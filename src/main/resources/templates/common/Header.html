@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}">
+    <!-- Thêm Font Awesome CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+H3dh8ErM5Lp4n5D51NV8oP6bLfUvyaGBsEG2UqU2q3g5kC2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"/>
+    <style>
+
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 100%;
+            height: 70px;
+            background-color: #163f16;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between; /* Căn giữa theo chiều ngang */
+            align-items: center; /* Căn giữa theo chiều dọc */
+
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-right: 100px;
+        }
+
+        .form-outline {
+            margin-right: 10px; /* Khoảng cách giữa ô input và nút tìm kiếm */
+        }
+
+        #form1{
+            color: aliceblue;
+            width: 600px;
+            background-color: #b9b7b7;
+        }
+
+        .btn_login-container{
+            margin-right: 20px;
+        }
+
+        .btn_login {
+            width: 100px;
+            background-color: #b9b7b7;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .fa-cart-shopping {
+            color: #b9b7b7;
+            font-size: 18px;
+
+        }
+        .box-search-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container {
+            width: 50px;
+            height: 50px;
+            margin-left: 30px;
+            padding: 0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="/images/logo.png" alt="logo" th:src="@{/images/logo.png}" >
+        </div>
+        <div class="box-search-btn">
+            <div class="input-container" >
+                <div class="form-outline">
+                    <input type="search" id="form1" class="form-control"  />
+                    <label class="form-label" for="form1">Search</label>
+                </div>
+                <button type="button" class="btn btn-dark" style="background-color: #5e7525">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <dic class="btn_login-container" >
+                <button type="button" class="btn_login" style="margin-right: 10px">LOGIN</button>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </dic>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+</body>
+</html>

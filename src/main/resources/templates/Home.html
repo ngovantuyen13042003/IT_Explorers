@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+H3dh8ErM5Lp4n5D51NV8oP6bLfUvyaGBsEG2UqU2q3g5kC2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"/>
+    <style>
+
+        .sub-header {
+            width: 100%;
+            height: 300px;
+            background-color: #5e7525;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sub-header-box{
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .restaurant-name {
+            color: black;
+            padding: 0;
+        }
+
+        .box-nav {
+            width: 900px;
+            margin: 0 auto;
+
+        }
+
+        .navbar-nav {
+            display: flex; /* Hiển thị các nav-item theo hàng ngang */
+            justify-content: space-around; /* Canh giữa các nav-item và để chúng cách đều nhau */
+            width: 100%; /* Đảm bảo các nav-item chiếm hết chiều rộng của navbar */
+            padding: 0; /* Xóa khoảng cách lề trái và phải của navbar-nav */
+        }
+
+        .nav-item {
+            text-align: center; /* Canh văn bản trong nav-item vào giữa */
+            padding: 10px 20px; /* Kích thước và khoảng cách giữa các nav-item */
+        }
+        .nav-link:hover {
+            color: #f00; /* Màu chữ khi hover (ví dụ: màu đỏ) */
+        }
+        .nav-link:active {
+            color: #00f; /* Màu chữ khi active (ví dụ: màu xanh) */
+            text-decoration: underline; /* Gạch chân khi active */
+        }
+
+        .nav-link {
+            text-decoration: none; /* Loại bỏ gạch chân trên liên kết */
+            color: #333; /* Màu văn bản cho nav-link */
+        }
+
+        .product-card {
+            display: flex;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            max-width: 400px; /* Đặt chiều rộng tối đa cho thẻ card là 400px */
+            width: 100%; /* Đảm bảo thẻ card sẽ không vượt quá 400px */
+            max-height: 150px;
+            min-height: 150px;
+            height: 100%;
+        }
+
+
+        .product-image {
+            flex: 1;
+        }
+
+        .product-info {
+            flex: 2;
+            padding: 10px;
+        }
+
+        .product-title {
+            margin-bottom: 10px;
+            font-size: 18px;
+            height: 20px;
+            font-weight: bold;
+        }
+
+        .product-ingredient {
+            font-size: 14px;
+            height: 60px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div th:replace="~{/common/Header}"></div>
+    <div class="sub-header">
+        <div class="sub-header-box">
+            <p style="color: #650a0a">Trang chủ <span style="color: #a8a5a5"> > </span> Nhà hàng</p>
+            <h2 class="restaurant-name">Bami king - Bánh Mì Bò Nướng & Cơm thố - An Trạch</h2>
+            <p style="color: #b9b7b7 ; margin-top: 20px">
+                Bánh mì - xôi
+                <br>
+                <i class="fa-solid fa-star" style="color: #ffc400"></i>
+                <i class="fa-regular fa-clock" style="margin-left: 20px"></i>
+                30 phút - 1.2 km
+                <br>
+                Giờ mở cữa:   6h00 - 22h00
+                <br>
+                <i class="fa-solid fa-tag fa-rotate-90"></i>
+                <span style="color: black">Tận hưởng ưu đãi</span>
+                <br>
+                <i class="fa-solid fa-tag fa-rotate-90"></i>
+                <span style="color: black; margin-right: 20px">Ưu đãi đến 47k</span>      <span style="color: #a90101">Xem chi tiết</span>
+            </p>
+        </div>
+    </div>
+    <div class="box-nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="selectMenuItem(this)">Ưu đãi hôm nay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="selectMenuItem(this)">Cơm thố</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="selectMenuItem(this)">Giảm giá</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="selectMenuItem(this)">Xôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="selectMenuItem(this)">Nước</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="selectMenuItem(this)">Khác</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <!-- Show menu-->
+        <div class="product">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/images/dish.jpg"  th:src="@{/images/dish.jpg}" alt="Product Image" style="width: 100%;">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">
+                        Product Name
+                    </div>
+                    <div class="product-ingredient">
+                        Ingredients: Lorem ipsum, dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                    <div class="product-price">
+                        $10.99 <i class="fa-solid fa-circle-plus" style="margin-left: 50px; color: #115311"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{/common/Footer}"></div>
+    <script>
+        function selectMenuItem(element) {
+            if (!element.classList.contains("active")) {
+                // Loại bỏ trạng thái active từ tất cả các mục menu
+                const menuItems = document.querySelectorAll(".nav-link");
+                menuItems.forEach(item => item.classList.remove("active"));
+
+                // Thêm trạng thái active vào mục menu được chọn
+                element.classList.add("active");
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+</body>
+</html>
