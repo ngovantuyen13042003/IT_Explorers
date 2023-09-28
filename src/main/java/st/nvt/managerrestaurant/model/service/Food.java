@@ -20,12 +20,7 @@ public class Food {
     private String name;
     private String description;
     private Double price;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "Food_Ingredient",
-        joinColumns = @JoinColumn(name = "idFood", referencedColumnName = "id"),
-        inverseJoinColumns = @JoinColumn(name = "idIngredient", referencedColumnName = "id"))
-    private List<Ingredient> ingredientList;
+    private String  ingredientList;
 
     @OneToMany(mappedBy = "food",cascade = CascadeType.ALL)
     private List<Images> images;

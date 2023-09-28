@@ -1,9 +1,10 @@
 package st.nvt.managerrestaurant.service;
 
+import org.springframework.data.domain.Page;
 import st.nvt.managerrestaurant.model.service.Food;
 
 import java.util.List;
 
 public interface FoodService {
-    List<Food> listFoods();
+    Page<Food> listFoods(int page, int size);
 }

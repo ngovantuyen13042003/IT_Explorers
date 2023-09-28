@@ -95,8 +95,34 @@
             font-size: 18px;
             font-weight: bold;
             height: 20px;
+            display: flex;
+            justify-content: center;
         }
+
+        .price, plus {
+            flex: 1;
+            margin: 0 auto;
+        }
+
+        .plus {
+            margin-right: 30px;
+        }
+
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .product-card {
+            width: calc(33.33% - 10px); /* Độ rộng của mỗi thẻ sản phẩm, trừ đi margin */
+            margin: 5px; /* Khoảng cách giữa các thẻ sản phẩm */
+            border: 1px solid #ccc; /* Viền thẻ sản phẩm (tuỳ chọn) */
+            padding: 10px; /* Khoảng cách bên trong thẻ sản phẩm (tuỳ chọn) */
+        }
+
     </style>
+
 </head>
 <body>
     <div th:replace="~{/common/Header}"></div>
@@ -151,25 +177,51 @@
     <div class="container">
         <!-- Show menu-->
         <div class="product">
-            <div class="product-card">
+            <div class="product-card" th:each="item: ${menu}">
                 <div class="product-image">
                     <img src="/images/dish.jpg"  th:src="@{/images/dish.jpg}" alt="Product Image" style="width: 100%;">
                 </div>
                 <div class="product-info">
-                    <div class="product-title">
+                    <div class="product-title" th:text="${item.getName()}">
                         Product Name
                     </div>
-                    <div class="product-ingredient">
+                    <div class="product-ingredient" th:text="${item.getIngredientList()}">
                         Ingredients: Lorem ipsum, dolor sit amet, consectetur adipiscing elit.
                     </div>
                     <div class="product-price">
-                        $10.99 <i class="fa-solid fa-circle-plus" style="margin-left: 50px; color: #115311"></i>
+                        <div class="price" th:text="${item.getPrice()}">
+                            $10.99
+                        </div>
+                        <div class="plus"><i class="fa-solid fa-circle-plus" style="margin-left: 50px; color: #115311"></i></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <hr/>
+
+    <!--    pagination-->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" th:class="${page.number == 0} ? disabled">
+                <a class="page-link" th:href="@{/(page=${page.number - 1})}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li th:each="i : ${#numbers.sequence(0, page.totalPages - 1)}"
+                th:class="${i == page.number} ? active : ''">
+                <a class="page-link" th:href="@{/(page=${i})}" th:text="${i + 1}"></a>
+            </li>
+            <li class="page-item" th:class="${page.number == page.totalPages - 1} ? disabled">
+                <a class="page-link" th:href="@{/(page=${page.number + 1})}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
     <div th:replace="~{/common/Footer}"></div>
     <script>
         function selectMenuItem(element) {
