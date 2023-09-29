@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Food Detail</title>
+  <link rel="stylesheet" href="your-styles.css">
+  <script src="your-script.js"></script>
+</head>
+<body>
+<div th:each="image, iterStat : ${food.images}">
+  <img th:src="@{'/images/' + ${food.id} + '/' + ${iterStat.index}}"
+       th:alt="Food Image"
+       th:style="${iterStat.index == 0} ? 'display: block;' : 'display: none;'" />
+</div>
+
+<button id="prevBtn" onclick="showPrevImage()">Previous</button>
+<button id="nextBtn" onclick="showNextImage()">Next</button>
+
+<script>
+  var currentImage = 0;
+  var totalImages = /* Total number of images for this food */;
+
+  function showPrevImage() {
+    if (currentImage > 0) {
+      currentImage--;
+      updateImageDisplay();
+    }
+  }
+
+  function showNextImage() {
+    if (currentImage < totalImages - 1) {
+      currentImage++;
+      updateImageDisplay();
+    }
+  }
+
+  function updateImageDisplay() {
+    var images = document.querySelectorAll('img');
+    for (var i = 0; i < images.length; i++) {
+      if (i === currentImage) {
+        images[i].style.display = 'block';
+      } else {
+        images[i].style.display = 'none';
+      }
+    }
+  }
+</script>
+
+<ul>
+  <li><strong>Name:</strong> <span th:text="${food.name}"></span></li>
+  <li><strong>Description:</strong> <span th:text="${food.description}"></span></li>
+  <li><strong>Price:</strong> <span th:text="${food.price}"></span></li>
+  <li><strong>Ingredient List:</strong> <span th:text="${food.ingredientList}"></span></li>
+</ul>
+</body>
+</html>

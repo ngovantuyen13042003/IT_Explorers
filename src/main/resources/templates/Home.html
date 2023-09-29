@@ -178,8 +178,8 @@
         <!-- Show menu-->
         <div class="product">
             <div class="product-card" th:each="item: ${menu}">
-                <div class="product-image">
-                    <img src="/images/dish.jpg"  th:src="@{/images/dish.jpg}" alt="Product Image" style="width: 100%;">
+                <div class="product-image" th:if="${imgs[0].food.id == item.id}">
+                    <img   th:src="@{'img/'+${imgs[0].nameImage}}" alt="Product Image"  style="width: 100%; padding-top: 15px">
                 </div>
                 <div class="product-info">
                     <div class="product-title" th:text="${item.getName()}">
