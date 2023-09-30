@@ -1,0 +1,14 @@
+
+.box-content {
+    display: flex;
+    height: 900px;
+    width: 100%;
+}
+
+.box-img {
+    flex: 1;
+}
+
+.box-info {
+    flex: 1;
+}
