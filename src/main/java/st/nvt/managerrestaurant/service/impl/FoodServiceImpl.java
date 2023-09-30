@@ -6,9 +6,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import st.nvt.managerrestaurant.model.service.Food;
+import st.nvt.managerrestaurant.model.service.Images;
 import st.nvt.managerrestaurant.repository.FoodRepository;
 import st.nvt.managerrestaurant.service.FoodService;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,6 +21,7 @@ public class FoodServiceImpl implements FoodService {
     @Override
     public Page<Food> listFoods(int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
+
         return foodRepository.findAll(pageable);
     }
 
@@ -28,7 +31,7 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
-    public Optional<Food> findById(Long id) {
-        return foodRepository.findById(id);
+    public Food findById(Long id) {
+        return foodRepository.getById(id);
     }
 }

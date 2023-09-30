@@ -8,8 +8,9 @@ import java.util.List;
 
 public interface ImagesService {
     Images  saveOrUpdate(Images image);
-
     List<Images> findByFood(Food food);
+
+    Images findTop1ByFood(Long id);
 
     List<Images> findAll();
 }

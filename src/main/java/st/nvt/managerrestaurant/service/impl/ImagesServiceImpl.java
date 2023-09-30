@@ -26,6 +26,11 @@ public class ImagesServiceImpl implements ImagesService {
     }
 
     @Override
+    public Images findTop1ByFood(Long id) {
+        return imagesRepository.findTop1ByFood(id);
+    }
+
+    @Override
     public List<Images> findAll() {
         return imagesRepository.findAll();
     }

@@ -14,14 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FoodDTO {
-    @NotEmpty(message = "Food name should be not Empty!")
     private String name;
-    @NotEmpty(message = "Food description should be not Empty!")
     private String description;
-    @NotEmpty(message = "Food price should be not Empty!")
     private Double price;
-    @NotEmpty(message = "Food ingredient should be not Empty!")
     private String  ingredientList;
-    @NotEmpty(message = "There should be at least 1 image of the food!")
-    private List<Images> images;
+    private String images;
 }

@@ -18,7 +18,7 @@
 <div th:replace="~{/common/Header}"></div>
   <div class="container">
     <h1 class="text-center" style="margin-bottom: 30px">Creation Food</h1>
-    <form action="add-food" enctype="multipart/form-data" method="post" th:object="${food}" >
+    <form action="/api/v1/add-food" enctype="multipart/form-data" method="post" th:object="${food}" >
       <!-- Text input -->
       <div class="form-outline mb-4">
         <input type="text" id="form6Example3" class="form-control" th:field="*{name}" />

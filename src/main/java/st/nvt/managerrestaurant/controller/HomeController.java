@@ -19,26 +19,55 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
+@RequestMapping("/api/v1")
 public class HomeController {
     @Autowired
     private FoodService foodService;
     @Autowired
     private ImagesService imagesService;
 
-    @GetMapping
+    @GetMapping("/home")
     public String menu(@RequestParam(defaultValue = "0") int page, Model model) {
         int pageSize = 9;
-        Page<Food> foodPage = foodService.listFoods(page,pageSize);
-        model.addAttribute("menu", foodPage.getContent());
+        Page<Food> foodPage = foodService.listFoods(page, pageSize);
+
+        // Tạo một danh sách mới chứa các món ăn với một hình ảnh duy nhất
+        List<Food> menuWithImages = new ArrayList<>();
+
+        for (Food food : foodPage.getContent()) {
+            List<Images> images = imagesService.findByFood(food);
+
+            if (!images.isEmpty()) {
+                // Chỉ lấy một hình ảnh đầu tiên cho món ăn
+                food.setImages(Collections.singletonList(images.get(0)));
+                System.out.println(images.get(0).getNameImage());
+            } else {
+                // Nếu không có hình ảnh nào, thì tạo một danh sách rỗng
+                food.setImages(Collections.emptyList());
+            }
+            menuWithImages.add(food);
+        }
+        model.addAttribute("menu", menuWithImages);
         model.addAttribute("page", foodPage);
-        model.addAttribute("imgs", imagesService.findAll());
+
+
         return "Home";
     }
+
+    @GetMapping("/food/detail/{id}")
+    public String showFoodDetail(@PathVariable Long id, Model model) {
+        Food food = foodService.findById(id);
+        List<Images> images = imagesService.findByFood(food);
+        food.setImages(images);
+        model.addAttribute("food",food);
+        return "detail";
+    }
+
+
+
 
     @GetMapping("/creation-food")
     public String showFormAddFood(@ModelAttribute Food food, Model model) {
@@ -55,6 +84,7 @@ public class HomeController {
             for(MultipartFile imageFile : images) {
                 Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + imageFile.getOriginalFilename());
                 Files.copy(imageFile.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+                System.out.println(path);
                 Images image = new Images();
                 image.setDataImage(imageFile.getBytes());
                 image.setTypeImage(imageFile.getContentType());
@@ -65,11 +95,6 @@ public class HomeController {
             food.setImages(imagesList);
             foodService.saveOrUpdate(food);
         }
-        return "redirect:/";
+        return "redirect:/api/v1/home";
     }
-
-
-
-
-
 }
