@@ -1,14 +1,20 @@
 
 .box-content {
     display: flex;
-    height: 900px;
     width: 100%;
 }
 
 .box-img {
     flex: 1;
+    width: 100%;
 }
 
 .box-info {
     flex: 1;
+    margin-top: 50px;
+}
+
+.plus {
+    font-size: 32px;
+    color: #163f16;
 }
