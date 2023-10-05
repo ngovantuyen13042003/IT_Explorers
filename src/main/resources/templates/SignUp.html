@@ -29,9 +29,10 @@
 			</div>
 
 			<div class="form-outline mb-4">
-				<input type="password" id="confirmPassword" class="form-control"/>
+				<input type="password" id="confirmPassword" class="form-control" oninput="checkPassword()" />
 				<label class="form-label" for="confirmPassword">Confirm password</label>
 			</div>
+			<p class="text-danger"></p>
 
 			<!-- Submit button -->
 			<button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
@@ -60,6 +61,7 @@
 	</div>
 </div>
 <div th:replace="~{/common/Footer}"></div>
+<script type="text/javascript" th:src="@{/js/CheckPassword.js}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
 </body>
 </html>
