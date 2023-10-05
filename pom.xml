@@ -60,6 +60,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -74,6 +82,14 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+<!--            ngăn chặn việc xóa file trong thư mục target (lưu trữ hình ảnh) khi build project -->
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version> <!-- Phiên bản có thể thay đổi -->
+                <configuration>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>

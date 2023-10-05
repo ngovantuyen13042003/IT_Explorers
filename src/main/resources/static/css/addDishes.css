@@ -1,0 +1,14 @@
+.container {
+    width: 800px;
+    margin: 50px 0;
+}
+
+.btn-block mb-4 {
+    background-color: #5e7525;
+    color: white;
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+}

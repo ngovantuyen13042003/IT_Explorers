@@ -1,0 +1,136 @@
+.sub-header {
+    width: 100%;
+    height: 300px;
+    background-color: #5e7525;
+    margin: 0 auto;
+    padding: 20px;
+
+    background-image: url("/images/c.png");
+}
+
+.sub-header-box{
+    width: 800px;
+    margin: 0 auto;
+
+}
+
+.restaurant-name {
+    color: black;
+    padding: 0;
+}
+
+.box-nav {
+    width: 900px;
+    margin: 0 auto;
+
+}
+
+.navbar-nav {
+    display: flex; /* Hiển thị các nav-item theo hàng ngang */
+    justify-content: space-around; /* Canh giữa các nav-item và để chúng cách đều nhau */
+    width: 100%; /* Đảm bảo các nav-item chiếm hết chiều rộng của navbar */
+    padding: 0; /* Xóa khoảng cách lề trái và phải của navbar-nav */
+}
+
+.nav-item {
+    text-align: center; /* Canh văn bản trong nav-item vào giữa */
+    padding: 10px 20px; /* Kích thước và khoảng cách giữa các nav-item */
+}
+.nav-link:hover {
+    color: #f00; /* Màu chữ khi hover (ví dụ: màu đỏ) */
+}
+.nav-link:active {
+    color: #00f; /* Màu chữ khi active (ví dụ: màu xanh) */
+    text-decoration: underline; /* Gạch chân khi active */
+}
+
+.nav-link {
+    text-decoration: none; /* Loại bỏ gạch chân trên liên kết */
+    color: #333; /* Màu văn bản cho nav-link */
+}
+
+.product-card {
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    max-width: 400px; /* Đặt chiều rộng tối đa cho thẻ card là 400px */
+    width: 100%; /* Đảm bảo thẻ card sẽ không vượt quá 400px */
+    max-height: 150px;
+    min-height: 150px;
+    height: 100%;
+}
+
+
+.product-image {
+    margin-top: 15px;
+    width: 100%;
+    height: 62px;
+    overflow: hidden;
+    flex: 1;
+
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.product-info {
+    flex: 2;
+    width: 100%;
+    padding: 10px;
+}
+
+.product-title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    height: 20px;
+    font-weight: bold;
+}
+
+.product-title > a {
+    color: black;
+}
+
+.product-ingredient {
+    font-size: 14px;
+    height: 60px;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.price, plus {
+    flex: 1;
+    margin: 0 auto;
+}
+
+.plus {
+    margin-right: -10px;
+    cursor: pointer;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.product-card {
+    width: calc(33.33% - 10px); /* Độ rộng của mỗi thẻ sản phẩm, trừ đi margin */
+    margin: 5px; /* Khoảng cách giữa các thẻ sản phẩm */
+    border: 1px solid #ccc; /* Viền thẻ sản phẩm (tuỳ chọn) */
+    padding: 10px; /* Khoảng cách bên trong thẻ sản phẩm (tuỳ chọn) */
+}
+
+.sub-header-box {
+    background-image: url("/img");
+}

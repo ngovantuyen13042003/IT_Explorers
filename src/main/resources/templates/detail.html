@@ -32,10 +32,10 @@
 		</div>
 		<div class="box-info">
 			<h3 th:text="${food.name}"></h3>
-			<h3 th:text="${food.price}"></h3>
+			<h3 th:text="${food.price} + ' $' "></h3>
 			<p th:text="${food.description}"></p>
 			<p th:text="${food.ingredientList}"></p>
-			<p class="plus"><i class="fa-solid fa-circle-plus"></i></p>
+			<p class="plus"><i  class="fa-solid fa-cart-plus"></i></p>
 		</div>
 	</div>
 </div>
