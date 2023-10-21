@@ -15,17 +15,26 @@
 <div class="container">
 	<div class="container-signin">
 		<h1 class="text-center">SIGN IN</h1>
-		<form>
+
+		<form method="post" th:action="@{/login}" >
+
+			<div th:if="${param.error}">
+				<p class="error-message">Invalid username or password</p>
+			</div>
+			<div th:if="${param.logout}">
+				<p class="success-message">You have been logged out</p>
+			</div>
+
 			<!-- Email input -->
 			<div class="form-outline mb-4">
-				<input type="email" id="form2Example1" class="form-control"/>
-				<label class="form-label" for="form2Example1">Email address</label>
+				<input type="text" id="username" class="form-control" name="username" />
+				<label class="form-label" for="username">Username</label>
 			</div>
 
 			<!-- Password input -->
 			<div class="form-outline mb-4">
-				<input type="password" id="form2Example2" class="form-control"/>
-				<label class="form-label" for="form2Example2">Password</label>
+				<input type="password" id="password" class="form-control" name="password" />
+				<label class="form-label" for="password">Password</label>
 			</div>
 
 			<!-- 2 column grid layout for inline styling -->
@@ -45,11 +54,11 @@
 			</div>
 
 			<!-- Submit button -->
-			<button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+			<button type="submit" class="btn btn-primary btn-block mb-4" style="background-color: #5e7525"> Sign in</button>
 
 			<!-- Register buttons -->
 			<div class="text-center">
-				<p>Don't have an account? <a th:href="@{/api/v1/sign-up}">Sign up</a></p>
+				<p>Don't have an account? <a th:href="@{/sign-up}">Sign up</a></p>
 				<p>or sign in with:</p>
 				<button type="button" class="btn btn-secondary btn-floating mx-1">
 					<i class="fab fa-facebook-f"></i>

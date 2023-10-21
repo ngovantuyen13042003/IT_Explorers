@@ -22,7 +22,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.*;
 
 @Controller
-@RequestMapping("/api/v1")
+
 public class HomeController {
     @Autowired
     private FoodService foodService;
@@ -95,6 +95,6 @@ public class HomeController {
             food.setImages(imagesList);
             foodService.saveOrUpdate(food);
         }
-        return "redirect:/api/v1/home";
+        return "redirect:/home";
     }
 }
