@@ -10,7 +10,13 @@
   <link rel="stylesheet" th:href="@{/css/addDishes.css}">
 </head>
 <body>
-<div th:replace="~{/common/Header}"></div>
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+  <div th:replace="~{/common/Header_off}"></div>
+
+</div>
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+  <div th:replace="~{/common/Header}"></div>
+</div>
   <div class="container">
     <h1 class="text-center" style="margin-bottom: 30px">Creation Food</h1>
     <form action="/add-food" enctype="multipart/form-data" method="post" th:object="${food}" >

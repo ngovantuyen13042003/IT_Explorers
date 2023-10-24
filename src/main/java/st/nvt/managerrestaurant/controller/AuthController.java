@@ -7,10 +7,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.context.request.WebRequest;
 import st.nvt.managerrestaurant.dto.AccountDTO;
 import st.nvt.managerrestaurant.model.account.Account;
 import st.nvt.managerrestaurant.service.IAccountService;
@@ -23,10 +22,11 @@ public class AuthController {
     IAccountService accountService;
     @Autowired
     IRoleService roleService;
-    @Autowired
+
 
     @GetMapping("/sign-in")
     public String showFormLogin() {
+
         return "SignIn";
     }
 
@@ -55,6 +55,14 @@ public class AuthController {
 
         Account acc = accountService.saveOrUpdate(account);
         return "redirect:/home";
+    }
+
+    @GetMapping("logout")
+    public String signout(@ModelAttribute("account") AccountDTO userDto, WebRequest request, SessionStatus status) {
+        //        Xóa session user ra khỏi vị trí
+        status.setComplete();// đã hoàn thành
+        request.removeAttribute("userdto",WebRequest.SCOPE_SESSION);//thực hiện xóa accountDTO ra khỏi tầm của session
+        return "redirect:sign-in";
     }
 
 
