@@ -11,17 +11,23 @@
 	<link rel="stylesheet" th:href="@{/css/signin.css}">
 </head>
 <body>
-<div th:replace="~{/common/Header}"></div>
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+	<div th:replace="~{/common/Header_off}"></div>
+
+</div>
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+	<div th:replace="~{/common/Header}"></div>
+</div>
 <div class="container">
 	<div class="container-signin">
 		<h1 class="text-center">SIGN IN</h1>
 
 		<form method="post" th:action="@{/login}" >
 
-			<div th:if="${param.error}">
-				<p class="error-message">Invalid username or password</p>
+			<div class="text-danger" th:if="${param.error}">
+				<p class="error-message" >Invalid username or password</p>
 			</div>
-			<div th:if="${param.logout}">
+			<div th:if="${param.logout}" class="text-danger">
 				<p class="success-message">You have been logged out</p>
 			</div>
 
@@ -33,7 +39,7 @@
 
 			<!-- Password input -->
 			<div class="form-outline mb-4">
-				<input type="password" id="password" class="form-control" name="password" />
+				<input type="password" id="password" class="form-control " name="password" />
 				<label class="form-label" for="password">Password</label>
 			</div>
 

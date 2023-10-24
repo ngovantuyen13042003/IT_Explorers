@@ -41,7 +41,6 @@ public class SpringSecurity {
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
                                 .defaultSuccessUrl("/home")
-                                .failureUrl("/login?error=true")
                                 .permitAll()
                 )
                 .logout(
@@ -49,10 +48,12 @@ public class SpringSecurity {
                                 .invalidateHttpSession(true)
                                 .clearAuthentication(true)
                                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                                .logoutSuccessUrl("/login?logout")
+                                .logoutSuccessUrl("/sign-in?logout")
                                 .permitAll()
                 )
-        ;
+                .sessionManagement()
+                .maximumSessions(1)
+                .expiredUrl("/login?expired");
         return httpSecurity.build();
     }
 

@@ -11,7 +11,13 @@
 
 </head>
 <body>
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header_off}"></div>
+
+</div>
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
     <div th:replace="~{/common/Header}"></div>
+</div>
     <div class="sub-header">
         <div class="sub-header-box">
             <p style="color: #650a0a">Trang chủ <span style="color: #a8a5a5"> > </span> Nhà hàng</p>

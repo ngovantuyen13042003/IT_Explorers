@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import st.nvt.managerrestaurant.dto.AccountDTO;
 import st.nvt.managerrestaurant.dto.FoodDTO;
 import st.nvt.managerrestaurant.model.service.Food;
 import st.nvt.managerrestaurant.model.service.Images;
@@ -22,12 +23,17 @@ import java.nio.file.StandardCopyOption;
 import java.util.*;
 
 @Controller
-
+@SessionAttributes("account")
 public class HomeController {
     @Autowired
     private FoodService foodService;
     @Autowired
     private ImagesService imagesService;
+
+    @ModelAttribute("account")
+    public AccountDTO accountDTO(){
+        return new AccountDTO();
+    }
 
     @GetMapping("/home")
     public String menu(@RequestParam(defaultValue = "0") int page, Model model) {
