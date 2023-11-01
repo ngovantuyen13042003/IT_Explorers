@@ -1,0 +1,22 @@
+.container {
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.btn-block mb-4 {
+    background-color: #5e7525;
+    color: white;
+    width: 200px;
+}
+
+.box-addRestaurant {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.btn-submit {
+    width: 200px;
+    margin: 0 auto;
+}
