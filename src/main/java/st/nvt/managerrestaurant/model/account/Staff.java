@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -19,8 +21,8 @@ public class Staff {
     private String email;
     private String phoneNumber;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Account account;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "staff")
+    private List<Account> accounts;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_position")

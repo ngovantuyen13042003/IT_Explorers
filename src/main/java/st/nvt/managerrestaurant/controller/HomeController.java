@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import st.nvt.managerrestaurant.dto.AccountDTO;
-import st.nvt.managerrestaurant.dto.FoodDTO;
 import st.nvt.managerrestaurant.model.service.Food;
 import st.nvt.managerrestaurant.model.service.Images;
 import st.nvt.managerrestaurant.service.FoodService;
@@ -74,7 +73,6 @@ public class HomeController {
 
 
 
-
     @GetMapping("/creation-food")
     public String showFormAddFood(@ModelAttribute Food food, Model model) {
         model.addAttribute("food", food);
@@ -92,7 +90,6 @@ public class HomeController {
                 Files.copy(imageFile.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
                 System.out.println(path);
                 Images image = new Images();
-                image.setDataImage(imageFile.getBytes());
                 image.setTypeImage(imageFile.getContentType());
                 image.setNameImage(imageFile.getOriginalFilename());
                 image.setFood(food);
@@ -103,4 +100,7 @@ public class HomeController {
         }
         return "redirect:/home";
     }
+
+
+
 }

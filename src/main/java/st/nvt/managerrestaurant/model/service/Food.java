@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -23,5 +24,8 @@ public class Food {
 
     @OneToMany(mappedBy = "food",cascade = CascadeType.ALL)
     private List<Images> images;
+
+    @ManyToMany(mappedBy = "foods", cascade = CascadeType.ALL)
+    private List<Cart> carts = new ArrayList<>();
 
 }
