@@ -3,7 +3,6 @@ package st.nvt.managerrestaurant.controller;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,9 +23,8 @@ public class AuthController {
     IRoleService roleService;
 
 
-    @GetMapping("/sign-in")
+    @GetMapping ("/login")
     public String showFormLogin() {
-
         return "SignIn";
     }
 
@@ -62,7 +60,7 @@ public class AuthController {
         //        Xóa session user ra khỏi vị trí
         status.setComplete();// đã hoàn thành
         request.removeAttribute("userdto",WebRequest.SCOPE_SESSION);//thực hiện xóa accountDTO ra khỏi tầm của session
-        return "redirect:sign-in";
+        return "redirect:/login";
     }
 
 

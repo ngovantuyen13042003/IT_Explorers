@@ -6,6 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import st.nvt.managerrestaurant.model.payment.Order;
+import st.nvt.managerrestaurant.model.service.Cart;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -20,12 +24,14 @@ public class Customer {
     private String email;
     private String address;
     private int totalScores;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_account")
-    private Account account;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy ="customer")
+    private List<Account> accounts = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_order")
     private Order order;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+    private List<Cart> carts = new ArrayList<>();
 
 }

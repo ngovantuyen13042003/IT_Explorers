@@ -29,6 +29,12 @@ public class Account{
         inverseJoinColumns = @JoinColumn(name = "id_Role", referencedColumnName = "id"))
     private List<Role> roleList = new ArrayList<>();
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Staff staff;
+
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Customer customer;
 
 
 }

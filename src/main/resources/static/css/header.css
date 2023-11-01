@@ -25,6 +25,11 @@ html, body {
     margin-right: 10px; /* Khoảng cách giữa ô input và nút tìm kiếm */
 }
 
+.form-outline:focus-visible {
+    outline: none;
+    border: none;
+}
+
 #form1{
     color: blue;
     width: 600px;

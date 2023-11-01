@@ -1,0 +1,139 @@
+
+.box__cart {
+    z-index: 999;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+
+}
+
+.hide {
+    display: none;
+}
+
+.container-cart {
+    margin:  auto;
+    position: relative;
+    top: 15%;
+    width: 850px;
+    height: 400px;
+    background-color: #9EB384;
+    animation: modalShow 0.3s linear;
+}
+
+.product-cart {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center; !* Căn giữa theo chiều dọc *!*/
+    /*align-items: center; !* Căn giữa theo chiều ngang *!*/
+}
+
+.header-cart {
+    flex: 1;
+}
+
+.content-cart {
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center; !* Căn giữa theo chiều dọc *!*/
+    /*align-items: center; !* Căn giữa theo chiều ngang *!*/
+}
+
+.box-nav-cart {
+
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+}
+
+.title-item_cart {
+    text-decoration: none;
+    padding: 0px 17px;
+    margin: 0;
+}
+
+.box-nav_product-cart {
+    flex: 6;
+    list-style: none;
+}
+
+.box-nav_price-cart, .box-nav_quantity-cart, .box-nav_remove-cart, .box-nav_total-cart {
+    flex: 2;
+    list-style: none;
+}
+
+.box-product-cart {
+    flex: 9;
+}
+
+.img-product-cart {
+    flex: 2;
+    width: 120px;
+    height: 70px;
+}
+
+.name-product-cart {
+    flex: 4;
+}
+
+.price-product-cart {
+    flex: 2;
+}
+
+.quantity-product-cart {
+    flex: 2;
+}
+
+.total_price-payment-cart {
+    flex: 2;
+}
+
+.remove-product-cart {
+    flex: 2;
+}
+
+.box-img_product-cart {
+    width: 100%;
+    height: 90%;
+}
+
+.box-img_product-cart img{
+    width: 100%;
+    height: 100%;
+}
+
+.box-payment-cart {
+    flex: 3;
+}
+
+.border-none:focus-visible {
+    outline: none;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+.box-list-product-cart {
+    max-height: 160px;
+    overflow: auto;
+
+}
+
+/* animation for cart modal show */
+@keyframes modalShow {
+    from{
+        top: -500px;
+        opacity: 0;
+    }
+
+    to{
+        top: 15%;
+        opacity: 1;
+    }
+}
