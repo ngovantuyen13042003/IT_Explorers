@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cập nhật thông tin nhà hàng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+H3dh8ErM5Lp4n5D51NV8oP6bLfUvyaGBsEG2UqU2q3g5kC2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/UpdateInforRes.css}"/>
+</head>
+<body>
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header_off}"></div>
+
+</div>
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header}"></div>
+</div>
+<div class="container">
+    <h1 class="text-center" style="margin-bottom: 30px">Restaurant Information</h1>
+    <form>
+        <div class="input-group mb-4">
+            <label class="input-group-text" for="inputGroupSelect01">Loại nhà hàng</label>
+            <select class="form-select" id="inputGroupSelect01">
+                <option selected="">Chọn...</option>
+                <option value="1">Hàn Quốc</option>
+                <option value="2">Nhật Bản</option>
+                <option value="3">Hải sản</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label class="mb-2" for="tennhahang">Tên nhà hàng</label>
+            <div class="form-outline">
+                <input type="text" id="tennhahang" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="mb-2" for="diachi">Địa chỉ</label>
+            <div class="form-outline">
+                <input type="text" id="diachi" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="mb-2" for="sodienthoai">Số điện thoại</label>
+            <div class="form-outline">
+                <input type="tel" id="sodienthoai" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="mb-2" for="soban">Số lượng bàn</label>
+            <div class="form-outline">
+                <input type="number" min="0" id="soban" class="form-control" />
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-4" style="background-color: #5e7525">Cập nhật</button>
+    </form>
+
+</div>
+<div th:replace="~{/common/Footer}"></div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+    </body>
+</html>
