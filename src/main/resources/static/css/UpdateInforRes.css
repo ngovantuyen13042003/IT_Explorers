@@ -1,0 +1,6 @@
+.form-select {
+    padding: 0 2.25rem 0 .75rem !important;
+}
+.btn{
+    --mdb-btn-font-size: 1rem !important;
+}
