@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Điều khoản sử dụng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+H3dh8ErM5Lp4n5D51NV8oP6bLfUvyaGBsEG2UqU2q3g5kC2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/memberPolicy.css}">
+
+</head>
+<body>
+<!--header-->
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header_off}"></div>
+</div>
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header}"></div>
+</div>
+<!--end header-->
+
+<div class="menu">
+    <div class="ant-col side-nav">
+        <div class="ant-row side-nav-2">
+            <div class="ant-col ant-col-24">
+                <div class="ant-row">
+                    <div class="ant-col ant-col-24">
+                        <div id="div1" class="nav-title">ABOUT US</div>
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <span class="nav-item-title"><a th:href="@{/about-us/terms-and-conditions}">Điều khoản sử dụng</a></span>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-item-title"><a th:href="@{/about-us/privacy-policy}">Chính sách quyền riêng tư</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="ant-col">
+            <div class="container" id="tab1" role="tabpanel">
+                <h1>Điều Khoản Sử Dụng</h1>
+                <p>Cập nhật lần cuối: 23 tháng 10 năm 2023</p>
+                <p><strong>Quan trọng</strong>&nbsp;– vui lòng đọc kỹ những điều khoản được quy định dưới đây. Bằng việc sử dụng
+                    Dịch Vụ (<em>như được định nghĩa dưới đây</em>), bạn đồng ý rằng bạn đã đọc, hiểu, chấp nhận và đồng ý với Điều
+                    Khoản Sử Dụng. Bạn cũng đồng ý với các cam đoan mà bạn đưa ra dưới đây. Nếu bạn không đồng ý hoặc không thuộc
+                    phạm vi điều chỉnh của Điều Khoản Sử Dụng Dịch Vụ và không muốn tiếp tục sử dụng Dịch Vụ, vui lòng không tiếp
+                    tục sử dụng Website (<em>như được định nghĩa dưới đây</em>) hoặc Dịch Vụ này.</p>
+                <p>Điều khoản sử dụng dưới đây (gọi chung là “<strong>Điều Khoản Sử Dụng</strong>” hoặc “<strong>Hợp Đồng</strong>”)
+                    này cấu thành một Thỏa thuận pháp lý giữa bạn và&nbsp;<strong>Công ty TNHH IT Explorers </strong>(“<strong>Công
+                        Ty</strong>”). Để sử dụng Dịch Vụ bạn phải đồng ý với Điều Khoản Sử Dụng được quy định sau đây. Bằng việc sử
+                    dụng website RMS được cung cấp bởi Công Ty (“<strong>Ứng dụng</strong>”), và cài đặt hoặc sử
+                    dụng bất kỳ phần mềm liên quan nào (“<strong>Phần Mềm</strong>”) do Công Ty cung cấp với mục đích hỗ trợ người
+                    có nhu cầu sử dụng dịch vụ chuyển phát thực phẩm đến các địa điểm cụ thể được kết nối với các người cung cấp
+                    dịch vụ chuyển phát bên thứ ba độc lập (gọi chung là “<strong>Dịch Vụ</strong>”), bạn theo đây xác nhận và đồng
+                    ý một cách rõ ràng rằng bạn sẽ chịu sự ràng buộc của các Điều Khoản Sử Dụng, và bất kỳ sửa đổi, bổ sung nào đối
+                    với Điều Khoản Sử Dụng này được công bố tại từng thời điểm tại <a
+                            href="http://www.rms.com">http://www.rms.com</a> hoặc thông qua Website.</p>
+                <p>Cho mục đích của các Điều Khoản Sử Dụng này, bất cứ khi nào bối cảnh đó đòi hỏi “Bạn” hoặc “Người Dùng” đều có
+                    nghĩa là bất kỳ cá nhân hoặc pháp nhân nào đã đồng ý sử dụng Website bằng cách cung cấp dữ liệu đăng ký khi
+                    đăng ký vào Website. Thuật ngữ “Chúng tôi”, “của Chúng tôi” có nghĩa là Công Ty.</p>
+                <p>Công Ty bảo lưu quyền được điều chỉnh, thay thế hoặc sửa đổi Điều Khoản Sử Dụng hoặc các chính sách liên quan đến
+                    Dịch Vụ tại bất cứ thời điểm nào mà Công Ty cho là phù hợp. Những chỉnh sửa, thay đổi Điều Khoản Sử Dụng hoặc
+                    các chính sách có liên quan đến Dịch Vụ sẽ có hiệu lực sau năm (05) ngày kể từ ngày phiên bản cập nhật được đăng
+                    tải trên trang web&nbsp;<a href="https://www.rms.com/vn/">https://www.rms.com/vn/</a>. Bạn xác nhận và đồng ý
+                    rằng bạn phải có trách nhiệm thường xuyên kiểm tra Điều Khoản Sử Dụng. Việc tiếp tục sử dụng Dịch Vụ sau khi có bất kỳ thay đổi nào, bất kể là
+                    bạn đã xem xét chúng hay chưa, sẽ tương đương với việc bạn đã chấp thuận và đồng ý đối với những thay đổi đó.</p>
+                <p>CÔNG TY&nbsp;<strong>LÀ MỘT CÔNG TY CÔNG NGHỆ</strong>&nbsp;KHÔNG CUNG CẤP DỊCH VỤ THỰC PHẨM VÀ ĐỒ UỐNG.
+                    CÔNG TY KHÔNG PHẢI LÀ THƯƠNG NHÂN CUNG CẤP THỰC PHẨM, NGƯỜI CUNG CẤP
+                    DỊCH VỤ CHUYỂN PHÁT HAY DỊCH VỤ VẬN TẢI.</p>
+                <p><strong>1. Cam đoan và đảm bảo</strong></p>
+                <p>Bằng việc sử dụng Dịch Vụ, bạn cam đoan và bảo đảm một cách cụ thể rằng bạn có đầy đủ quyền hợp pháp để chấp
+                    thuận và đồng ý với Điều Khoản Sử Dụng và rằng bạn đủ mười tám (18) tuổi. Không giới hạn những phần đã đề cập ở
+                    trên, Dịch Vụ không dành cho người dưới mười tám (18) tuổi hay những đối tượng bị ngăn cấm tham gia vào một thỏa
+                    thuận mang tính hợp đồng dưới bất kỳ hình thức nào. Bằng việc sử dụng Dịch Vụ, bạn cam đoan và bảo đảm thêm rằng
+                    bạn có quyền, thẩm quyền và năng lực để sử dụng Dịch Vụ và tuân theo Điều Khoản Sử Dụng. Bạn cũng đồng thời xác
+                    nhận rằng những thông tin bạn cung cấp là đúng, đầy đủ và chính xác. Việc bạn sử dụng Dịch Vụ là để phục vụ
+                    riêng cho cá nhân bạn. Bạn cam kết sẽ không ủy quyền cho người khác sử dụng danh tính hoặc tư cách người dùng
+                    Website của mình, và bạn không được chuyển giao hoặc bằng cách khác chuyển nhượng tài khoản người dùng của bạn
+                    cho bất kỳ cá nhân hoặc tổ chức nào khác.</p>
+                <p>Bằng việc sử dụng Website, bạn đồng ý rằng:</p>
+                <ul>
+                    <li>Bạn sẽ chỉ sử dụng Dịch Vụ cho các mục đích hợp pháp;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ chỉ sử dụng Dịch Vụ phù hợp với mục đích mà nó được dự định sử dụng;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không sử dụng Dịch Vụ, Website để gửi và lưu trữ bất kỳ tài liệu hoặc thông tin
+                        trái phép nào hoặc phục vụ các mục đích lừa đảo;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không sử dụng Dịch Vụ, Ứng Dụng và/hoặc Phần Mềm để làm phiền, quấy rối, quấy nhiễu hoặc thực hiện
+                        đặt sử dụng dịch vụ giả mạo</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không sử dụng Website cho mục đích khác ngoài mục đích sử dụng Dịch Vụ;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không sử dụng Dịch Vụ hoặc bất kỳ nội dung nào có thể truy cập qua Dịch Vụ cho bất kỳ mục đích thương
+                        mại nào, bao gồm nhưng không giới hạn ở việc liên hệ, quảng cáo, chào bán hoặc bán cho bất kỳ Thương Nhân,
+                        Người dùng Ứng Dụng hoặc Người Cung Cấp Dịch Vụ Chuyển Phát nào trừ khi được Công Ty đồng ý bằng văn bản;
+                    </li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không tạo ra hoặc biên soạn, trực tiếp hoặc gián tiếp, bất kỳ bộ sưu tập, biên tập, hoặc thư mục nào
+                        khác từ bất kỳ nội dung nào được hiển thị thông qua Dịch Vụ ngoại trừ việc sử dụng cá nhân, cho mục đích phi
+                        thương mại của bạn;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không sao chép bất kỳ nội dung nào được hiển thị thông qua Dịch Vụ và/hoặc Ứng Dụng, bao gồm nhưng
+                        không giới hạn đối với nội dung và các bài đánh giá của các Thương Nhân, để tái sử dụng dưới bất kỳ hình
+                        thức hoặc phương tiện nào;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không liên hệ với người cung cấp dịch vụ vận tải và/hoặc dịch vụ chuyển phát bên thứ ba vì những mục
+                        đích khác ngoài mục đích sử dụng Dịch Vụ;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không làm ảnh hưởng xấu đến hoạt động bình thường của mạng lưới;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không cố ý hoặc vô ý gây ra hoặc cố gắng gây ra thiệt hại cho Người Cung Cấp Dịch Vụ Chuyển Phát;
+                    </li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không làm tổn hại đến Dịch Vụ, Ứng Dụng và/hoặc Phần Mềm dưới bất kỳ hình thức nào;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ không sao chép, phân phối Phần Mềm hoặc nội dung khác mà không có sự cho phép bằng văn bản của Công
+                        Ty;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ chỉ sử dụng Phần Mềm và/hoặc Ứng Dụng cho riêng bạn và sẽ không bán lại Phần Mềm hoặc Dịch Vụ cho một
+                        bên thứ ba;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ bảo toàn và bảo mật mật khẩu tài khoản của mình hoặc bất kỳ phương thức nhận dạng nào mà chúng tôi
+                        cung cấp để bạn tiếp cận sử dụng Dịch Vụ;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ cung cấp cho Công Ty bằng chứng về nhận dạng mà chúng tôi có thể yêu cầu một cách hợp lý;</li>
+                </ul>
+                <ul>
+                    <li>Bạn đồng ý cung cấp thông tin chính xác, cập nhật và đầy đủ theo yêu cầu của Dịch Vụ và có trách nhiệm duy
+                        trì và cập nhật thông tin của bạn một cách kịp thời để đảm bảo rằng các thông tin này luôn chính xác, cập
+                        nhật và đầy đủ vào mọi thời điểm trong thời hạn của Thỏa Thuận này. Bạn đồng ý rằng Công Ty có thể tin cậy
+                        vào tính chính xác, cập nhật và đầy đủ của các thông tin mà bạn cung cấp. Bạn xác nhận rằng nếu các thông
+                        tin về bạn là không đúng, không chính xác, không cập nhật hoặc không đầy đủ trên bất kỳ phương diện nào thì
+                        Công Ty có quyền, nhưng không phải nghĩa vụ, chấm dứt Thỏa Thuận này và chấm dứt việc sử dụng Dịch Vụ của
+                        bạn bất kỳ lúc nào cho dù là có hoặc không thông báo;</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ chỉ sử dụng một điểm truy cập hoặc tài khoản dữ liệu mà bạn được phép sử dụng;</li>
+                </ul>
+                <ul>
+                    <li>Bạn không được sử dụng bất kỳ phương tiện nào để lừa đảo Công Ty hoặc làm giàu cho bản thân, bằng bất kỳ
+                        hình thức nào, cho dù là mang tính chất lừa đảo hay tính chất khác, thông qua bất kỳ sự kiện, hoạt động
+                        quảng cáo hoặc chiến dịch nào do Công Ty tiến hành để khuyến khích tài khoản mới hoặc việc sử dụng Dịch Vụ
+                        bởi các khách hàng mới hoặc hiện tại;</li>
+                </ul>
+                <ul>
+                    <li>Bạn ý thức rõ rằng khi yêu cầu các dịch vụ vận tải và/hoặc vận chuyển hàng hoá thông qua SMS hoặc khi sử
+                        dụng Dịch Vụ, mức cước viễn thông tiêu chuẩn sẽ được áp dụng;</li>
+                </ul>
+                <ul>
+                    <li>Bạn không được làm ảnh hưởng xấu hoặc phá hoại sự vận hành bình thường của mạng lưới nơi Dịch Vụ vận hành;
+                    </li>
+                </ul>
+                <ul>
+                    <li>Bạn đồng ý rằng Dịch vụ được cung cấp trên cơ sở nỗ lực hợp lý; và</li>
+                </ul>
+                <ul>
+                    <li>Bạn đồng ý rằng việc sử dụng Dịch vụ sẽ&nbsp;phụ thuộc vào Chính Sách Bảo Mật của Công Ty mà có thể được sửa
+                        đổi theo thời gian.</li>
+                </ul>
+                <p>Bạn có trách nhiệm đảm bảo TÊN NGƯỜI NHẬN, THÔNG TIN LIÊN HỆ VÀ ĐỊA CHỈ GIAO NHẬN đã được ghi chính xác vào cột
+                    “Lưu ý cho Lái xe” trên Ứng Dụng. Công Ty sẽ không chịu trách nhiệm trong trường hợp chậm trễ hoặc không giao
+                    được thực phẩm mà bạn đặt hàng vì lí do thông tin chi tiết giao hàng không đúng như đã nói ở trên.</p>
+                <p>Bạn là người duy nhất phải chịu trách nhiệm đối với việc chậm trễ nhận hàng, mất mát, hư hỏng, nhiễm bẩn hoặc tạm
+                    giữ, trước hoặc sau khi giao thực phẩm (bao gồm nhưng không giới hạn ở container) hoặc bất kỳ ai được đề cập đến
+                    trong tài liệu này do bạn trực tiếp hoặc gián tiếp gây ra hoặc bất kỳ người nào hành động như công chức, đại
+                    diện hoặc nhà thầu độc lập hoặc thay mặt cho cả hai.</p>
+                <p>Bạn đồng ý chịu trách nhiệm toàn bộ và trách nhiệm pháp lý đối với mọi mất mát hoặc thiệt hại mà chính bản thân
+                    bạn, người cung cấp dịch vụ bên thứ ba, Công Ty hoặc bất kỳ bên thứ ba nào khác phải chịu như là kết quả của bất
+                    kì vi phạm Điều Khoản Sử Dụng.</p>
+                <p>Người Cung Cấp Dịch Vụ Chuyển Phát bên thứ ba bảo lưu quyền từ chối giao hàng, ví dụ, nếu thực phẩm không được
+                    đóng gói tốt, trên 5kg hoặc có kích thước lớn hơn 32x25x12cm.</p>
+                <p><strong>2. Đặt Hàng</strong></p>
+                <p>Ứng Dụng cho phép bạn đặt đơn hàng thực phẩm và dịch vụ giao hàng và Người Cung Cấp Dịch Vụ Chuyển Phát sẽ, tùy
+                    thuộc vào các điều khoản và điều kiện được nêu ra trong tài liệu này, mua đơn hàng đó tại Thương Nhân có liên
+                    quan và giao hàng cho bạn.</p>
+                <p>Công Ty không sở hữu, bán, tự mình bán lại và/hoặc không kiểm soát các Thương Nhân, Người Cung Cấp Dịch Vụ Chuyển
+                    Phát hoặc các dịch vụ liên quan được cung cấp trong giao dịch đó. Bạn hiểu rằng bất kỳ đơn hàng nào bạn đặt sẽ
+                    phụ thuộc vào tính sẵn có của sản phẩm và khả năng cung cấp dịch vụ giao hàng của Thương Nhân và Người Cung Cấp
+                    Dịch Vụ Chuyển Phát.</p>
+                <p>Về nguyên tắc, tất cả các yêu cầu giao thực phẩm thực hiện trên Ứng Dụng được xem là đã được xác nhận. Tuy nhiên,
+                    ngay khi bạn đặt hàng thành công, Người Cung Cấp Dịch Vụ Chuyển Phát có thể gọi cho bạn theo số điện thoại hoặc
+                    số di động được cung cấp để xác nhận chi tiết đơn hàng, giá phải trả và thời gian giao hàng ước tính. Để tránh
+                    nhầm lẫn, Công Ty không tham gia và sẽ không chịu trách nhiệm đối với bất kỳ sự thu xếp riêng nào giữa bạn và
+                    Người Cung Cấp Dịch Vụ Chuyển Phát về việc sửa đổi và/hoặc hủy đơn hàng do bạn thực hiện nếu việc thu xếp đó
+                    không được tiến hành thông qua Ứng Dụng.</p>
+                <p>Ngoài những điều đã đề cập ở trên, Người Cung Cấp Dịch Vụ Chuyển Phát cũng có thể liên lạc với bạn qua điện thoại
+                    và/hoặc email để thông báo và xác nhận bất kỳ thay đổi nào đối với đơn hàng, về tính sẵn có hoặc không có sẵn
+                    hoặc thay đổi về giá của đơn hàng theo thông báo của Thương Nhân. Vui lòng lưu ý sự thay đổi hoặc xác nhận đơn
+                    hàng sẽ được xem là cuối cùng. Rõ ràng Công Ty và Người Cung Cấp Dịch Vụ Chuyển Phát có quyền không tiến hành
+                    đơn hàng của bạn trong trường hợp bạn không nghe điện thoại vào thời điểm có cuộc gọi đến để xác nhận đơn hàng
+                    và trong các tình huống như vậy, quy định về chính sách huỷ và hoàn tiền dưới đây sẽ được áp dụng.</p>
+                <p>Mức giá hiển thị trên Ứng Dụng được xác định duy nhất bởi Thương Nhân và được liệt kê chỉ để biết thông tin.</p>
+                <p>Giá thực phẩm của bất kỳ (các) sản phẩm nào trên Ứng Dụng có thể bị hiển thị không chính xác do một số vấn đề về
+                    kỹ thuật, lỗi đánh máy hoặc thông tin sản phẩm được cung cấp bởi Thương Nhân, trong trường hợp như vậy Thương
+                    Nhân có thể hủy bỏ (các) đơn đặt hàng của bạn.</p>
+                <p>Thương Nhân sẽ chịu trách nhiệm duy nhất về bất kỳ sự bảo đảm/ cam đoan nào đối với các sản phẩm thực phẩm đã bán
+                    cho bạn và không có trường hợp nào là trách nhiệm của Công Ty.</p>
+                <p><strong>3. Huỷ Đặt Hàng</strong></p>
+                <p>Theo nguyên tắc chung, bạn không được quyền hủy đặt hàng khi bạn đã nhận được xác nhận. Nếu bạn hủy đặt hàng sau
+                    khi đơn hàng đã được xác nhận, Người Cung Cấp Dịch Vụ Chuyển Phát có quyền tính phí chuyển phát nếu các món ăn
+                    mà bạn yêu cầu chưa được phục vụ bởi Thương Nhân. Bạn có trách nhiệm phải thanh toán toàn bộ giá trị đơn hàng
+                    trong trường hợp: (i) hủy đơn hàng sau khi Thương Nhân đã bắt đầu chuẩn bị món ăn, hoặc (ii) bạn không có mặt để
+                    nhận hàng, hoặc (iii) không thể liên lạc trực tiếp hoặc qua điện thoại với bạn sau 10 phút kể từ thời điểm Người
+                    Cung Cấp Dịch Vụ Chuyển Phát đến địa điểm mà bạn chỉ định qua Ứng Dụng.</p>
+                <p>Người Cung Cấp Dịch Vụ Chuyển Phát sẽ có toàn quyền không thực hiện đặt hàng của bạn trong các trường hợp sau:
+                </p>
+                <ul>
+                    <li>địa chỉ được chọn nằm ngoài khu vực giao hàng được cung cấp trên Ứng Dụng;</li>
+                </ul>
+                <ul>
+                    <li>không liên lạc được với bạn qua điện thoại hoặc email vào thời điểm xác nhận đặt hàng;</li>
+                </ul>
+                <ul>
+                    <li>không thực hiện được lệnh của bạn do thiếu thông tin, chỉ dẫn hoặc ủy quyền từ bạn tại thời điểm giao hàng;
+                        hoặc</li>
+                </ul>
+                <ul>
+                    <li>không có sẵn tất cả các mặt hàng bạn đặt mua tại thời điểm đặt hàng.</li>
+                </ul>
+                <p><strong>4. Thanh toán</strong></p>
+                <p>Bạn sẽ thanh toán trực tiếp phí dịch vụ giao hàng và giá trị đơn hàng bằng tiền mặt cho Người Cung Cấp Dịch Vụ
+                    Chuyển Phát khi nhận hàng.</p>
+                <p><strong>5. Chương Trình Khách Hàng Thân Thiết RMSRewards </strong></p>
+                <p><u>Chương Trình Hội Viên</u></p>
+                <ul>
+                    <li>Bằng việc sử dụng Ứng Dụng, bạn sẽ đương nhiên là một hội viên của chương trình khách hàng thân thiết có tên
+                        “RMSRewards Loyalty Programme” do Công Ty và/hoặc các Công Ty Liên Kết của Công Ty triển khai thực hiện
+                        (“<strong>RMSRewards Loyalty Programme</strong>”).</li>
+                </ul>
+                <ul>
+                    <li>Với tư cách là một hội viên của chương trình RMSRewards Loyalty Programme, bạn sẽ có thể nhận được
+                        e-vouchers, khuyến mãi, giảm giá, tặng phẩm, mã khuyến mãi và/hoặc các lợi ích khác được cung cấp bởi Công
+                        Ty và/hoặc các thương nhân bên thứ ba khác được thể hiện trên danh sách quà tặng được hiển thị trên Ứng Dụng
+                        tại từng thời điểm (“<strong>Quà Tặng</strong>”).</li>
+                </ul>
+                <p><u>Tích luỹ điểm</u></p>
+                <ul>
+                    <li>Công Ty, theo toàn quyền quyết định của mình, có thể cấp điểm cho bạn (“<strong>Điểm</strong>”) và điểm đó
+                        có thể được sử dụng để đổi Quà Tặng dựa trên giá trị của Dịch Vụ đã hoàn tất và được đặt thông qua
+                        Ứng Dụng trên phạm vi lãnh thổ Việt Nam.</li>
+                </ul>
+                <ul>
+                    <li>Công Ty, theo toàn quyền quyết định của mình, có thể cấp cho bạn 1 Điểm cho mỗi 000 đồng cho mỗi dịch vụ
+                        đặt hàng ở Việt Nam (mã khuyến mại, chiết khấu giá cước dịch vụ quy đổi từ Quà Tặng hoặc các việc
+                        điều chỉnh giá cước khác được áp dụng cho dịch vụ đủ điều kiện sẽ không được tính cho mục
+                        đích cấp Điểm).&nbsp;Ví dụ, nếu cước dịch vụ của bạn có giá thể hiện là 100.000 đồng và bạn được
+                        giảm giá 50.000 đồng, Công Ty, theo toàn quyền quyết định của mình, phát hành cho bạn 5 Điểm tính trên
+                        50.000 đồng.</li>
+                </ul>
+                <ul>
+                    <li>Sổ điểm được tính trên cơ sở từng giao dịch riêng biệt và được làm tròn lên hàng đơn vị gần nhất nếu phần số
+                        thập phân lớn hơn hoặc bằng 0.5 Điểm, và được làm tròn xuống hàng đơn vụ gần nhất nếu phần số thập phân nhỏ
+                        hơn 0.5 Điểm. Ví dụ, nếu bạn bỏ ra 000 đồng cho một chuyến đi GrabFood, Công Ty, theo toàn quyền quyết định
+                        của mình, sẽ cấp cho bạn 2 Điểm nhưng nếu bạn bỏ ra 25.000 đồng cho chuyến đi GrabFood, Công Ty, theo toàn
+                        quyền quyết định của mình, sẽ cấp cho bạn 3 Điểm.</li>
+                </ul>
+                <ul>
+                    <li>Nếu cước phí thực tế cho ra kết quả theo số thập phân nhỏ hơn 1 Điểm Công Ty, theo quyết định riêng của
+                        mình, có thể cho bạn 1 điểm. Ví dụ, nếu chuyến đi GrabFood của bạn có giá 000 đồng và bạn được giảm giá
+                        1.000 đồng, Công Ty, theo toàn quyền quyết định của mình, sẽ cấp cho bạn 1 Điểm cho 8.000 đồng mà bạn đã
+                        thanh toán.</li>
+                </ul>
+                <ul>
+                    <li>Công Ty, theo toàn quyền quyết định của mình, sẽ điều chỉnh tăng hoặc giảm mức giá trị cấp Điểm đối với từng
+                        giao dịch cụ thể sẽ được thông báo cho bạn tại từng thời điểm. Bạn sẽ không có quyền yêu cầu Công Ty giải
+                        thích về phương thức tính toán (để cấp Điểm) hoặc các vấn đề khác liên quan đến Điểm hoặc khuyến mãi vì bất
+                        kỳ mục đích gì.</li>
+                </ul>
+                <p><u>Thời Hạn Hiệu Lực Của Điểm</u></p>
+                <ul>
+                    <li>Điểm tích luỹ:</li>
+                </ul>
+                <ol>
+                    <li>trong giai đoạn từ ngày 1 tháng 1 đến ngày 30 tháng 6 của năm dương lịch sẽ có hiệu lực đến ngày 31 tháng 12
+                        của cùng năm dương lịch; và</li>
+                </ol>
+                <ol start="2">
+                    <li>trong giai đoạn từ ngày 1 tháng 7 đến ngày 31 tháng 12 của năm dương lịch sẽ có hiệu lực đến ngày 30 tháng 6
+                        của năm dương lịch liền kề sau đó.</li>
+                </ol>
+                <ul>
+                    <li>Bạn phải sử dụng Điểm tích lũy để đổi Quà Tặng trong thời hạn hiệu lực áp dụng tương ứng của số Điểm đã tích
+                        lũy. Việc gia hạn thời hạn hiệu lực của Điểm chưa sử dụng hết sẽ không được áp dụng. Công Ty có quyền xử lý
+                        Điểm hết hạn theo phương thức mà Công Ty xét thấy phù hợp theo toàn quyền quyết định của Công Ty. Bạn đồng ý
+                        rằng bạn sẽ không có bất kỳ khiếu nại dưới bất kỳ hình thức nào đối với Công Ty liên quan đến số Điểm đã hết
+                        hạn.</li>
+                </ul>
+                <ul>
+                    <li>Điểm không có giá trị tiền tệ cũng như không có giá trị quy đổi thành tiền mặt hoặc bất kỳ hình thức nào
+                        khác. Điểm không được bán, sang nhượng hoặc chuyển nhượng để đổi lấy giá trị vật chất hoặc lợi ích khác
+                        trong bất kỳ trường hợp nào. Điểm sẽ không được xem, giải thích, hoặc được sử dụng như giấy tờ có giá hoặc
+                        công cụ chuyển nhượng trong bất kỳ trường hợp nào.</li>
+                </ul>
+                <p><u>Quy Đổi Quà Tặng</u></p>
+                <ul>
+                    <li>Nếu bạn tuân thủ với tất cả điều khoản và điều kiện này và đã tích lũy đủ Điểm theo yêu cầu, bạn có thể chọn
+                        và quy đổi thành Quà Tặng đang có sẵn trên Ứng Dụng. Việc quy đổi Quà Tặng dưới dạng e-voucher sẽ phải chịu
+                        sự điều chỉnh và tuân thủ theo các quy định khác của Công Ty hoặc thương nhân bên thứ ba (tùy từng trường
+                        hợp cụ thể) cung cấp e-voucher cụ thể mà bạn mong muốn quy đổi.&nbsp;</li>
+                </ul>
+                <ul>
+                    <li>Bạn phải sử dụng e-voucher đã quy đổi của bạn trong thời hạn hiệu lực của e-voucher đó. Việc gia hạn thời
+                        hạn hiệu lực của ngày quy đổi e-voucher sẽ không được áp dụng. Bạn đồng ý rằng bạn sẽ không có bất kỳ khiếu
+                        nại dưới bất kỳ hình thức nào đối với Công Ty liên quan đến bất kỳ e-voucher đã hết hạn nào.</li>
+                </ul>
+                <ul>
+                    <li>Quà Tặng sẽ không có giá trị quy đổi thành tiền mặt cũng không thể quy đổi thành một Quà Tặng khác trong bất
+                        kỳ trường hợp nào. Quà Tặng không được bán, trao đổi hoặc nhượng lại để đổi lấy giá trị vật chất trong mọi
+                        trường hợp. Quà Tặng sẽ không được xem là, giải thích là, hoặc được sử dụng như giấy tờ có giá hoặc công cụ
+                        chuyển nhượng trong bất kỳ trường hợp nào.</li>
+                </ul>
+                <ul>
+                    <li>Số Điểm mà bạn đã quy đổi thành công thành Quà Tặng không thể được quy đổi cho một Quà Tặng khác dưới mọi
+                        trường hợp. Bất kỳ yêu cầu đổi trả Quà Tặng nào cũng sẽ không được giải quyết.</li>
+                </ul>
+                <ul>
+                    <li>Công Ty có thể toàn quyền quyết định việc từ chối yêu cầu quy đổi Điểm của bạn vì bất kỳ lý do nào, bao gồm
+                        nhưng không giới hạn, trường hợp khách hàng không có đủ Điểm tích lũy để quy đổi thành một Quà Tặng cụ thể,
+                        hoặc khi Quà Tặng không còn thể hiện trên Ứng Dụng hoặc thương nhân bên thứ ba không còn hàng, hoặc có lỗi
+                        đối với số Điểm mà bạn mong muốn dùng để quy đổi thành Quà Tặng, và những trường hợp khác.</li>
+                </ul>
+                <ul>
+                    <li>Bạn có thể kiểm tra số dư Điểm và việc quy đổi quà tặng trên Ứng Dụng. Số dư Điểm và việc quy đổi quà tặng
+                        thể hiện trong tài khoản trên Ứng Dụng của bạn sẽ được xem là bằng chứng sau cùng của các nội dung này.</li>
+                </ul>
+                <p><u>Hạng Hội Viên</u></p>
+                <ul>
+                    <li>Chương trình RMSRewards Loyalty Programme gồm có bốn (4) hạng hội viên như sau:</li>
+                </ul>
+                <ol>
+                    <li>hạng hội viên vừa gia nhập gọi là “Hội Viên”;</li>
+                </ol>
+                <ol>
+                    <li>hạng hội viên cơ bản gọi là “Hạng Bạc”;</li>
+                    <li>hạng hội viên trung bình gọi là “Hạng Vàng”; và</li>
+                    <li>hạng hội viên cao cấp gọi là “Bạch Kim”.</li>
+                </ol>
+                <ul>
+                    <li>Số Điểm cần thiết để nâng cấp hoặc gia hạn hội viên theo từng cấp được quy định dưới đây:</li>
+                </ul>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <p>Hạng hội viên</p>
+                        </td>
+                        <td rowspan="5">&nbsp;&nbsp;&nbsp;</td>
+                        <td>
+                            <p>Điểm cần tích luỹ từ 1 tháng 1 đến 30 tháng 6 hoặc từ 1 tháng 7 đến 31 tháng 12 của năm dương
+                                lịch</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>a. Hội Viên</p>
+                        </td>
+                        <td>
+                            <p>0</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>b. Hạng Bạc</p>
+                        </td>
+                        <td>
+                            <p>500</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>c. Hạng Vàng</p>
+                        </td>
+                        <td>
+                            <p>1500</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>d. Bạch Kim</p>
+                        </td>
+                        <td>
+                            <p>3000</p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <ul>
+                    <li>Điểm được tích lũy từ ngày 1 tháng 1 đến 30 tháng 6 của một năm dương lịch sẽ được phục vụ cho việc xếp hạng
+                        hội viên cho giai đoạn từ 1 tháng 7 đến 31 tháng 12 của cùng năm dương lịch.</li>
+                </ul>
+                <ul>
+                    <li>Điểm được tích lũy từ 1 tháng 7 đến 31 tháng 12 của một năm dương lịch sẽ được phục vụ cho việc xếp hạng hội
+                        viên cho giai đoạn từ 1 tháng 1 đến ngày 30 tháng 6 của năm dương lịch liền kề sau đó.</li>
+                </ul>
+                <ul>
+                    <li>Tại thời điểm hết hạn xếp hạng hội viên và trong trường hợp bạn không có đủ số Điểm để duy trì hạn mức đó,
+                        hạng hội viên của bạn sẽ được giảm xuống đến hạng thấp hơn liền kề trước đó.</li>
+                </ul>
+                <ul>
+                    <li>Các lợi ích của từng hạng hội viên sẽ được quy định cụ thể tại từng thời điểm được thể hiện trên Ứng Dụng.
+                    </li>
+                </ul>
+                <p><u>Chấm Dứt Tham Gia Hội Viên</u></p>
+                <ul>
+                    <li>Nếu bạn không muốn là hội viên của chương trình RMSRewards Loyalty Programme, bạn có thể chọn chức năng từ
+                        chối tham gia chương trình được tích hợp trên Ứng Dụng.</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ tự động chấm dứt tư cách hội viên của chương trình RMSRewards Loyalty Programme trong trường hợp bạn
+                        xóa Ứng Dụng trên điện thoại của bạn.</li>
+                </ul>
+                <ul>
+                    <li>Tại thời điểm chấm dứt tư cách hội viên của chương trình RMSRewards Loyalty Programme, tất cả Điểm được
+                        tích lũy tính đến thời điểm đó sẽ tự động bị hủy. Điểm tích lũy phải được quy đổi trước thời điểm chấm dứt
+                        tư cách hội viên và tại thời điểm tư cách hội viên bị chấm dứt, Điểm tích lũy còn tồn đọng sẽ không còn giá
+                        trị quy đổi. Không áp dụng việc cộng dồn hoặc tích trữ Điểm cho lần quay trở lại làm hội viên tiếp theo của
+                        bạn trong tương lai.</li>
+                </ul>
+                <ul>
+                    <li>Việc quy đổi mang tính gian lận hoặc lạm dụng sẽ có thể dẫn đến việc hủy số Điểm đã tích lũy cũng như chấm
+                        dứt tư cách hội viên của bạn trong chương trình RMSRewards Loyalty Programme.</li>
+                </ul>
+                <p><u>Quy Định Chung</u></p>
+                <ul>
+                    <li>Trong phạm vi được pháp luật cho phép, Công Ty tại mọi thời điểm sẽ, không cần phải thông báo cho bạn và
+                        theo toàn quyền quyết định của Công Ty, bảo lưu các quyền sau đây:</li>
+                </ul>
+                <ol>
+                    <li>thay thế, điều chỉnh hoặc sửa đổi bất kỳ điều khoản và điều kiện nào của chương trình RMSRewards Loyalty
+                        Programme (bao gồm việc bổ sung hoặc hủy bỏ bất kỳ điều khoản nào);</li>
+                </ol>
+                <ol start="2">
+                    <li>chấm dứt hoặc điều chỉnh nội dung chương trình RMSRewards Loyalty Programme;</li>
+                </ol>
+                <ol start="3">
+                    <li>thu hồi, điều chỉnh và/hoặc tính lại bất kỳ số Điểm nào đã được thưởng;</li>
+                </ol>
+                <ol start="4">
+                    <li>thay đổi số Điểm yêu cầu để quy đổi thành các Quà Tặng cụ thể hoặc thay thế bất kỳ Quà Tặng nào bằng bất kỳ
+                        lợi ích nào có giá trị tương tự;</li>
+                </ol>
+                <ol start="5">
+                    <li>thay đổi số Điểm được tích lũy tính trên giá trị thanh toán thực tế của các dịch vụ giao hàng GrabFood hợp
+                        lệ;</li>
+                </ol>
+                <ol start="6">
+                    <li>điều chỉnh các điều kiện và yêu cầu đối với việc tích lũy Điểm;</li>
+                </ol>
+                <ol start="7">
+                    <li>điều chỉnh hoạt động có thể tích lũy Điểm;</li>
+                </ol>
+                <ol start="8">
+                    <li>điều chỉnh phương thức sử dụng để tính số Điểm thưởng;</li>
+                </ol>
+                <ol start="9">
+                    <li>thu hồi hoặc chấm dứt việc thưởng Điểm cho bạn;</li>
+                </ol>
+                <ol start="10">
+                    <li>sửa đổi yêu cầu áp dụng đối với Điểm hoặc các yêu cầu khác để nâng hoặc duy trì hạng hội viên; và</li>
+                </ol>
+                <ol start="11">
+                    <li>thay đổi hoặc hủy bỏ các lợi ích có liên quan đến một hạng hội viên cụ thể.</li>
+                </ol>
+                <ul>
+                    <li>Công Ty có thể tạm hoãn việc tính và cộng dồn số Điểm được tích lũy để xác nhận, điều chỉnh những lỗi sai
+                        trong việc tính toán hoặc điều chỉnh việc tính toán khi Công Ty xét thấy cần thiết mà không cần phải thông
+                        báo trước cho bạn hoặc cung cấp lý do cụ thể cho bạn.</li>
+                </ul>
+                <ul>
+                    <li>Bạn sẽ chịu trách nhiệm đối với bất kỳ khoản thuế, lệ phí hoặc nghĩa vụ nào phát sinh từ việc Công Ty cấp
+                        Điểm cho bạn, việc bạn sử dụng Điểm và/hoặc sử dụng Quà Tặng mà bạn đã quy đổi và tất cả chi phí và phí tổn
+                        phát sinh liên quan đến các vấn đề đó sẽ được thanh toán và chi trả bởi bạn.</li>
+                </ul>
+                <p><strong>6. Thuế</strong></p>
+                <p>Bạn đồng ý rằng Thỏa Thuận này sẽ phải chịu tất cả các khoản thuế, nghĩa vụ, phí và/hoặc lệ phí theo quy định của
+                    pháp luật hiện hành, cho dù được ấn định dưới bất kỳ hình thức nào, có hiệu lực áp dụng và liên quan đến bất kỳ
+                    loại thuế nào có thể được đưa ra vào bất kỳ thời điểm nào trong tương lai. Bạn đồng ý sử dụng những nỗ lực tốt
+                    nhất của bạn để thực hiện tất cả các hành động cần thiết và được yêu cầu bởi pháp luật có liên quan để tạo điều
+                    kiện, hỗ trợ và/hoặc bảo vệ Công Ty trong việc yêu cầu hoặc xác nhận thuế đầu vào, các khoản khấu trừ, giảm giá
+                    hoặc hoàn thuế đối với bất kỳ khoản thuế nào đã thanh toán hoặc có thể phải thanh toán liên quan đến Dịch vụ
+                    được cung cấp theo Thỏa Thuận này.</p>
+                <p><strong>7. Cấp Li-xăng và Giới Hạn Quyền</strong></p>
+                <p>Công Ty và các bên cấp li-xăng cho Công Ty, khi được áp dụng, sẽ cấp cho bạn quyền có thể hủy ngang, không độc
+                    quyền, không thể chuyển nhượng, không chuyển giao, mang tính cá nhân và giới hạn để sử dụng Ứng Dụng và/hoặc
+                    Phần Mềm chỉ cho cá nhân bạn, không nhằm mục đích thương mại theo Điều Khoản Sử Dụng này. Tất cả các quyền không
+                    cấp cho bạn một cách rõ ràng sẽ được bảo lưu bởi Công Ty và các bên cấp li-xăng cho Công Ty.</p>
+                <p>Bạn không được (i) cấp li-xăng, cấp lại li-xăng, bán, bán lại, chuyển giao, chuyển nhượng, phân phối hoặc khai
+                    thác thương mại hoặc cung cấp cho bất kỳ bên thứ ba nào Ứng Dụng và/hoặc Phần Mềm dưới bất kỳ hình thức nào;
+                    (ii) sửa đổi hoặc tạo ra sản phẩm phái sinh từ Ứng Dụng và/hoặc Phần Mềm; (iii) tạo ra các “đường dẫn” Internet
+                    liên kết đến Ứng Dụng hoặc “làm nền tảng cho” hay “nhân bản” bất kỳ Phần Mềm nào trên bất kỳ máy chủ hay thiết
+                    bị không dây hay thiết bị sử dụng Internet nào khác; (iv) đảo ngược thiết kế hoặc truy cập vào Phần Mềm để (a)
+                    xây dựng một sản phẩm hoặc Dịch vụ cạnh tranh, (b) xây dựng một sản phẩm sử dụng những ý tưởng, tính năng, chức
+                    năng hoặc đồ họa tương tự như của Ứng Dụng và/hoặc Phần Mềm, hoặc (c) sao chép bất kỳ ý tưởng, tính năng, chức
+                    năng hoặc đồ họa nào của Ứng Dụng và/hoặc Phần Mềm, hoặc (v) khởi động một chương trình hoặc tập lệnh tự động,
+                    bao gồm nhưng không giới hạn, nhện web, trình thu thập web, robot web, kiến web, trình tạo chỉ mục web, chương
+                    trình tự động, virus, hoặc bất kỳ chương trình nào có thể đưa ra nhiều yêu cầu đối với máy chủ mỗi giây, làm
+                    chậm hoặc cản trở quá mức hoạt động và/hoặc hiệu suất của Ứng Dụng và/hoặc Phần Mềm, (vi) sử dụng rô bốt, nhện,
+                    ứng dụng tìm kiếm/khôi phục vị trí, hoặc các thiết bị hoặc phương pháp thủ công hay tự động khác để khôi phục,
+                    tạo chỉ mục, “khai phá dữ liệu”, hoặc bằng bất kỳ cách nào khác sao chép lại hoặc phá hỏng kết cấu chuyển động
+                    hoặc trình bày của các Dịch Vụ và nội dung của nó; (vii) đăng tải, phân phối hoặc sao chép bằng bất kỳ cách nào
+                    bất kỳ tài liệu có bản quyền nào, các nhãn hiệu, hay các thông tin sở hữu khác mà không có sự chấp thuận trước
+                    của chủ sở hữu các quyền độc quyền này, (viii) gỡ bỏ bất kỳ thông báo về bản quyền, nhãn hiệu hay các quyền sở
+                    hữu khác trên Dịch Vụ.</p>
+                <p>Bạn có thể sử dụng Phần Mềm và/hoặc Ứng Dụng cho mục đích cá nhân, phi thương mại và không được dùng Phần Mềm
+                    và/hoặc Ứng Dụng để: (i) gửi thư rác hoặc tin nhắn đồng loạt hoặc tin nhắn tự động; (ii) gửi hoặc lưu trữ tài
+                    liệu xâm phạm, khiêu dâm, đe dọa, bôi nhọ, hoặc trái pháp luật hoặc mang tính nguy hại, bao gồm, nhưng không
+                    giới hạn, các tài liệu có hại cho trẻ em hoặc vi phạm quyền riêng tư của bên thứ ba; (iii) gửi tài liệu có chứa
+                    virus phần mềm, Trojan hoặc đoạn mã, các tập tin, tập lệnh, gián điệp hoặc chương trình máy tính độc hại; (iv)
+                    gây cản trở hoặc phá vỡ tính toàn vẹn hoặc hiệu suất của Phần Mềm và/hoặc Ứng Dụng hoặc dữ liệu chứa trong đó;
+                    hoặc (v) cố gắng truy cập trái phép vào Phần Mềm và/hoặc Ứng Dụng hoặc các hệ thống hay mạng lưới liên quan của
+                    nó; hoặc (vi) giả danh bất kỳ cá nhân hoặc tổ chức nào hoặc mô tả sai mối quan hệ của bạn với một cá nhân hoặc
+                    tổ chức để trốn tránh thực hiện các hành vi có thể làm tổn hại đến uy tín hoặc danh tiếng của Công Ty.</p>
+                <p><strong>8. Quyền Sở Hữu Trí Tuệ</strong></p>
+                <p>Công Ty và các bên cấp li-xăng cho Công Ty, khi được áp dụng, sở hữu tất cả các quyền, quyền sở hữu và lợi ích,
+                    bao gồm tất cả các quyền sở hữu trí tuệ có liên quan trong và đối với Phần Mềm và/hoặc Ứng Dụng và theo nghĩa
+                    rộng hơn là Dịch Vụ và bất cứ đề nghị, ý tưởng, yêu cầu nâng cấp, thông tin phản hồi, khuyến nghị hoặc các thông
+                    tin nào khác được cung cấp bởi bạn hoặc bất kỳ bên nào khác có liên quan đến Dịch Vụ. Các Điều Khoản Sử Dụng này
+                    không tạo nên một thỏa thuận mua bán và không chuyển cho bạn bất kỳ quyền sở hữu nào đối với hoặc liên quan đến
+                    Dịch Vụ, Phần Mềm và/hoặc Ứng Dụng, hoặc bất kỳ quyển sở hữu tài sản trí tuệ nào thuộc sở hữu của Công Ty
+                    và/hoặc các bên cấp phép của Công Ty. Tên Công Ty, logo Công Ty, logo của Dịch Vụ, Phần Mềm và/hoặc Ứng Dụng và
+                    logo của nhà cung cấp dịch vụ bên thứ ba và tên sản phẩm liên quan đến Phần Mềm và/hoặc Ứng Dụng là nhãn hiệu
+                    của Công Ty hoặc các bên thứ ba, và không có quyền hay giấy phép nào được cấp để sử dụng chúng. Để tránh hiểu
+                    nhầm, thuật ngữ Phần Mềm và Ứng Dụng ở đây là bao gồm toàn bộ các bộ phận, quy trình và thiết kế tạo nên Phần
+                    Mềm và Ứng Dụng.</p>
+                <p><strong>9. Bảo Mật Thông Tin</strong></p>
+                <p>Bạn phải duy trì bảo mật tất cả các thông tin và dữ liệu liên quan đến Công Ty, các dịch vụ, sản phẩm, công việc
+                    kinh doanh, kế hoạch tiếp thị và quảng bá hoặc các hoạt động khác của Công Ty và các công ty liên kết của Công
+                    Ty đã được tiết lộ với bạn bởi Công Ty hoặc đại diện của Công Ty (bất kể bằng lời nói hay bằng văn bản, trước,
+                    tại hoặc sau ngày của Thỏa Thuận này) hoặc đã được bạn thu thập gián tiếp hay trực tiếp, từ Công Ty hoặc bất kỳ
+                    các công ty liên kết nào khác, hoặc đã được tạo ra trong quá trình giao kết Thỏa Thuận này. Bạn phải đảm bảo
+                    rằng bạn, các cán bộ, nhân viên và đại lý của mình chỉ sử dụng thông tin mật đó để thực hiện Dịch Vụ và sẽ không
+                    tiết lộ những thông tin đó cho bất kỳ bên thứ ba nào cũng như sử dụng thông tin cho bất kỳ mục đích nào khác mà
+                    không có sự đồng ý trước bằng văn bản của Công Ty. Bạn chỉ tiết lộ những thông tin này cho các cán bộ, nhân viên
+                    và đại lý cần biết thông tin để hoàn thành nghĩa vụ của mình theo Thoả thuận này.</p>
+                <p>Nghĩa vụ bảo mật nêu trên không áp dụng trong trường hợp bạn có thể chỉ ra rằng các thông tin liên quan:</p>
+                <ul>
+                    <li>đã thuộc sở hữu của bạn vào thời điểm tiếp nhận thông tin;</li>
+                </ul>
+                <ul>
+                    <li>là, hoặc trở thành trong tương lai, thông tin phổ cập mà không phải do lỗi hoặc sai sót của bạn;</li>
+                </ul>
+                <ul>
+                    <li>đã được tiếp nhận từ một bên thứ ba có quyền tiết lộ chúng; hoặc</li>
+                </ul>
+                <ul>
+                    <li>phải tiết lộ theo quy định pháp luật.</li>
+                </ul>
+                <p><strong>10. Bảo Mật Thông Tin Cá Nhân</strong></p>
+                <p>Bạn đồng ý và cho phép Công Ty sử dụng và xử lý Thông Tin Cá Nhân của bạn cho các Mục Đích và theo phương thức
+                    như được xác định dưới đây.</p>
+                <p>Vì mục đích của Điều Khoản Sử Dụng này,&nbsp;<strong>“Thông Tin Cá Nhân”</strong>&nbsp;có nghĩa là thông tin về
+                    bạn mà dựa vào đó có thể xác định danh tính của bạn, bao gồm, nhưng không giới hạn, tên, số chứng minh thư, số
+                    giấy khai sinh, số hộ chiếu, quốc tịch, địa chỉ, số điện thoại, các chi tiết về thẻ tín dụng hoặc thẻ ghi nợ,
+                    chủng tộc, giới tính, ngày sinh, địa chỉ thư điện tử, bất kỳ thông tin gì về bạn mà bạn đã cung cấp cho Công Ty
+                    trong các mẫu đơn đăng ký, đơn xin hoặc bất kỳ tài liệu tương tự nào và/hoặc bất kỳ thông tin gì về bạn mà đã
+                    được hoặc có thể thu thập, lưu trữ, sử dụng và xử lý bởi Công Ty theo thời gian và bao gồm các thông tin cá nhân
+                    nhạy cảm như dữ liệu liên quan đến sức khỏe, tôn giáo hay tín ngưỡng tương tự khác.</p>
+                <p>Việc cung cấp các Thông Tin Cá Nhân của bạn là tự nguyện. Tuy nhiên, nếu bạn không cung cấp cho Công Ty Thông Tin
+                    Cá Nhân của bạn, việc yêu cầu sử dụng Ứng Dụng của bạn có thể không được hoàn thiện và Công Ty sẽ không thể xử
+                    lý Thông Tin Cá Nhân của bạn cho các mục đích nêu dưới đây và có thể khiến Công Ty không thể cho phép bạn sử
+                    dụng Dịch Vụ.</p>
+                <p>Công Ty có thể sử dụng và xử lý Thông Tin Cá Nhân của bạn cho việc kinh doanh và các hoạt động của Công Ty, bao
+                    gồm, nhưng không giới hạn ở (<strong>“Mục đích”</strong>):</p>
+                <ul>
+                    <li>Để thực hiện các nghĩa vụ của Công Ty đối với bất kỳ hợp đồng nào đã ký kết với bạn;</li>
+                    <li>Để cung cấp cho bạn các dịch vụ theo Điều Khoản Sử Dụng này;</li>
+                    <li>Để xử lý việc tham gia của bạn trong bất kỳ sự kiện, chương trình khuyến mãi, hoạt động, nhóm trọng điểm,
+                        các nghiên cứu, cuộc thi, thăm dò ý kiến, khảo sát hoặc các hoạt động khác và để liên lạc với bạn về việc
+                        tham gia vào các sự kiện vừa nêu;</li>
+                    <li>Để xử lý, quản lý, hoặc xác minh yêu cầu sử dụng Dịch Vụ của bạn theo Điều Khoản Sử Dụng này;</li>
+                    <li>Để xác nhận và/hoặc xử lý các khoản thanh toán theo Điều Khoản Sử Dụng này;</li>
+                    <li>Để phát triển, nâng cấp và cung cấp những công việc được yêu cầu theo Điều Khoản Sử Dụng này nhằm đáp ứng
+                        nhu cầu của bạn;</li>
+                    <li>Để xử lý bất kỳ khoản bồi hoàn, giảm giá và/hoặc các khoản phí theo quy định của Điều Khoản Sử Dụng này;
+                    </li>
+                    <li>Để tạo điều kiện hoặc cho phép bất kỳ sự kiểm tra theo yêu cầu của Điều Khoản Sử Dụng này;</li>
+                    <li>Để trả lời các khúc mắc, ý kiến và phản hồi từ bạn;</li>
+                    <li>Để trao đổi với bạn về bất kỳ mục đích nào được liệt kê ở đây;</li>
+                    <li>Để phục vụ các mục đích quản lý hành chính nội bộ như kiểm toán, phân tích dữ liệu, lưu giữ cơ sở dữ liệu;
+                    </li>
+                    <li>Để phục vụ các mục đích phát hiện, ngăn chặn và truy tố tội phạm;</li>
+                    <li>Để Công Ty thực hiện các nghĩa vụ theo pháp luật;</li>
+                    <li>Để gửi cho bạn các thông báo, bản tin, cập nhật, bưu phẩm, tài liệu quảng cáo, ưu đãi đặc biệt, lời chúc
+                        nhân các ngày lễ từ phía Công Ty, đối tác, nhà quảng cáo và/hoặc nhà tài trợ;</li>
+                    <li>Để thông báo và mời bạn tới dự các sự kiện hoặc các hoạt động do Công Ty, đối tác, nhà quảng cáo và/hoặc nhà
+                        tài trợ tổ chức; và/hoặc</li>
+                    <li>Để chia sẻ Thông Tin Cá Nhân của bạn với các công ty liên kết của Công Ty bao gồm các công ty con, công ty
+                        liên kết và/hoặc các thực thể thuộc quyền đồng kiểm soát của công ty mẹ của tập đoàn (“<strong>Tập
+                            Đoàn</strong>”) và với các đại lý, các nhà cung cấp bên thứ ba của Công Ty và của Tập Đoàn, các nhà phát
+                        triển, quảng cáo, đối tác, công ty sự kiện hoặc nhà tài trợ có thể liên hệ với bạn vì bất kỳ lý do gì.</li>
+                </ul>
+                <p>Nếu bạn không đồng ý cho Công Ty sử dụng Thông Tin Cá Nhân của bạn cho bất kỳ Mục Đích nào nói trên, xin vui lòng
+                    thông báo cho Công Ty qua các thông tin liên hệ hỗ trợ có trong Ứng Dụng.</p>
+                <p>Trong trường hợp có bất kỳ thay đổi nào về Thông Tin Cá Nhân mà bạn đã cung cấp cho chúng tôi, ví dụ, nếu bạn
+                    thay đổi địa chỉ thư điện tử, số điện thoại, chi tiết thanh toán hoặc nếu bạn muốn hủy bỏ tài khoản của bạn, xin
+                    vui lòng cập nhật thông tin của bạn bằng cách gửi yêu cầu tới thông tin liên hệ hỗ trợ được cung cấp trong Ứng
+                    Dụng.</p>
+                <p>Trong khả năng tốt nhất của mình, Công Ty sẽ thực hiện các thay đổi như yêu cầu trong vòng mười bốn (14) ngày làm
+                    việc kể từ khi nhận được thông báo thay đổi.</p>
+                <p>Bằng việc gửi thông tin, bạn cho phép việc sử dụng các thông tin đó như quy định trong đơn điền thông tin và
+                    trong Điều Khoản Sử Dụng này.</p>
+                <p><strong>11. Tương Tác Với Bên Thứ Ba</strong></p>
+                <p>Trong quá trình sử dụng Dịch Vụ, bạn có thể trao đổi thư tín với, mua hàng hóa và/hoặc dịch vụ từ, hoặc tham gia
+                    vào các chương trình khuyến mãi của các nhà cung cấp bên thứ ba, bên quảng cáo hoặc nhà tài trợ trưng bày hàng
+                    hóa và/hoặc dịch vụ của họ thông qua Dịch Vụ, Phần Mềm và/hoặc Ứng Dụng. Bất kỳ hoạt động nào như vậy và bất kỳ
+                    điều khoản, điều kiện, bảo đảm hoặc cam đoan nào liên quan đến hoạt động đó, sẽ chỉ là quan hệ giữa bạn và bên
+                    thứ ba có liên quan. Công Ty và các bên cấp li-xăng của Công Ty không có bất kỳ trách nhiệm pháp lý, nghĩa vụ
+                    hay trách nhiệm nào đối với bất kỳ sự trao đổi thư tín, mua bán, giao dịch hay quảng cáo nào giữa bạn và bất kỳ
+                    bên thứ ba đó. Tập Đoàn không chứng nhận bất kỳ ứng dụng hay trang web nào trên Internet mà được liên kết thông
+                    qua Dịch Vụ, Ứng Dụng và/hoặc Phần Mềm, và trong mọi trường hợp Công Ty, các bên cấp phép của Công Ty hoặc Tập
+                    Đoàn không phải chịu trách nhiệm trong bất kỳ trường hợp nào về nội dung, sản phẩm, dịch vụ hoặc các tài liệu
+                    khác có trên hoặc có sẵn từ các trang web hoặc các nhà cung cấp bên thứ ba. Công Ty cung cấp Dịch Vụ cho bạn
+                    theo Điều Khoản Sử Dụng này. Tuy nhiên, bạn ghi nhận rằng, một số bên thứ ba cung cấp dịch vụ vận tải, hàng hoá
+                    và/hoặc dịch vụ có thể yêu cầu bạn đồng ý với các điều khoản và điều kiện bổ sung hoặc điều khoản và điều kiện
+                    khác trước khi bạn sử dụng hoặc tiếp cận những hàng hóa hoặc dịch vụ đó, và Công Ty không phải là một bên liên
+                    quan và từ chối mọi trách nhiệm và/hoặc nghĩa vụ pháp lý phát sinh từ những thỏa thuận như vậy giữa bạn và các
+                    nhà cung cấp bên thứ ba.</p>
+                <p>Công Ty có thể dựa vào quảng cáo và tiếp thị của bên thứ ba được cung cấp qua Dịch Vụ và các cơ chế khác để phụ
+                    trợ cho Dịch Vụ và/hoặc để tăng doanh thu. Bằng việc đồng ý với Điều Khoản Sử Dụng này, bạn đồng ý nhận các
+                    quảng cáo và tiếp thị này. Nếu không muốn nhận các quảng cáo nói trên, bạn cần gửi thông báo bằng văn bản cho
+                    Công Ty hoặc làm theo quy trình đã được Công Ty thiết lập sẵn. Bạn ghi nhận rằng nếu bạn lựa chọn không nhận các
+                    dịch vụ quảng cáo nói trên, bạn có thể bị tính một khoản phí cao hơn hoặc bị từ chối cho sử dụng Dịch Vụ. Mức lệ
+                    phí cao hơn này, nếu có, sẽ được đăng tải trên trang web của Công Ty tại http://www.rms.com/vn/. Bạn đồng ý và
+                    cho phép Công Ty tổng hợp và công bố thông tin về bạn và về việc sử dụng Dịch Vụ của bạn trên nguyên tắc ẩn danh
+                    như một phần của hồ sơ khách hàng hoặc báo cáo, phân tích tương tự. Bạn đồng ý rằng bạn có trách nhiệm thực hiện
+                    các biện pháp cẩn trọng đối với mọi hành động và tương tác của mình với bất kỳ nhà cung cấp dịch vụ vận tải bên
+                    thứ ba nào, hoặc các nhà cung cấp, nhà quảng cáo và/hoặc nhà tài trợ bên thứ ba nào khác mà bạn tương tác thông
+                    qua Dịch Vụ và/hoặc các tài liệu quảng cáo hoặc tiếp thị được cung cấp thông qua Dịch Vụ.</p>
+                <p><strong>12. Bồi Thường</strong></p>
+                <p>Bằng việc chấp thuận Điều Khoản Sử Dụng này khi sử dụng Dịch Vụ, bạn đồng ý rằng bạn sẽ bảo vệ, bồi thường và đảm
+                    bảo cho Công Ty, các bên cấp li-xăng Công Ty và các tổ chức mẹ, công ty con, công ty liên kết, các viên chức,
+                    giám đốc, thành viên, nhân viên, luật sư và đại lý của họ được bồi thường đối với bất kỳ và tất cả các yêu cầu
+                    bồi thường, phí tổn, thiệt hại, tổn thất, trách nhiệm và chi phí (bao gồm cả phí và phí tổn cho luật sư và/hoặc
+                    hành động pháp lý) phát sinh từ hoặc có liên quan đến: (a) việc bạn sử dụng Dịch Vụ, Phần Mềm và/hoặc Ứng Dụng,
+                    việc bạn thỏa thuận với các thương nhân, nhà cung cấp dịch vụ vận tải và/hoặc dịch vụ chuyển phát, nhà cung cấp,
+                    đối tác, nhà quảng cáo và/hoặc nhà tài trợ bên thứ ba, hoặc (b) việc bạn vi phạm hoặc xâm phạm bất kỳ điều khoản
+                    nào trong Điều Khoản Sử Dụng này hoặc bất kỳ luật hoặc quy định hiện hành nào, cho dù có được hay không được quy
+                    định tại Điều Khoản Sử Dụng này, hoặc (c) việc bạn xâm phạm các quyền của bất kỳ bên thứ ba nào, bao gồm cả các
+                    nhà cung cấp dịch vụ vận tải và/hoặc dịch vụ chuyển phát bên thứ ba được thu xếp thông qua Dịch Vụ, hoặc (d)
+                    việc bạn sử dụng hoặc sử dụng không đúng Dịch Vụ, Phần Mềm và/hoặc Ứng Dụng, hoặc (e) việc sử dụng hoặc sử dụng
+                    không đúng của bạn đối với Quà Tặng hoặc quyền lợi hội viên của chương trình RMSRewards Loyalty Programme, bao
+                    gồm cả trường hợp bạn vi phạm hoặc cung cấp bất kỳ thông tin sai lệch nào.</p>
+                <p><strong>13. Miễn Trừ Trách Nhiệm</strong></p>
+                <p>CÔNG TY KHÔNG ĐƯA RA BẤT KỲ CAM ĐOAN, BẢO ĐẢM, HOẶC BẢO LÃNH NÀO VỀ ĐỘ TIN CẬY, KỊP THỜI, CHẤT LƯỢNG, SỰ PHÙ HỢP,
+                    TÍNH SẴN CÓ, TÍNH CHÍNH XÁC HOẶC HOÀN THIỆN CỦA DỊCH VỤ, ỨNG DỤNG VÀ/HOẶC PHẦN MỀM VÀ/HOẶC QUÀ TẶNG. CÔNG TY
+                    KHÔNG CAM ĐOAN HOẶC BẢO ĐẢM RẰNG (A) VIỆC SỬ DỤNG DỊCH VỤ, ỨNG DỤNG VÀ/HOẶC PHẦN MỀM SẼ ĐƯỢC AN TOÀN, KỊP THỜI,
+                    KHÔNG BỊ GIÁN ĐOẠN HOẶC KHÔNG CÓ LỖI HOẶC VẬN HÀNH KẾT HỢP VỚI BẤT KỲ PHẦN CỨNG, PHẦN MỀM, HỆ THỐNG HOẶC DỮ LIỆU
+                    NÀO KHÁC, (B) DỊCH VỤ VÀ/HOẶC QUÀ TẶNG SẼ ĐÁP ỨNG ĐƯỢC CÁC YÊU CẦU HOẶC MONG ĐỢI CỦA BẠN, (C) BẤT KỲ DỮ LIỆU
+                    ĐƯỢC LƯU TRỮ NÀO SẼ CHÍNH XÁC HAY ĐÁNG TIN CẬY, (D) CHẤT LƯỢNG CỦA BẤT KỲ SẢN PHẨM, DỊCH VỤ, THÔNG TIN, QUÀ TẶNG
+                    HOẶC TÀI LIỆU KHÁC MÀ BẠN MUA HOẶC CÓ ĐƯỢC THÔNG QUA ỨNG DỤNG SẼ ĐÁP ỨNG CÁC YÊU CẦU HOẶC MONG ĐỢI CỦA BẠN, (E)
+                    CÁC LỖI HOẶC KHIẾM KHUYẾT TRONG ỨNG DỤNG VÀ/HOẶC PHẦN MỀM SẼ ĐƯỢC SỬA CHỮA, HOẶC (F) ỨNG DỤNG HOẶC (CÁC) MÁY CHỦ
+                    CHO PHÉP ỨNG DỤNG HOẠT ĐỘNG SẼ KHÔNG CÓ VIRÚT HOẶC CÁC THÀNH PHẦN CÓ HẠI KHÁC, HOẶC (G) ỨNG DỤNG VÀ/HOẶC PHẦN
+                    MỀM THEO DÕI BẠN HOẶC PHƯƠNG TIỆN ĐƯỢC NHÀ CUNG CẤP DỊCH VỤ BÊN THỨ BA SỬ DỤNG. DỊCH VỤ ĐƯỢC CUNG CẤP CHO BẠN
+                    ĐÚNG TRÊN CƠ SỞ “NGUYÊN TRẠNG”. TẤT CẢ CÁC ĐIỀU KIỆN, CAM ĐOAN VÀ BẢO ĐẢM, CHO DÙ ĐƯỢC THỂ HIỆN MỘT CÁCH RÕ
+                    RÀNG, NGỤ Ý, THEO LUẬT ĐỊNH HOẶC THEO PHƯƠNG THỨC KHÁC, BAO GỒM, NHƯNG KHÔNG GIỚI HẠN, BẤT KỲ BẢO ĐẢM NGẦM ĐỊNH
+                    VỀ TÍNH THƯƠNG MẠI, SỰ PHÙ HỢP VỚI MỘT MỤC ĐÍCH CỤ THỂ, HOẶC KHÔNG VI PHẠM CÁC QUYỀN CỦA BÊN THỨ BA, THEO ĐÂY SẼ
+                    ĐƯỢC MIỄN TRỪ TRÁCH NHIỆM TRONG PHẠM VI CAO NHẤT VÀ TỐI ĐA CÓ THỂ.</p>
+                <p>CÔNG TY KHÔNG ĐƯA RA BẤT KỲ CAM ĐOAN, BẢO ĐẢM, HAY BẢO LÃNH ĐỐI VỚI ĐỘ TIN CẬY, TÍNH AN TOÀN, KỊP THỜI, CHẤT
+                    LƯỢNG, SỰ PHÙ HỢP HAY TÍNH SẴN CÓ CỦA BẤT KỲ DỊCH VỤ NÀO VÀ/HOẶC QUÀ TẶNG, BAO GỒM, NHƯNG KHÔNG GIỚI HẠN, CÁC
+                    DỊCH VỤ VẬN TẢI, VẬN CHUYỂN HÀNG HÓA CỦA BÊN THỨ BA HOẶC CÁC DỊCH VỤ KHÁC VÀ SẢN PHẨM CÓ ĐƯỢC HOẶC CÓ NGUỒN GỐC
+                    TỪ CÁC BÊN THỨ BA THÔNG QUA VIỆC SỬ DỤNG DỊCH VỤ, ỨNG DỤNG VÀ/HOẶC PHẦN MỀM VÀ/HOẶC VIỆC QUY ĐỔI, CUNG CẤP HOẶC
+                    SỬ DỤNG QUÀ TẶNG. BẠN THỪA NHẬN VÀ ĐỒNG Ý RẰNG TOÀN BỘ RỦI RO PHÁT SINH TỪ VIỆC SỬ DỤNG DỊCH VỤ VÀ BẤT KỲ DỊCH
+                    VỤ CỦA BÊN THỨ BA NÀO, BAO GỒM, NHƯNG KHÔNG GIỚI HẠN, CÁC DỊCH VỤ VẬN TẢI, VẬN CHUYỂN HÀNG HÓA CỦA BÊN THỨ BA
+                    HOẶC CÁC DỊCH VỤ KHÁC VÀ SẢN PHẨM DỊCH VỤ LÀ HOÀN TOÀN THUỘC VỀ RIÊNG BẠN VÀ BẠN SẼ KHÔNG KIỆN ĐÒI CÔNG TY DƯỚI
+                    BẤT KỲ HÌNH THỨC NÀO.</p>
+                <p><strong>14. Chậm Trễ Do Internet</strong></p>
+                <p>DỊCH VỤ, ỨNG DỤNG VÀ/HOẶC PHẦN MỀM CÓ THỂ CÓ NHỮNG HẠN CHẾ, CHẬM TRỄ, VÀ CÁC VẤN ĐỀ KHÁC XUẤT PHÁT TỪ VIỆC SỬ
+                    DỤNG INTERNET VÀ THÔNG TIN LIÊN LẠC THEO PHƯƠNG THỨC ĐIỆN TỬ BAO GỒM VIỆC THIẾT BỊ BẠN SỬ DỤNG HOẶC NGƯỜI CUNG
+                    CẤP DỊCH VỤ BÊN THỨ BA SỬ DỤNG BỊ LỖI, KHÔNG CÓ KẾT NỐI, NẰM NGOÀI VÒNG PHỦ SÓNG, BỊ TẮT NGUỒN HOẶC KHÔNG HOẠT
+                    ĐỘNG. CÔNG TY KHÔNG CHỊU TRÁCH NHIỆM VỀ BẤT KỲ SỰ CHẬM TRỄ, LỖI CHUYỂN GIAO, CÁC THIỆT HẠI HAY TỔN THẤT PHÁT
+                    SINH TỪ NHỮNG VẤN ĐỀ TRÊN</p>
+                <p><strong>15. Giới Hạn Trách Nhiệm</strong></p>
+                <p>BẤT KỲ YÊU CẦU BỒI THƯỜNG NÀO CỦA BẠN ĐỐI VỚI CÔNG TY TRONG BẤT KỲ TRƯỜNG HỢP NÀO SẼ CHỈ GIỚI HẠN TRONG TỔNG TẤT
+                    CẢ CÁC KHOẢN ĐÃ ĐƯỢC BẠN CHI TRẢ VÀ/HOẶC BẠN SẼ TRẢ CHO VIỆC SỬ DỤNG DỊCH VỤ GIỚI HẠN TRONG SỰ KIỆN DẪN TỚI CÁC
+                    YÊU CẦU BỒI THƯỜNG ĐÓ. TRONG MỌI TRƯỜNG HỢP, CÔNG TY VÀ/HOẶC CÁC BÊN CẤP LI-XĂNG CHO CÔNG TY SẼ KHÔNG PHẢI CHỊU
+                    TRÁCH NHIỆM PHÁP LÝ ĐỐI VỚI BẠN HOẶC BẤT CỨ CÁ NHÂN, TỔ CHỨC NÀO VỀ BẤT KỲ TỔN THẤT HOẶC THIỆT HẠI TRỰC TIẾP,
+                    GIÁN TIẾP, MANG TÍNH TRỪNG PHẠT, KINH TẾ, TƯƠNG LAI, ĐẶC BIỆT, LÀM GƯƠNG, NGẪU NHIÊN, HẬU QUẢ HOẶC CÁC LOẠI TỔN
+                    THẤT HOẶC THIỆT HẠI KHÁC (BAO GỒM THƯƠNG TỔN CÁ NHÂN, RỐI LOẠN TÂM LÝ HAY THẤT THOÁT DỮ LIỆU, HÀNG HÓA, DOANH
+                    THU, LỢI NHUẬN, SỬ DỤNG SAI HAY BẤT KỲ LỢI ÍCH KINH TẾ NÀO KHÁC). CÔNG TY VÀ/HOẶC CÁC BÊN CẤP LI-XĂNG CHO CÔNG
+                    TY SẼ KHÔNG PHẢI CHỊU TRÁCH NHIỆM PHÁP LÝ ĐỐI VỚI BẤT KỲ THIỆT HẠI, TỔN THẤT HOẶC THƯƠNG TỔN MÀ ĐÃ PHÁT SINH BỞI
+                    HOẶC GÂY RA CHO BẠN HAY BẤT CỨ CÁ NHÂN, TỔ CHỨC NÀO KHÁC MÀ BẠN ĐÃ ĐẶT DỊCH VỤ CHO HỌ, BAO GỒM, NHƯNG KHÔNG GIỚI
+                    HẠN, THIỆT HẠI, TỔN THẤT HOẶC THƯƠNG TỔN PHÁT SINH TỪ, HOẶC LIÊN QUAN TỚI DỊCH VỤ, ỨNG DỤNG, PHẦN MỀM VÀ/HOẶC
+                    CHƯƠNG TRÌNH GRABREWARDS LOYALTY PROGRAMME THEO BẤT KỲ CÁCH NÀO, BAO GỒM, NHƯNG KHÔNG GIỚI HẠN, VIỆC SỬ DỤNG
+                    HOẶC KHÔNG THỂ SỬ DỤNG DỊCH VỤ, ỨNG DỤNG VÀ/HOẶC PHẦN MỀM, BẤT KỲ SỰ TIN TƯỞNG NÀO CỦA BẠN VỀ TÍNH HOÀN THIỆN,
+                    CHÍNH XÁC HOẶC TỒN TẠI CỦA BẤT KỲ QUẢNG CÁO NÀO, HOẶC LÀ KẾT QUẢ CỦA BẤT KỲ MỐI QUAN HỆ HAY GIAO DỊCH NÀO GIỮA
+                    BẠN VÀ BẤT CỨ NHÀ CUNG CẤP BÊN THỨ BA NÀO, THƯƠNG NHÂN, NHÀ QUẢNG CÁO HOẶC NHÀ TÀI TRỢ NÀO CÓ QUẢNG CÁO XUẤT
+                    HIỆN TRÊN TRANG WEB HOẶC ĐƯỢC DẪN CHIẾU ĐẾN BỞI DỊCH VỤ, ỨNG DỤNG, PHẦN MỀM VÀ/HOẶC CHƯƠNG TRÌNH GRABREWARDS
+                    LOYALTY PROGRAMME, NGAY CẢ KHI CÔNG TY VÀ/HOẶC CÁC BÊN CẤP LI-XĂNG CHO CÔNG TY ĐÃ ĐƯỢC THÔNG BÁO TRƯỚC VỀ KHẢ
+                    NĂNG XẢY RA NHỮNG TỔN THẤT NÀY.</p>
+                <p>CÔNG TY KHÔNG VÀ SẼ KHÔNG ĐÁNH GIÁ HAY QUẢN LÝ TÍNH PHÙ HỢP, TÍNH PHÁP LÝ, NĂNG LỰC, VIỆC DI CHUYỂN HAY VỊ TRÍ
+                    CỦA BẤT KỲ NGƯỜI CUNG CẤP BÊN THỨ BA NÀO, BAO GỒM NHÀ CUNG CẤP DỊCH VỤ VẬN TẢI VÀ/HOẶC VẬN CHUYỂN HÀNG HÓA,
+                    THƯƠNG NHÂN, NHÀ QUẢNG CÁO VÀ/HOẶC NHÀ TÀI TRỢ BÊN THỨ BA VÀ BẠN HOÀN TOÀN TỪ BỎ QUYỀN KIỆN ĐÒI VÀ MIỄN TRỪ CHO
+                    CÔNG TY KHỎI BẤT KỲ VÀ TẤT CẢ TRÁCH NHIỆM, KHIẾU NẠI HOẶC TỔN THẤT PHÁT SINH TỪ HOẶC DƯỚI BẤT KỲ HÌNH THỨC NÀO
+                    LIÊN QUAN ĐẾN CÁC NHÀ CUNG CẤP BÊN THỨ BA, BAO GỒM NGƯỜI CUNG CẤP DỊCH VỤ VẬN TẢI VÀ/HOẶC VẬN CHUYỂN HÀNG HOÁ,
+                    THƯƠNG NHÂN, NHÀ QUẢNG CÁO VÀ/HOẶC NHÀ TÀI TRỢ BÊN THỨ BA.</p>
+                <p>CÔNG TY SẼ KHÔNG THAM GIA VÀO CÁC TRANH CHẤP, ĐÀM PHÁN GIẢI QUYẾT TRANH CHẤP GIỮA BẠN VÀ CÁC NHÀ CUNG CẤP BÊN THỨ
+                    BA, BAO GỒM NGƯỜI CUNG CẤP DỊCH VỤ VẬN TẢI VÀ/HOẶC VẬN CHUYỂN HÀNG HOÁ, THƯƠNG NHÂN, NHÀ QUẢNG CÁO VÀ/HOẶC NHÀ
+                    TÀI TRỢ BÊN THỨ BA. TRỪ KHI BẠN LÀ MỘT KHÁCH HÀNG DOANH NGHIỆP CÓ TÀI KHOẢN DOANH NGHIỆP HIỆN TẠI VỚI CÔNG TY,
+                    CÔNG TY KHÔNG THỂ VÀ SẼ KHÔNG ĐÓNG BẤT KỲ VAI TRÒ GÌ TRONG VIỆC QUẢN LÝ CÁC KHOẢN THANH TOÁN GIỮA BẠN VÀ CÁC NHÀ
+                    CUNG CẤP BÊN THỨ BA, BAO GỒM NGƯỜI CUNG CẤP DỊCH VỤ VẬN TẢI VÀ/HOẶC VẬN CHUYỂN HÀNG HOÁ, THƯƠNG NHÂN, NHÀ QUẢNG
+                    CÁO VÀ/HOẶC NHÀ TÀI TRỢ BÊN THỨ BA. BẠN CHỊU TRÁCH NHIỆM HOÀN TOÀN VÀ TOÀN BỘ VỀ CÁC QUYẾT ĐỊNH LIÊN QUAN ĐẾN
+                    CÁC DỊCH VỤ VÀ SẢN PHẨM ĐƯỢC CHÀO MỜI TỚI BẠN THÔNG QUA DỊCH VỤ, PHẦN MỀM VÀ/HOẶC ỨNG DỤNG VÀ/HOẶC CHƯƠNG TRÌNH
+                    GRABREWARDS LOYALTY PROGRAMME (CÙNG TẤT QUẢ CÁC HỆ QUẢ CỦA NÓ). BẠN TUYỆT ĐỐI TỪ BỎ QUYỀN KIỆN ĐÒI VÀ MIỄN TRỪ
+                    CHO CÔNG TY KHỎI BẤT KỲ VÀ TẤT CẢ TRÁCH NHIỆM, KHIẾU NẠI, LÝ DO KHỞI KIỆN, HAY TỔN THẤT XUẤT PHÁT TỪ VIỆC SỬ
+                    DỤNG DỊCH VỤ, PHẦN MỀM VÀ/HOẶC ỨNG DỤNG, VIỆC THAM GIA HOẶC LÀM HỘI VIÊN CỦA CHƯƠNG TRÌNH GRABREWARDS LOYALTY
+                    PROGRAMME, HOẶC THEO BẤT KỲ HÌNH THỨC NÀO LIÊN QUAN ĐẾN CÁC BÊN THỨ BA, BAO GỒM NGƯỜI CUNG CẤP DỊCH VỤ VẬN TẢI
+                    VÀ/HOẶC VẬN CHUYỂN HÀNG HOÁ, THƯƠNG NHÂN, NHÀ QUẢNG CÁO VÀ/HOẶC NHÀ TÀI TRỢ BÊN THỨ BA ĐÃ ĐƯỢC GIỚI THIỆU TỚI
+                    BẠN THÔNG QUA DỊCH VỤ, PHẦN MỀM VÀ/HOẶC ỨNG DỤNG VÀ/HOẶC CHƯƠNG TRÌNH GRABREWARDS LOYALTY PROGRAMME.</p>
+                <p>CHẤT LƯỢNG CỦA CÁC DỊCH VỤ VẬN TẢI VÀ/HOẶC VẬN CHUYỂN HÀNG HÓA BÊN THỨ BA ĐƯỢC ĐẶT THÔNG QUA VIỆC SỬ DỤNG DỊCH VỤ
+                    HOÀN TOÀN LÀ TRÁCH NHIỆM CỦA NHÀ CUNG CẤP DỊCH VỤ BÊN THỨ BA, LÀ BÊN CUỐI CÙNG CUNG CẤP CÁC DỊCH VỤ VẬN TẢI
+                    VÀ/HOẶC VẬN CHUYỂN HÀNG HÓA ĐÓ CHO BẠN. DO ĐÓ, BẠN HIỂU RẰNG, VỚI VIỆC SỬ DỤNG DỊCH VỤ, BẠN CÓ THỂ TIẾP XÚC VỚI
+                    VIỆC VẬN TẢI VÀ VẬN CHUYỂN HÀNG HÓA CÓ TIỀM ẨN NGUY HIỂM, SỰ CÔNG KÍCH, CÓ HẠI CHO TRẺ VỊ THÀNH NIÊN, KHÔNG AN
+                    TOÀN HOẶC BẰNG CÁCH KHÁC GÂY PHIỀN TOÁI, VÀ&nbsp;<strong>BẠN HOÀN TOÀN CHẤP NHẬN RỦI RO KHI SỬ DỤNG DỊCH
+                        VỤ</strong>.</p>
+                <p>TRONG PHẠM VI PHÁP LUẬT CHO PHÉP, CÔNG TY SẼ KHÔNG CHỊU TRÁCH NHIỆM ĐỐI VỚI BẤT KỲ KHIẾU NẠI, TỔN THẤT, THIỆT
+                    HẠI, CHI PHÍ HOẶC PHÍ TỔN PHÁT SINH CHO BẠN HOẶC ĐƯỢC GÁNH CHỊU BỞI BẠN CÓ NGUỒN GỐC LIÊN QUAN ĐẾN VIỆC THAM GIA
+                    HOẶC LÀM HỘI VIÊN CỦA CHƯƠNG TRÌNH GRABREWARDS LOYALTY PROGRAMME, BAO GỒM NHƯNG KHÔNG GIỚI HẠN BỞI:</p>
+                <ul>
+                    <li>VIỆC THƯƠNG NHÂN BÊN THỨ BA KHÔNG THỰC HIỆN HOẶC TỪ CHỐI CHẤP NHẬN ĐIỂM THƯỞNG ĐỂ QUY ĐỔI HOẶC QUÀ TẶNG QUY
+                        ĐỔI;</li>
+                </ul>
+                <ul>
+                    <li>BẤT KỲ VIỆC THẤT THOÁT DỮ DIỆU VÀ GHI CHÉP LIÊN QUAN ĐẾN CHƯƠNG TRÌNH GRABREWARDS LOYALTY PROGRAMME;</li>
+                </ul>
+                <ul>
+                    <li>BẤT KỲ HÀNH ĐỘNG, KHÔNG HÀNH ĐỘNG, HÀNH VI BẤT CẨN HOẶC CỐ TÌNH VI PHẠM CỦA THƯƠNG NHÂN BÊN THỨ BA CUNG CẤP
+                        QUÀ TẶNG;</li>
+                </ul>
+                <ul>
+                    <li>BẤT KỲ HÀNH ĐỘNG, KHÔNG HÀNH ĐỘNG, HÀNH VI BẤT CẨN HOẶC CỐ TÌNH VI PHẠM CỦA CÔNG TY, THÀNH VIÊN HỘI ĐỒNG
+                        THÀNH VIÊN, GIÁM ĐỐC, NHÂN VIÊN, ĐẠI LÝ HOẶC CỘNG TÁC VIÊN CỦA CÔNG TY CÓ LIÊN QUAN ĐẾN CHƯƠNG TRÌNH
+                        GRABREWARDS LOYALTY PROGRAMME; VÀ</li>
+                </ul>
+                <ul>
+                    <li>BẤT KỲ TỔN THẤT VỀ GIÁ TRỊ HOẶC QUYỀN LỢI CÓ THỂ PHÁT SINH TỪ VIỆC ĐIỀU CHỈNH CHƯƠNG TRÌNH GRABREWARDS
+                        LOYALTY PROGRAMME.</li>
+                </ul>
+                <p>CÔNG TY SẼ KHÔNG CHỊU TRÁCH NHIỆM ĐỐI VỚI BẤT KỲ THƯƠNG TẬT CƠ THỂ HOẶC TỔN HẠI SỨC KHOẺ HOẶC TÀI SẢN HOẶC VIỆC
+                    CHẬM TRỄ HÀNH TRÌNH CỦA BẠN VÌ BẤT KỲ LÝ DO NÀO BAO GỒM NHƯNG KHÔNG GIỚI HẠN Ở CÁC SỰ KIỆN BẤT KHẢ KHÁNG NHƯ
+                    THIÊN TAI, BÃO LŨ, CHIẾN TRANH, ĐÌNH CÔNG, HÀNH VI PHẠM TỘI HOẶC SỰ THIẾU SÓT CỦA CÁC BÊN THỨ BA, CÁC HÀNH ĐỘNG
+                    CÔNG NGHIỆP, ĐIỀU KIỆN GIAO THÔNG KHÔNG LƯỜNG TRƯỚC ĐƯỢC, VIỆC TẠM GIỮ THEO QUY TRÌNH PHÁP LÝ, SỰ GIÁN ĐOẠN CỦA
+                    QUỐC GIA HOẶC ĐỊA PHƯƠNG ĐỐI VỚI MẠNG LƯỚI GIAO THÔNG ĐƯỜNG HÀNG KHÔNG, ĐƯỜNG BỘ HOẶC ĐƯỜNG THUỶ HOẶC SỰ CỐ HỆ
+                    THỐNG THÔNG TIN LIÊN LẠC.</p>
+                <p>CÔNG TY KHÔNG CAM KẾT, ĐẢM BẢO HOẶC HỨA HẸN CÔNG NGHỆ, ỨNG DỤNG HOẶC DỊCH VỤ KHÁCH HÀNG CỦA CÔNG TY SẼ HOẠT ĐỘNG
+                    NHƯ DỰ ĐỊNH TRÊN ĐIỆN THOẠI, MÁY VI TÍNH, MÁY TÍNH BẢNG HOẶC CÁC THIẾT BỊ KHÁC CỦA BẠN.</p>
+                <p>CÔNG TY CŨNG KHÔNG CAM KẾT HOẶC ĐẢM BẢO VỀ TÍNH SẴN SÀNG, ĐỘ TIN CẬY, THỜI GIAN, TÍNH XÁC THỰC HOẶC CHẤT LƯỢNG
+                    CỦA DỊCH VỤ GIAO HÀNG, ỨNG DỤNG HOẶC NGƯỜI CUNG CẤP DỊCH VỤ VẬN TẢI BÊN THỨ BA.</p>
+                <p>CÔNG TY KHÔNG CHỊU TRÁCH NHIỆM ĐỐI VỚI BẤT KỲ TỔN THẤT, THIỆT HẠI, KHIẾU NẠI HOẶC CHI PHÍ NÀO BAO GỒM BẤT KỲ
+                    THIỆT HẠI DO HẬU QUẢ GIÁN TIẾP HOẶC NGẪU NHIÊN HOẶC THIỆT HẠI CHO ĐIỆN THOẠI DI ĐỘNG CỦA BẠN HOẶC BẤT KỲ ỨNG
+                    DỤNG NÀO ĐƯỢC LƯU TRỮ TRONG ĐÓ DO CÀI ĐẶT HOẶC SỬ DỤNG ỨNG DỤNG.</p>
+                <p>CÔNG TY SẼ KHÔNG CHỊU TRÁCH NHIỆM VỀ BẤT KỲ TỔN THẤT HOẶC THIỆT HẠI NÀO BAO GỒM NHƯNG KHÔNG GIỚI HẠN ĐỐI VỚI BẤT
+                    KỲ THƯƠNG TẬT NÀO MÀ BẠN CÓ THỂ PHẢI CHỊU VÀ THIỆT HẠI HOẶC MẤT MÁT ĐỐI VỚI TÀI SẢN THUỘC SỞ HỮU HOẶC THUỘC
+                    QUYỀN CHIẾM HỮU CỦA BẠN, HOẶC BẤT KỲ TỔN THẤT VÀ THIỆT HẠI GIÁN TIẾP NÀO LÀ KẾT QUẢ TỪ CÁC DỊCH VỤ VẬN TẢI BÊN
+                    THỨ BA, CÁC VẤN ĐỀ LIÊN QUAN ĐẾN NGƯỜI CUNG CẤP DỊCH VỤ VẬN TẢI BÊN THỨ BA, HOẶC QUÁ TRÌNH VẬN CHUYỂN DO BẠN SỬ
+                    DỤNG DỊCH VỤ TRONG KHẢ NĂNG CỦA BẠN NHƯ MỘT KHÁCH HÀNG.</p>
+                <p><strong>16. Thông Báo</strong></p>
+                <p>Công Ty có thể gửi thông báo dưới dạng một thông báo chung trên Ứng Dụng, qua thư điện tử đến địa chỉ thư điện tử
+                    của bạn trong hồ sơ của Công Ty, hoặc bằng văn bản gửi bằng thư đảm bảo hoặc thư trả trước đến địa chỉ của bạn
+                    trong dữ liệu của Công Ty. Thông báo đó sẽ được coi là đã gửi tới bạn sau 48 giờ kể từ lúc gửi bưu điện (nếu
+                    được gửi bằng thư bảo đảm hoặc thư trả trước) hoặc sau 1 giờ sau khi gửi (nếu gửi bằng thư điện tử). Bạn có thể
+                    gửi thông báo cho Công Ty (những thông báo này sẽ được coi là đã được gửi khi Công Ty nhận được thông báo) bằng
+                    thư gửi qua bưu điện hoặc thư bảo đảm tới Công Ty với các thông tin chi tiết liên hệ như được cung cấp trong Ứng
+                    Dụng.</p>
+                <p><strong>17. Chuyển Nhượng</strong></p>
+                <p>Thỏa Thuận này, được tạo thành bởi Điều Khoản Sử Dụng này được thay đổi tại từng thời điểm, sẽ không thể được bạn
+                    chuyển nhượng mà không có sự chấp thuận trước bằng văn bản của Công Ty. Bạn đồng ý chấp nhận rằng Công Ty có thể
+                    chuyển nhượng các quyền và nghĩa vụ theo Điều Khoản Sử Dụng này cho bất kỳ bên thứ ba nào.</p>
+                <p><strong>18. Điều Khoản Chung</strong></p>
+                <p>Thỏa Thuận chịu điều chỉnh bởi pháp luật&nbsp;<strong>Việt Nam</strong>, không liên quan đến việc lựa chọn hay
+                    mâu thuẫn quy định pháp luật của bất kỳ quyền tài phán nào, và bất kỳ tranh chấp, hành động, khiếu nại hay lý do
+                    khởi kiện xuất phát từ hay liên quan đến Điều Khoản Sử Dụng hoặc Dịch Vụ sẽ hoàn toàn thuộc quyền xét xử của tòa
+                    án&nbsp;<strong>Việt Nam</strong>&nbsp;mà bạn đồng ý tuân theo.</p>
+                <p>Trong trường hợp luật pháp của Quốc Gia Thay Thế không chấp nhận quyền xét xử của tòa án&nbsp;<strong>Việt
+                    Nam</strong>&nbsp;hoặc trường hợp phán quyết của tòa án&nbsp;<strong>Việt Nam&nbsp;</strong>không thể được
+                    thi hành tại Quốc Gia Thay Thế, các tranh chấp chưa được giải quyết sẽ được chuyển tới Trung tâm Trọng tài Quốc
+                    tế Việt Nam (“<strong>VIAC</strong>”), phù hợp với các Nguyên tắc Tố tụng Trọng tài của VIAC được sửa đổi, bổ
+                    sung tại từng thời điểm (“<strong>Các Nguyên Tắc Tố Tụng Trọng Tài</strong>”) bởi một trọng tài do Các Bên cùng
+                    thống nhất chỉ định (“<strong>Trọng Tài</strong>”). Nếu Các Bên không thể thống nhất về một trọng tài, Chủ tịch
+                    của VIAC sẽ chỉ định Trọng tài theo đúng Các Nguyên Tắc Tố Tụng Trọng Tài.</p>
+                <p>Địa điểm tố tụng trọng tài là Việt Nam, ngôn ngữ trọng tài bằng tiếng Việt và phí Trọng Tài sẽ được chia đều cho
+                    Các Bên, trừ khi Trọng Tài yêu cầu phí này được chi trả theo cách khác mà Trọng Tài xác định là cần thiết để
+                    điều khoản trọng tài này có thể được thi hành theo pháp luật áp dụng.</p>
+                <p>Không có bất kỳ sự liên doanh, hợp tác, thỏa thuận lao động, hay quan hệ đại lý nào tồn tại giữa bạn, Công Ty hay
+                    bất kỳ bên cung cấp thứ ba nào được tạo thành từ Điều Khoản Sử Dụng này hay từ việc sử dụng Dịch Vụ.</p>
+                <p>Nếu bất kỳ điều khoản nào của Điều Khoản Sử Dụng bị coi là không hợp lệ hoặc không thể thi hành, thì điều khoản
+                    đó sẽ bị xóa bỏ và các điều khoản còn lại sẽ được thi hành đến mức tối đa theo luật pháp. Việc này cũng áp dụng,
+                    không giới hạn, đối với các pháp luật áp dụng và quyền tài phán như nêu trên.</p>
+                <p>Việc Công Ty không thể thi hành bất kỳ quyền hay điều khoản nào của Điều Khoản Sử Dụng không cấu thành sự khước
+                    từ những quyền hay điều khoản đó trừ khi được Công Ty thừa nhận và chấp thuận dưới dạng văn bản. Điều khoản sử
+                    dụng bao gồm toàn bộ thỏa thuận giữa bạn và Công Ty và thay thế tất cả các đàm phán hoặc thảo luận trước đây,
+                    bằng văn bản hoặc bằng lời nói (nếu có) giữa các bên liên quan đến các vấn đề trong tài liệu này.</p>
+                <p>Bạn chấp thuận rằng Công Ty có quyền chấm dứt Thỏa Thuận này ngay lập tức trong trường hợp bạn bị phát hiện đã vi
+                    phạm bất kỳ điều khoản nào đã nêu trong Thỏa Thuận này. Để tránh nghi ngờ, việc chấm dứt Thỏa Thuận này không
+                    đòi hỏi Công Ty phải bồi thường, bồi hoàn hoặc chi trả bất kỳ phí tổn nào mà bạn phải chịu khi sử dụng Dịch Vụ
+                    từ bất kỳ nhà cung cấp dịch vụ bên thứ ba nào theo Thỏa Thuận này.</p>
+            </div>
+        </div>
+    </div>
+    <div th:replace="~{/common/Footer}"></div>
+
+    <script>
+        function selectMenuItem(element) {
+            if (!element.classList.contains("active")) {
+                // Loại bỏ trạng thái active từ tất cả các mục menu
+                const menuItems = document.querySelectorAll(".nav-link");
+                menuItems.forEach(item => item.classList.remove("active"));
+
+                // Thêm trạng thái active vào mục menu được chọn
+                element.classList.add("active");
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+
+</body>
+</html>
