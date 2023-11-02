@@ -9,14 +9,38 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"/>
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-	<link rel="stylesheet" th:href="@{/css/Cart.css}"/>
+	<link rel="stylesheet" th:href="@{/css/TotalCart.css}">
+
 	<style>
-		body{
-			background-color: #9EB384;
+		.container {
+			width: 60%;
+			margin: 0 auto;
+		}
+
+		.booking-form {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.form-row {
+			display: flex;
+			margin-bottom: 10px;
+		}
+
+		.form-group {
+			flex-basis: 50%;
+			padding-right: 10px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
 		}
 	</style>
+	<title>Giỏ hàng</title>
 </head>
-<body>
+
+<body class="color-body">
 <!--header-->
 <div th:if="${#authorization.expression('isAuthenticated()')}">
 	<div th:replace="~{/common/Header_off}"></div>
@@ -25,83 +49,92 @@
 	<div th:replace="~{/common/Header}"></div>
 </div>
 <!--end header-->
-<div class="container mt-16 mb-9">
-	<div class="container-cart rounded-md flex flex-col justify-between p-2 " >
-		<div class="product-cart">
-			<div class="header-cart flex flex-row justify-between max-h-2 pt-2">
-				<p class="flex justify-center items-center ">GIỎ HÀNG CỦA BẠN (ĐANG CÓ N SẢN PHẨM)</p>
-			</div>
-			<hr/>
-			<div class="content-cart">
-				<div class="box-nav-cart max-h-1 ">
-					<li class="box-nav_product-cart flex justify-center items-center">
-						<p class="title-item_cart ">Sản phẩm</p>
-					</li>
-					<li class="box-nav_price-cart flex justify-center items-center">
-						<p class="title-item_cart">Đơn giá</p>
-					</li>
-					<li class="box-nav_quantity-cart flex justify-center items-center">
-						<p class="title-item_cart">Số lượng</p>
-					</li>
-					<li class="box-nav_total-cart flex justify-center items-center">
-						<p class="title-item_cart">Thành tiền</p>
-					</li>
-					<li class="box-nav_remove-cart ve flex justify-center items-center">
-						<p class="title-item_cart">Xóa</p>
-					</li>
-				</div>
-				<hr/>
-				<div class="box-list-product-cart max-h-[160px] flex flex-col">
-					<div class="box-product-cart  flex flex-row items-center justify-center">
-						<div class="img-product-cart rounded-md ">
-							<div class="box-img_product-cart rounded-md  max-w-full max-h-full cursor-pointer">
-								<img th:src="@{/images/logo.png}">
-							</div>
-						</div>
-						<div class="name-product-cart flex flex-col justify-center ml-2">
-							<p class="font-bold cursor-pointer">Mực phơi một nắng</p>
-							<p class="text-xs">Mực tươi được đánh bắt lại Ấn Độ dương</p>
-						</div>
-						<div class="price-product-cart font-bold flex justify-center items-center" >
-							5.600$
-						</div>
-						<div class="quantity-product-cart flex justify-center items-center">
-							<input class="w-32 pl-2 border-none rounded-md " th:value="1" type="number" />
-						</div>
-						<div class="total_price-payment-cart font-bold flex justify-center items-center">
-							5.600$
-						</div>
-						<div class="remove-product-cart flex justify-center items-center">
-							<a class="cursor-pointer"><i class="fa-solid fa-trash" style="color: #464444;"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="box-payment-cart">
-				<div class="note-product">
-				</div>
-				<div class="info-payment">
 
+<div class="Total-Cart">
+	<h1>Giỏ hàng</h1>
+	<table>
+		<thead>
+		<tr>
+			<th></th>
+			<th>Tên món</th>
+			<th>Đơn giá</th>
+			<th>Số lượng</th>
+			<th>Tổng tiền</th>
+		</tr>
+		</thead>
+		<tbody>
+		<!-- Thêm các dòng trong bảng giỏ hàng tại đây -->
+		<tr>
+			<td><img src="path-to-your-image.jpg" alt="Món"></td>
+			<td>Bánh mì</td>
+			<td>10.000đ</td>
+			<td class="quantity">
+				<button>-</button>
+				<input type="text" value="2">
+				<button>+</button>
+			</td>
+			<td>20.000đ</td>
+		</tr>
+		</tbody>
+		<tfoot>
+		<tr>
+			<td colspan="4" style="text-align: right;">Thành tiền:</td>
+			<td id="grandTotal"></td>
+		</tr>
+		</tfoot>
+	</table>
+	<div class="btn-group-cart">
+		<button class="button-cart"><a href="./Home.html">Thêm món</a></button>
+
+	</div>
+
+	<div class="container container-order">
+		<h1>Đặt Món</h1>
+		<div class="row input-container">
+			<div class="col-xs-12">
+				<div class="styled-input wide">
+					<input type="text" required />
+					<label>Họ và tên</label>
 				</div>
 			</div>
-		</div>
-		<div class="flex flex-row justify-end ">
-			<div class="flex-1 w-[430px] h-[125px]">
-				<textarea class="rounded-md p-2" style="width: 430px; height: 125px" placeholder="Ghi chú"></textarea>
+			<div class="col-md-6 col-sm-12">
+				<div class="styled-input">
+					<input type="text" required />
+					<label>Email</label>
+				</div>
 			</div>
-			<div class="flex flex-col flex-1 max-h-24">
-				<div class="flex-1 flex justify-end mt-2">
-					<h6 class="font-bold">Tổng: 3456734$</h6>
+			<div class="col-md-6 col-sm-12">
+				<div class="styled-input" style="float:right;">
+					<input type="text" required />
+					<label>SĐT</label>
 				</div>
-				<div class="flex flex-row flex-1 justify-end mt-9">
-					<Button class="border bg-grey p-1 rounded-md max-h-9 ">Tiếp tục order</Button>
-					<Button class="border bg-white p-1 rounded-md max-h-9 ml-2 " >Tiến hành thanh toán</Button>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="styled-input">
+					<input type="text" required />
+					<label>Phương thức thanh toán</label>
 				</div>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="styled-input" style="float:right;">
+					<input type="text" required />
+					<label>Tích điểm</label>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="styled-input wide">
+					<textarea required></textarea>
+					<label>Mô tả</label>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="btn-lrg submit-btn">In Biên Lai</div>
 			</div>
 		</div>
 	</div>
 </div>
 	<div th:replace="~{/common/Footer}"></div>
+<script type="text/javascript" th:src="@{/js/TotalCart.js}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
 </body>
 </html>
