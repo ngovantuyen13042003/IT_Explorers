@@ -10,4 +10,9 @@ public class RestaurantController {
 
         return "AddRestaurant";
     }
+
+    @GetMapping("/update-infor-restaurant")
+    public String updateInforRes() {
+        return "UpdateInforRestaurant";
+    }
 }
