@@ -101,6 +101,15 @@ public class HomeController {
         return "redirect:/home";
     }
 
+    @GetMapping("/about-us/privacy-policy")
+    public String showPolicy() {
+        return "privacyPolicy";
+    }
+
+    @GetMapping("/about-us/terms-and-conditions")
+    public String showTerms() {
+        return "terms";
+    }
 
 
 }

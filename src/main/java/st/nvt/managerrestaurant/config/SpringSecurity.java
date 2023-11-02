@@ -39,6 +39,7 @@ public class SpringSecurity {
                 .requestMatchers("/food/**").permitAll()
                 .requestMatchers("/error/**").permitAll()
                 .requestMatchers("/?continue/**").permitAll()
+                .requestMatchers("/about-us/**").permitAll()
                 .and()
                 .formLogin(
                     form -> form

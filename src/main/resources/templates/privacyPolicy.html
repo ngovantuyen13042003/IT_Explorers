@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chính sách bảo mật</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+H3dh8ErM5Lp4n5D51NV8oP6bLfUvyaGBsEG2UqU2q3g5kC2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/memberPolicy.css}">
+
+</head>
+<body>
+<!--header-->
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header_off}"></div>
+</div>
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header}"></div>
+</div>
+<!--end header-->
+
+    <div class="menu">
+        <div class="ant-col side-nav">
+            <div class="ant-row side-nav-2">
+                <div class="ant-col ant-col-24">
+                    <div class="ant-row">
+                        <div class="ant-col ant-col-24">
+                            <div id="div1" class="nav-title">ABOUT US</div>
+                            <ul class="nav-list">
+                                <li class="nav-item" >
+                                    <span class="nav-item-title"><a th:href="@{/about-us/terms-and-conditions}">Điều khoản sử dụng</a></span>
+                                </li>
+                                <li class="nav-item" >
+                                    <span class="nav-item-title"><a th:href="@{/about-us/privacy-policy}">Chính sách quyền riêng tư</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ant-col">
+            <div class="container">
+                <h1>Chính sách quyền riêng tư</h1>
+                <p>Cập nhật lần cuối: 23 tháng 10 năm 2023</p>
+                <p>Chính sách bảo mật này mô tả các chính sách và quy trình của chúng tôi về việc thu thập,
+                    sử dụng và tiết lộ thông tin của bạn khi bạn sử dụng Dịch vụ và thông báo về quyền riêng tư của bạn và
+                    cách pháp luật bảo vệ bạn.</p>
+                <p>Chúng tôi sử dụng dữ liệu cá nhân của bạn để cung cấp và cải thiện Dịch vụ. Bằng cách sử dụng Dịch vụ,
+                    bạn đồng ý với việc thu thập và sử dụng thông tin theo Chính sách bảo mật này.</p>
+                <h1>Giải thích và Định nghĩa</h1>
+                <h2>Giải thích</h2>
+                <p>Các từ có chữ cái đầu tiên được viết hoa có ý nghĩa được định nghĩa trong các điều kiện sau đây.
+                    Các định nghĩa sau đây sẽ có cùng ý nghĩa bất kể liệu chúng xuất hiện ở dạng số ít hay số nhiều.</p>
+                <h2>Định nghĩa</h2>
+                <p>Cho mục đích của Chính sách bảo mật này:</p>
+                <ul>
+                    <li>
+                        <p><strong>Tài khoản</strong> có nghĩa là một tài khoản duy nhất được tạo cho bạn để truy cập
+                            Dịch vụ của chúng tôi hoặc một phần của Dịch vụ của chúng tôi.</p>
+                    </li>
+                    <li>
+                        <p><strong>Đối tác liên kết</strong> có nghĩa là một thực thể kiểm soát, bị kiểm soát
+                            bởi hoặc cùng kiểm soát với một bên, trong đó "kiểm soát" có nghĩa là sở hữu 50%
+                            hoặc nhiều hơn cổ phiếu, quyền sở hữu vốn hoặc chứng khoán khác có quyền bỏ phiếu để bầu cử
+                            các giám đốc hoặc các cơ quan quản lý khác.</p>
+                    </li>
+                    <li>
+                        <p><strong>Công ty</strong> (được gọi là "Công ty", "Chúng tôi",
+                            "Chúng tôi" hoặc "Của chúng tôi" trong Thỏa thuận này) đề cập đến IT Explorers, 48 Cao Thắng.</p>
+                    </li>
+                    <li>
+                        <p><strong>Cookies</strong> là các tệp tin nhỏ được đặt trên máy tính, thiết bị di động hoặc bất kỳ thiết bị nào khác bởi một trang web, chứa chi tiết lịch sử duyệt web của bạn trên trang web đó trong số nhiều mục đích của nó.</p>
+                    </li>
+                    <li>
+                        <p><strong>Quốc gia</strong> đề cập đến: Việt Nam</p>
+                    </li>
+                    <li>
+                        <p><strong>Thiết bị</strong> có nghĩa là bất kỳ thiết bị nào có thể truy cập Dịch vụ như máy tính, điện thoại di động hoặc máy tính bảng kỹ thuật số.</p>
+                    </li>
+                    <li>
+                        <p><strong>Dữ liệu cá nhân</strong> là bất kỳ thông tin nào liên quan đến một cá nhân được xác định hoặc có thể xác định được.</p>
+                    </li>
+                    <li>
+                        <p><strong>Dịch vụ</strong> đề cập đến Trang web.</p>
+                    </li>
+                    <li>
+                        <p><strong>Nhà cung cấp dịch vụ</strong> có nghĩa là bất kỳ cá nhân hoặc tổ chức pháp nhân nào xử lý dữ liệu thay mặt cho Công ty. Nó đề cập đến các công ty hoặc cá nhân bên thứ ba được thuê bởi Công ty để tạo điều kiện cho Dịch vụ, cung cấp Dịch vụ thay mặt cho Công ty, thực hiện các dịch vụ liên quan đến Dịch vụ hoặc hỗ trợ Công ty trong việc phân tích cách Dịch vụ được sử dụng.</p>
+                    </li>
+                    <li>
+                        <p><strong>Dữ liệu sử dụng</strong> đề cập đến dữ liệu được thu thập tự động, được tạo ra bằng cách sử dụng Dịch vụ hoặc từ cơ sở hạ tầng Dịch vụ chính nó (ví dụ: thời gian truy cập trang).</p>
+                    </li>
+                    <li>
+                        <p><strong>Trang web</strong> đề cập đến Restaurant Management System, có thể truy cập từ <a href="http://www.rms.com" rel="external nofollow noopener" target="_blank">http://www.rms.com</a></p>
+                    </li>
+                    <li>
+                        <p><strong>Bạn</strong> có nghĩa là cá nhân truy cập hoặc sử dụng Dịch vụ, hoặc công ty hoặc thực thể pháp nhân khác thay mặt cho cá nhân đó truy cập hoặc sử dụng Dịch vụ, tùy theo trường hợp.</p>
+                    </li>
+                </ul>
+                <h1>Thu thập và Sử dụng Dữ liệu Cá nhân của Bạn</h1>
+                <h2>Các loại Dữ liệu được thu thập</h2>
+                <h3>Dữ liệu Cá nhân</h3>
+                <p>Khi sử dụng Dịch vụ của chúng tôi, chúng tôi có thể yêu cầu bạn cung cấp cho chúng tôi một số thông tin cá nhân có thể xác định được để liên hệ hoặc xác định bạn. Thông tin cá nhân có thể bao gồm, nhưng không giới hạn:</p>
+                <ul>
+                    <li>
+                        <p>Địa chỉ email</p>
+                    </li>
+                    <li>
+                        <p>Tên và họ</p>
+                    </li>
+                    <li>
+                        <p>Số điện thoại</p>
+                    </li>
+                    <li>
+                        <p>Địa chỉ</p>
+                    </li>
+                    <li>
+                        <p>Dữ liệu sử dụng</p>
+                    </li>
+                </ul>
+                <h3>Dữ liệu sử dụng</h3>
+                <p>Dữ liệu sử dụng được thu thập tự động khi sử dụng Dịch vụ.</p>
+                <p>Dữ liệu sử dụng có thể bao gồm thông tin như địa chỉ Giao thức Internet của Thiết bị của bạn (ví dụ: địa chỉ IP), loại trình duyệt, phiên bản trình duyệt, các trang của Dịch vụ của chúng tôi mà bạn truy cập, thời gian và ngày truy cập của bạn, thời gian dành cho những trang đó, các định danh thiết bị duy nhất và dữ liệu chẩn đoán khác.</p>
+                <p>Khi bạn truy cập Dịch vụ bằng hoặc thông qua thiết bị di động, chúng tôi có thể thu thập một số thông tin cụ thể, bao gồm, nhưng không giới hạn, loại thiết bị di động bạn sử dụng, ID duy nhất của thiết bị di động của bạn, địa chỉ IP của thiết bị di động của bạn, hệ điều hành di động của bạn, loại trình duyệt Internet di động bạn sử dụng, các định danh thiết bị duy nhất và dữ liệu chẩn đoán khác.</p>
+                <p>Chúng tôi cũng có thể thu thập thông tin mà trình duyệt của bạn gửi khi bạn truy cập Dịch vụ của chúng tôi hoặc khi bạn truy cập Dịch vụ bằng hoặc thông qua thiết bị di động.</p>
+                <h3>Công nghệ theo dõi và Cookies</h3>
+                <p>Chúng tôi sử dụng Cookies và các công nghệ theo dõi tương tự để theo dõi hoạt động trên Dịch vụ của chúng tôi và lưu trữ một số thông tin. Các công nghệ theo dõi được sử dụng là các biểu tượng, thẻ và kịch bản để thu thập và theo dõi thông tin và cải thiện và phân tích Dịch vụ của chúng tôi. Các công nghệ chúng tôi sử dụng có thể bao gồm:</p>
+                <ul>
+                    <li><strong>Cookies hoặc Cookies Trình duyệt.</strong> Cookie là một tệp tin nhỏ được đặt trên Thiết bị của bạn. Bạn có thể chỉ dẫn Trình duyệt của bạn từ chối tất cả Cookies hoặc chỉ ra khi nào một Cookie đang được gửi. Tuy nhiên, nếu bạn không chấp nhận Cookies, bạn có thể không thể sử dụng một số phần của Dịch vụ của chúng tôi. Trừ khi bạn đã điều chỉnh cài đặt Trình duyệt của mình để từ chối Cookies, Dịch vụ của chúng tôi có thể sử dụng Cookies.</li>
+                    <li><strong>Web Beacons.</strong> Một số phần của Dịch vụ của chúng tôi và email của chúng tôi có thể chứa các tệp tin điện tử nhỏ được gọi là web beacon (còn được gọi là clear gifs, pixel tags và single-pixel gifs) cho phép Công ty, ví dụ, đếm số người dùng đã truy cập các trang đó hoặc mở một email và cho các thống kê trang web liên quan khác (ví dụ: ghi lại sự phổ biến của một phần nhất định và xác minh tính toàn vẹn của hệ thống và máy chủ).</li>
+                </ul>
+                <p>Cookies có thể là "Cookies lưu trữ" hoặc "Cookies phiên". Cookies lưu trữ tồn tại trên máy tính cá nhân hoặc thiết bị di động của bạn khi bạn ngoại tuyến, trong khi Cookies phiên bị xóa ngay khi bạn đóng trình duyệt web của mình. Bạn có thể tìm hiểu thêm về cookies trên bài viết trang web <a href="https://www.termsfeed.com/blog/cookies/#What_Are_Cookies" target="_blank">TermsFeed</a>.</p>
+                <p>Chúng tôi sử dụng cả Cookies phiên và Cookies lưu trữ cho các mục đích được nêu dưới đây:</p>
+                <ul>
+                    <li>
+                        <p><strong>Cookies Cần thiết / Cookies Cần thiết</strong></p>
+                        <p>Loại: Cookies phiên</p>
+                        <p>Quản lý bởi: Chúng tôi</p>
+                        <p>Mục đích: Những Cookies này là cần thiết để cung cấp cho bạn các dịch vụ có sẵn thông qua Trang web và cho phép bạn sử dụng một số tính năng của nó. Chúng giúp xác thực người dùng và ngăn chặn việc sử dụng gian lận của tài khoản người dùng. Mà không có những Cookies này, các dịch vụ mà bạn đã yêu cầu không thể được cung cấp và chúng tôi chỉ sử dụng những Cookies này để cung cấp cho bạn những dịch vụ đó.</p>
+                    </li>
+                    <li>
+                        <p><strong>Cookies Chính sách / Chấp nhận Cookies</strong></p>
+                        <p>Loại: Cookies lưu trữ</p>
+                        <p>Quản lý bởi: Chúng tôi</p>
+                        <p>Mục đích: Những Cookies này xác định xem người dùng đã chấp nhận việc sử dụng cookies trên Trang web hay chưa.</p>
+                    </li>
+                    <li>
+                        <p><strong>Cookies Chức năng</strong></p>
+                        <p>Loại: Cookies lưu trữ</p>
+                        <p>Quản lý bởi: Chúng tôi</p>
+                        <p>Mục đích: Những Cookies này cho phép chúng tôi nhớ các lựa chọn bạn thực hiện khi bạn sử dụng Trang web, chẳng hạn như nhớ chi tiết đăng nhập hoặc ngôn ngữ ưa thích của bạn. Mục đích của những Cookies này là cung cấp cho bạn một trải nghiệm cá nhân hơn và tránh bạn phải nhập lại các lựa chọn của mình mỗi khi bạn sử dụng Trang web.</p>
+                    </li>
+                </ul>
+                <p>Để biết thêm thông tin về các cookies chúng tôi sử dụng và sự lựa chọn của bạn liên quan đến cookies, vui lòng truy cập Chính sách Cookies của chúng tôi hoặc phần Cookies trong Chính sách bảo mật của chúng tôi.</p>
+                <h2>Sử dụng Dữ liệu Cá nhân của Bạn</h2>
+                <p>Công ty có thể sử dụng Dữ liệu Cá nhân cho các mục đích sau:</p>
+                <ul>
+                    <li>
+                        <p><strong>Cung cấp và duy trì Dịch vụ của chúng tôi</strong>, bao gồm theo dõi việc sử dụng Dịch vụ của chúng tôi.</p>
+                    </li>
+                    <li>
+                        <p><strong>Quản lý Tài khoản của Bạn:</strong> để quản lý đăng ký của Bạn như một người dùng của Dịch vụ. Dữ liệu Cá nhân bạn cung cấp có thể cho phép bạn truy cập vào các chức năng khác nhau của Dịch vụ mà có sẵn cho bạn như một người dùng đã đăng ký.</p>
+                    </li>
+                    <li>
+                        <p><strong>Đối với việc thực hiện một hợp đồng:</strong> việc phát triển, tuân thủ và thực hiện hợp đồng mua hàng cho các sản phẩm, mặt hàng hoặc dịch vụ bạn đã mua hoặc bất kỳ hợp đồng nào khác với chúng tôi thông qua Dịch vụ.</p>
+                    </li>
+                    <li>
+                        <p><strong>Liên hệ với Bạn:</strong> Để liên hệ với bạn qua email, cuộc gọi điện thoại, SMS hoặc các hình thức giao tiếp điện tử tương tự khác, chẳng hạn như thông báo đẩy ứng dụng di động liên quan đến cập nhật hoặc thông tin thông tin liên quan đến chức năng, sản phẩm hoặc dịch vụ đã ký hợp đồng, bao gồm cập nhật bảo mật khi cần thiết hoặc hợp lý cho việc triển khai của chúng.</p>
+                    </li>
+                    <li>
+                        <p><strong>Cung cấp cho bạn</strong> tin tức, ưu đãi đặc biệt và thông tin chung về các hàng hóa, dịch vụ và sự kiện khác mà chúng tôi cung cấp tương tự như những gì bạn đã mua hoặc đã hỏi về trừ khi bạn đã chọn không nhận thông tin đó.</p>
+                    </li>
+                    <li>
+                        <p><strong>Quản lý các yêu cầu của bạn:</strong> Để đáp ứng và quản lý các yêu cầu của bạn đối với chúng tôi.</p>
+                    </li>
+                    <li>
+                        <p><strong>Đối với việc chuyển nhượng kinh doanh:</strong> Chúng tôi có thể sử dụng thông tin của bạn để đánh giá hoặc tiến hành sáp nhập, chuyển nhượng tài sản, cải cách, tái cơ cấu, giải thể hoặc bán hoặc chuyển nhượng một phần hoặc toàn bộ tài sản của chúng tôi, dù là một công việc đang diễn ra hoặc là một phần của quyền phá sản, thanh lý hoặc thủ tục tương tự, trong đó Dữ liệu Cá nhân mà chúng tôi nắm giữ về người dùng Dịch vụ của chúng tôi là một trong những tài sản được chuyển nhượng.</p>
+                    </li>
+                    <li>
+                        <p><strong>Đối với các mục đích khác</strong>: Chúng tôi có thể sử dụng thông tin của bạn cho các mục đích khác, chẳng hạn như phân tích dữ liệu, xác định xu hướng sử dụng, xác định hiệu quả của các chiến dịch quảng cáo của chúng tôi và đánh giá và cải thiện Dịch vụ, sản phẩm, dịch vụ, tiếp thị và trải nghiệm của bạn.</p>
+                    </li>
+                </ul>
+                <p>Chúng tôi có thể chia sẻ thông tin cá nhân của bạn trong các tình huống sau:</p>
+                <ul>
+                    <li><strong>Với Nhà cung cấp Dịch vụ:</strong> Chúng tôi có thể chia sẻ thông tin cá nhân của bạn với Nhà cung cấp Dịch vụ để theo dõi và phân tích việc sử dụng Dịch vụ của chúng tôi, để liên hệ với bạn.</li>
+                    <li><strong>Đối với việc chuyển nhượng kinh doanh:</strong> Chúng tôi có thể chia sẻ hoặc chuyển nhượng thông tin cá nhân của bạn liên quan đến hoặc trong quá trình đàm phán về bất kỳ sáp nhập, bán tài sản của Công ty, tài chính hoặc mua lại toàn bộ hoặc một phần của doanh nghiệp của chúng tôi cho một công ty khác.</li>
+                    <li><strong>Với Đối tác liên kết:</strong> Chúng tôi có thể chia sẻ thông tin của bạn với các đối tác liên kết của chúng tôi, trong trường hợp đó chúng tôi sẽ yêu cầu các đối tác liên kết đó tuân thủ Chính sách bảo mật này. Các đối tác liên kết bao gồm Công ty mẹ của chúng tôi và bất kỳ công ty con, đối tác liên doanh hoặc công ty khác mà chúng tôi kiểm soát hoặc có quyền kiểm soát chung với chúng tôi.</li>
+                    <li><strong>Với các đối tác kinh doanh:</strong> Chúng tôi có thể chia sẻ thông tin của bạn với các đối tác kinh doanh của chúng tôi để cung cấp cho bạn một số sản phẩm, dịch vụ hoặc khuyến mãi cụ thể.</li>
+                    <li><strong>Với người dùng khác:</strong> khi bạn chia sẻ thông tin cá nhân hoặc tương tác khác trong các khu vực công cộng với người dùng khác, thông tin đó có thể được xem bởi tất cả người dùng và có thể được phân phối công khai ra ngoài.</li>
+                    <li><strong>Với sự đồng ý của bạn</strong>: Chúng tôi có thể tiết lộ thông tin cá nhân của bạn cho bất kỳ mục đích khác nào khác với sự đồng ý của bạn.</li>
+                </ul>
+                <h2>Giữ lại Dữ liệu Cá nhân của Bạn</h2>
+                <p>Công ty chỉ giữ Dữ liệu Cá nhân của bạn trong thời gian cần thiết để đáp ứng các mục đích nêu trong Chính sách bảo mật này. Chúng tôi sẽ giữ và sử dụng Dữ liệu Cá nhân của bạn trong mức cần thiết để tuân thủ các nghĩa vụ pháp lý của chúng tôi (ví dụ: nếu chúng tôi phải giữ dữ liệu của bạn để tuân thủ các luật pháp áp dụng), giải quyết tranh chấp và thực thi các thỏa thuận và chính sách pháp lý của chúng tôi.</p>
+                <p>Công ty cũng sẽ giữ Dữ liệu Sử dụng cho mục đích phân tích nội bộ. Dữ liệu Sử dụng thường được giữ trong một khoảng thời gian ngắn hơn, trừ khi dữ liệu này được sử dụng để tăng cường bảo mật hoặc cải thiện chức năng của Dịch vụ của chúng tôi, hoặc chúng tôi có nghĩa vụ pháp lý để giữ dữ liệu này trong thời gian dài hơn.</p>
+                <h2>Chuyển Dữ liệu Cá nhân của Bạn</h2>
+                <p>Thông tin của bạn, bao gồm Dữ liệu Cá nhân, được xử lý tại các văn phòng hoạt động của Công ty và tại bất kỳ nơi nào các bên liên quan đến quá trình xử lý đang đặt. Điều này có nghĩa là thông tin này có thể được chuyển đến - và được duy trì trên - máy tính nằm ngoài tiểu bang, tỉnh, quốc gia hoặc các quyền chính phủ khác nơi luật bảo vệ dữ liệu có thể khác so với quyền của bạn.</p>
+                <p>Sự đồng ý của bạn với Chính sách bảo mật này được theo sau bởi việc gửi thông tin như vậy đại diện cho sự đồng ý của bạn với việc chuyển đó.</p>
+                <p>Công ty sẽ thực hiện tất cả các biện pháp cần thiết để đảm bảo rằng dữ liệu của bạn được xử lý một cách an toàn và theo Chính sách bảo mật này và không có việc chuyển Dữ liệu Cá nhân của bạn sẽ xảy ra đến một tổ chức hoặc một quốc gia trừ khi có các biện pháp kiểm soát đủ đảm bảo bao gồm an ninh dữ liệu và thông tin cá nhân của bạn.</p>
+                <h2>Xóa Dữ liệu Cá nhân của Bạn</h2>
+                <p>Bạn có quyền xóa hoặc yêu cầu chúng tôi hỗ trợ trong việc xóa Dữ liệu Cá nhân mà chúng tôi đã thu thập về bạn.</p>
+                <p>Dịch vụ của chúng tôi có thể cho phép bạn xóa một số thông tin về bạn từ trong Dịch vụ.</p>
+                <p>Bạn có thể cập nhật, sửa đổi hoặc xóa thông tin của bạn bất kỳ lúc nào bằng cách đăng nhập vào Tài khoản của bạn, nếu có, và truy cập vào phần cài đặt tài khoản cho phép bạn quản lý thông tin cá nhân của bạn. Bạn cũng có thể liên hệ với chúng tôi để yêu cầu truy cập, sửa đổi hoặc xóa bất kỳ thông tin cá nhân nào bạn đã cung cấp cho chúng tôi.</p>
+                <p>Vui lòng lưu ý, tuy nhiên, rằng chúng tôi có thể cần giữ lại một số thông tin khi chúng tôi có nghĩa vụ pháp lý hoặc cơ sở hợp pháp để làm như vậy.</p>
+                <h2>Thông báo về Dữ liệu Cá nhân của Bạn</h2>
+                <h3>Giao dịch kinh doanh</h3>
+                <p>Nếu Công ty tham gia vào một sáp nhập, mua lại hoặc bán tài sản, Dữ liệu Cá nhân của Bạn có thể được chuyển. Chúng tôi sẽ thông báo trước khi Dữ liệu Cá nhân của Bạn được chuyển và trở thành đối tượng của Chính sách bảo mật khác.</p>
+                <h3>Thực thi pháp luật</h3>
+                <p>Trong một số trường hợp, Công ty có thể bắt buộc tiết lộ Dữ liệu Cá nhân của Bạn nếu yêu cầu làm như vậy theo luật pháp hoặc đáp ứng yêu cầu hợp lệ từ các cơ quan công quyền (ví dụ: tòa án hoặc cơ quan chính phủ).</p>
+                <h3>Yêu cầu pháp lý khác</h3>
+                <p>Công ty có thể tiết lộ Dữ liệu Cá nhân của Bạn trong niềm tin tốt đẹp rằng hành động như vậy là cần thiết để:</p>
+                <ul>
+                    <li>tuân thủ một nghĩa vụ pháp lý</li>
+                    <li>bảo vệ và bảo vệ quyền sở hữu của Công ty</li>
+                    <li>ngăn chặn hoặc điều tra hành vi sai trái có thể xảy ra trong kết nối với Dịch vụ</li>
+                    <li>bảo vệ sự an toàn cá nhân của Người dùng Dịch vụ hoặc công chúng</li>
+                    <li>bảo vệ chống lại trách nhiệm pháp lý</li>
+                </ul>
+                <h2>Bảo mật Dữ liệu Cá nhân của Bạn</h2>
+                <p>Bảo mật Dữ liệu Cá nhân của Bạn là quan trọng đối với chúng tôi, nhưng hãy nhớ rằng không có phương pháp truyền tải qua Internet hoặc phương pháp lưu trữ điện tử nào là 100% an toàn. Trong khi chúng tôi cố gắng sử dụng các biện pháp thương mại chấp nhận được để bảo vệ Dữ liệu Cá nhân của Bạn, chúng tôi không thể đảm bảo an toàn tuyệt đối của nó.</p>
+                <h1>Quyền riêng tư của trẻ em</h1>
+                <p>Dịch vụ của chúng tôi không dành cho bất kỳ ai dưới 13 tuổi. Chúng tôi không có ý định thu thập thông tin cá nhân có thể xác định được từ bất kỳ ai dưới 13 tuổi. Nếu bạn là phụ huynh hoặc người giám hộ và bạn nhận thấy rằng con bạn đã cung cấp cho chúng tôi Dữ liệu Cá nhân, vui lòng liên hệ với chúng tôi. Nếu chúng tôi nhận thấy rằng chúng tôi đã thu thập Dữ liệu Cá nhân từ bất kỳ ai dưới 13 tuổi mà không xác minh được sự đồng ý của cha mẹ, chúng tôi sẽ thực hiện các biện pháp để xóa thông tin đó khỏi máy chủ của chúng tôi.</p>
+                <p>Nếu chúng tôi cần phải dựa vào sự đồng ý như một cơ sở pháp lý để xử lý thông tin của bạn và quốc gia của bạn yêu cầu sự đồng ý từ phụ huynh, chúng tôi có thể yêu cầu sự đồng ý của phụ huynh của bạn trước khi chúng tôi thu thập và sử dụng thông tin đó.</p>
+                <h1>Liên kết đến các trang web khác</h1>
+                <p>Dịch vụ của chúng tôi có thể chứa liên kết đến các trang web khác không được vận hành bởi chúng tôi. Nếu bạn nhấp vào một liên kết của bên thứ ba, bạn sẽ được chuyển hướng đến trang web của bên thứ ba đó. Chúng tôi khuyến nghị bạn xem xét Chính sách bảo mật của mọi trang web bạn truy cập.</p>
+                <p>Chúng tôi không kiểm soát và không chịu trách nhiệm về nội dung, chính sách bảo mật hoặc thực hành của bất kỳ trang web hoặc dịch vụ bên thứ ba nào.</p>
+                <h1>Thay đổi Chính sách bảo mật này</h1>
+                <p>Chúng tôi có thể cập nhật Chính sách bảo mật của chúng tôi từ thời gian này. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi nào bằng cách đăng Chính sách bảo mật mới trên trang này.</p>
+                <p>Chúng tôi sẽ thông báo cho bạn qua email và / hoặc thông báo quan trọng trên Dịch vụ của chúng tôi, trước khi thay đổi có hiệu lực và cập nhật ngày "Cập nhật lần cuối" ở đầu Chính sách bảo mật này.</p>
+                <p>Chúng tôi khuyến nghị bạn xem xét Chính sách bảo mật này định kỳ để biết bất kỳ thay đổi nào. Các thay đổi về Chính sách bảo mật này có hiệu lực khi được đăng trên trang này.</p>
+                <h1>Liên hệ với chúng tôi</h1>
+                <p>Nếu bạn có bất kỳ câu hỏi nào về Chính sách bảo mật này, bạn có thể liên hệ với chúng tôi:</p>
+                <ul>
+                    <li>Theo số điện thoại: 0123456789</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{/common/Footer}"></div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+</body>
+</html>
