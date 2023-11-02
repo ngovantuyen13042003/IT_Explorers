@@ -1,0 +1,95 @@
+.container {
+    width: 75%;
+    height: 100%;
+    margin: 7.5rem auto 1rem;
+}
+.side-nav {
+    width: fit-content;
+    min-width: 17rem;
+    max-width: 17rem;
+}
+.ant-row,.ant-row:after, .ant-row:before {
+    display: flex;
+    flex-flow: row wrap;
+    min-width: 0;
+}
+.menu {
+    justify-content: center;;
+    display: flex;
+    flex-flow: row wrap;
+    min-width: 0;
+}
+
+.ant-col {
+    position: relative;
+    max-width: 100%;
+    min-height: 1px;
+}
+
+.side-nav-2 {
+    position: sticky;
+    top: 4.825rem;
+    left: 0;
+    background-color: #9EB384;
+    color: #fff;
+    height: 50vh;
+    margin-top: 7.5rem;
+}
+.ant-col-24{
+    display: block;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.header{
+    position: fixed;
+    z-index: 999;
+}
+.ul {
+}
+.nav-item{
+    list-style: none;
+    font-size: 18px;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    position: relative;
+}
+.nav-item:hover{
+    background-color: #e8e7e7;
+    color: black;
+
+}
+.nav-item a{
+    color: white;
+}
+.nav-item a::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+}
+.nav-item:hover span>a{
+    color: #000;
+}
+.nav-title{
+    text-align: center;
+    padding:5px;
+    font-size: 20px;
+    background-color: rgb(94, 117, 37);
+    font-weight: bold;
+}
+.nav-item-title{
+    flex: auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nav-list {
+    padding-left: 0;
+    margin-left: 0;
+}
+.active{
+    background-color: black;
+}
