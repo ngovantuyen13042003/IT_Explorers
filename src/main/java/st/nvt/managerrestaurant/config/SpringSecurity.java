@@ -29,6 +29,7 @@ public class SpringSecurity {
                 .requestMatchers("/add-food/**").hasAuthority("ADMIN")
                 .requestMatchers("/cart/**").authenticated()
                 .requestMatchers("/addToCart/**").authenticated()
+                .requestMatchers("/reservation/**").authenticated()
                 .requestMatchers("/login/**").permitAll()
                 .requestMatchers("/sign-up/**").permitAll()
                 .requestMatchers("/home/**").permitAll()
