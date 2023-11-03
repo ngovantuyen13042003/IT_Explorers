@@ -7,6 +7,7 @@ function toggleCart() {
     box__cart.classList.toggle('hide')
 }
 
+
 // Show modal cart
 addCarts.forEach(item => {
     item.addEventListener('click', toggleCart)

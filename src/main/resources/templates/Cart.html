@@ -39,7 +39,6 @@
 	</style>
 	<title>Giỏ hàng</title>
 </head>
-
 <body class="color-body">
 <!--header-->
 <div th:if="${#authorization.expression('isAuthenticated()')}">
@@ -48,6 +47,7 @@
 <div th:unless="${#authorization.expression('isAuthenticated()')}">
 	<div th:replace="~{/common/Header}"></div>
 </div>
+
 <!--end header-->
 
 <div class="Total-Cart">

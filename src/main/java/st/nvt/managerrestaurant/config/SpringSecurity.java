@@ -27,10 +27,18 @@ public class SpringSecurity {
                 .authorizeHttpRequests()
                 .requestMatchers("/creation-food/**").hasAuthority("ADMIN")
                 .requestMatchers("/add-food/**").hasAuthority("ADMIN")
+                .requestMatchers("/add-restaurant/**").hasAuthority("ADMIN")
+                .requestMatchers("/update-infor-restaurant/**").authenticated()
+                .requestMatchers("/add-cart/**").authenticated()
+
                 .requestMatchers("/cart/**").authenticated()
                 .requestMatchers("/about-us/**").authenticated()
                 .requestMatchers("/addToCart/**").authenticated()
+
+                .requestMatchers("/about-us/**").authenticated()
+
                 .requestMatchers("/reservation/**").authenticated()
+
                 .requestMatchers("/login/**").permitAll()
                 .requestMatchers("/sign-up/**").permitAll()
                 .requestMatchers("/home/**").permitAll()
