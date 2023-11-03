@@ -32,8 +32,13 @@ public class SpringSecurity {
                 .requestMatchers("/add-cart/**").authenticated()
 
                 .requestMatchers("/cart/**").authenticated()
-                .requestMatchers("/addToCart/**").authenticated()
                 .requestMatchers("/about-us/**").authenticated()
+                .requestMatchers("/addToCart/**").authenticated()
+
+                .requestMatchers("/about-us/**").authenticated()
+
+                .requestMatchers("/reservation/**").authenticated()
+
                 .requestMatchers("/login/**").permitAll()
                 .requestMatchers("/sign-up/**").permitAll()
                 .requestMatchers("/home/**").permitAll()

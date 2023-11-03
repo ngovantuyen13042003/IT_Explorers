@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Reservation </title>
+    <link rel="stylesheet" th:href="@{/css/reservation.css}">
+</head>
+<body>
+
+<!--header-->
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header_off}"></div>
+</div>
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header}"></div>
+</div>
+<!--end header-->
+<section class = "banner">
+    <h2 class="title-name">BOOK YOUR TABLE NOW</h2>
+    <div class = "card-container">
+        <div class = "card-img">
+            <!-- image here -->
+        </div>
+
+        <div class = "card-content">
+            <h3>Reservation</h3>
+            <form th:action="@{/reservation/bookTable}" method="post">
+
+            <!-- <input type="datetime-local" />-->
+                <div class = "form-row ">
+                    <select name = "days">
+                        <option value = "null">Select Day</option>
+                        <option value = "Sunday">Sunday</option>
+                        <option value = "Monday">Monday</option>
+                        <option value = "Tuesday">Tuesday</option>
+                        <option value = "Wednesday">Wednesday</option>
+                        <option value = "Thursday">Thursday</option>
+                        <option value = "Friday">Friday</option>
+                        <option value = "Saturday">Saturday</option>
+                    </select>
+
+                    <select name = "hours">
+                        <option value = "null">Select Hour</option>
+                        <option value = "10: 00">10: 00</option>
+                        <option value = "12: 00">12: 00</option>
+                        <option value = "14: 00">14: 00</option>
+                        <option value = "16: 00">16: 00</option>
+                        <option value = "18: 00">18: 00</option>
+                        <option value = "20: 00">20: 00</option>
+                        <option value = "22: 00">22: 00</option>
+                    </select>
+                </div>
+
+                <div class = "form-row">
+                    <input type = "text" placeholder="Full Name" name="fullName" >
+                    <input type = "text" placeholder="Phone Number" name="phoneNumber" >
+                </div>
+
+                <div class = "form-row">
+                    <input type = "number" name="numPersons" placeholder="How Many Persons?" min = "1" th:value="1">
+                    <input type = "submit" value = "BOOK TABLE" style="background-color: #5e7525">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<div th:replace="~{/common/Footer}"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation Confirmation</title>
+    <link rel="stylesheet" th:href="@{/css/reservation.css}">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!--header-->
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header_off}"></div>
+</div>
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header}"></div>
+</div>
+<!--end header-->
+<div class="banner">
+
+
+    <section class="banner w-[400px]">
+        <h2>Confirm table reservation!</h2>
+        <div class="confirmation-details w-[400px]">
+            <div class="detail-row flex flex-row justify-between w-[400px]" style="width: 400px">
+                <strong >Day:</strong>  <span class="flex flex-start w-[200px]" th:text="${day}" ></span>
+            </div>
+            <div class="detail-row flex flex-row justify-between">
+                <strong>Time:</strong> <span th:text="${hour}" ></span>
+            </div>
+            <div class="detail-row flex flex-row justify-between">
+                <strong>Full Name:</strong> <span th:text="${fullName}" ></span>
+            </div>
+            <div class="detail-row flex flex-row justify-between">
+                <strong>Phone Number:</strong> <span th:text="${phoneNumber}" ></span>
+            </div>
+            <div class="detail-row flex flex-row justify-between">
+                <strong>Number of Persons:</strong> <span th:text="${numPersons}" ></span>
+            </div>
+            <button type="submit" class="flex flex-row justify-center item-center m-auto p-2 w-[200px] rounded-md " style="color: #ffff;width: 200px;background-color: #5e7525">Xác Nhận</button>
+        </div>
+    </section>
+</div>
+
+<div th:replace="~{/common/Footer}"></div>
+</body>
+
+</html>

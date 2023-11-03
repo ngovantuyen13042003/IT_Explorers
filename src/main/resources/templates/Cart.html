@@ -9,9 +9,37 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"/>
 	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/TotalCart.css}">
 
+	<style>
+		.container {
+			width: 60%;
+			margin: 0 auto;
+		}
+
+		.booking-form {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.form-row {
+			display: flex;
+			margin-bottom: 10px;
+		}
+
+		.form-group {
+			flex-basis: 50%;
+			padding-right: 10px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+	</style>
+	<title>Giỏ hàng</title>
 </head>
-<body>
+<body class="color-body">
 <!--header-->
 <div th:if="${#authorization.expression('isAuthenticated()')}">
 	<div th:replace="~{/common/Header_off}"></div>
@@ -20,8 +48,93 @@
 	<div th:replace="~{/common/Header}"></div>
 </div>
 
+<!--end header-->
 
+<div class="Total-Cart">
+	<h1>Giỏ hàng</h1>
+	<table>
+		<thead>
+		<tr>
+			<th></th>
+			<th>Tên món</th>
+			<th>Đơn giá</th>
+			<th>Số lượng</th>
+			<th>Tổng tiền</th>
+		</tr>
+		</thead>
+		<tbody>
+		<!-- Thêm các dòng trong bảng giỏ hàng tại đây -->
+		<tr>
+			<td><img src="path-to-your-image.jpg" alt="Món"></td>
+			<td>Bánh mì</td>
+			<td>10.000đ</td>
+			<td class="quantity">
+				<button>-</button>
+				<input type="text" value="2">
+				<button>+</button>
+			</td>
+			<td>20.000đ</td>
+		</tr>
+		</tbody>
+		<tfoot>
+		<tr>
+			<td colspan="4" style="text-align: right;">Thành tiền:</td>
+			<td id="grandTotal"></td>
+		</tr>
+		</tfoot>
+	</table>
+	<div class="btn-group-cart">
+		<button class="button-cart"><a href="./Home.html">Thêm món</a></button>
+
+	</div>
+
+	<div class="container container-order">
+		<h1>Đặt Món</h1>
+		<div class="row input-container">
+			<div class="col-xs-12">
+				<div class="styled-input wide">
+					<input type="text" required />
+					<label>Họ và tên</label>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="styled-input">
+					<input type="text" required />
+					<label>Email</label>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="styled-input" style="float:right;">
+					<input type="text" required />
+					<label>SĐT</label>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="styled-input">
+					<input type="text" required />
+					<label>Phương thức thanh toán</label>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="styled-input" style="float:right;">
+					<input type="text" required />
+					<label>Tích điểm</label>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="styled-input wide">
+					<textarea required></textarea>
+					<label>Mô tả</label>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div class="btn-lrg submit-btn">In Biên Lai</div>
+			</div>
+		</div>
+	</div>
+</div>
 	<div th:replace="~{/common/Footer}"></div>
+<script type="text/javascript" th:src="@{/js/TotalCart.js}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
 </body>
 </html>
