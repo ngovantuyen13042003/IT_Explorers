@@ -24,18 +24,24 @@
 <div th:unless="${#authorization.expression('isAuthenticated()')}">
 	<div th:replace="~{/common/Header}"></div>
 </div>
-<!--end header-->
-<div class="container mt-16 mb-9">
-	<div class="container-cart rounded-md flex flex-col justify-between p-2 " >
+
+
+<!--cart-->
+
+<div class="box__cart " id="cartModal" >
+	<div class="container-cart rounded-md flex flex-col justify-between p-2" >
 		<div class="product-cart">
 			<div class="header-cart flex flex-row justify-between max-h-2 pt-2">
-				<p class="flex justify-center items-center ">GIỎ HÀNG CỦA BẠN (ĐANG CÓ N SẢN PHẨM)</p>
+				<p class="flex justify-center items-center ">GIỎ HÀNG CỦA BẠN (ĐANG CÓ ${#session['cart'].size()} SẢN PHẨM)</p>
+				<div class="flex flex-col justify-center">
+					<i class="close-cart fa-solid fa-circle-xmark cursor-pointer " style="color: #464444; "></i>
+				</div>
 			</div>
 			<hr/>
 			<div class="content-cart">
 				<div class="box-nav-cart max-h-1 ">
 					<li class="box-nav_product-cart flex justify-center items-center">
-						<p class="title-item_cart ">Sản phẩm</p>
+						<p class="title-item_cart " >Sản phẩm</p>
 					</li>
 					<li class="box-nav_price-cart flex justify-center items-center">
 						<p class="title-item_cart">Đơn giá</p>
@@ -51,24 +57,24 @@
 					</li>
 				</div>
 				<hr/>
-				<div class="box-list-product-cart max-h-[160px] flex flex-col">
-					<div class="box-product-cart  flex flex-row items-center justify-center">
+				<div class="box-list-product-cart max-h-[160px] flex flex-col" >
+					<div class="box-product-cart  flex flex-row items-center justify-center" th:each="itemCart : ${session.cart}">
 						<div class="img-product-cart rounded-md ">
 							<div class="box-img_product-cart rounded-md  max-w-full max-h-full cursor-pointer">
 								<img th:src="@{/images/logo.png}">
 							</div>
 						</div>
 						<div class="name-product-cart flex flex-col justify-center ml-2">
-							<p class="font-bold cursor-pointer">Mực phơi một nắng</p>
-							<p class="text-xs">Mực tươi được đánh bắt lại Ấn Độ dương</p>
+							<p class="font-bold cursor-pointer" th:text="${itemCart.getValue().food.name}">Mực phơi một nắng</p>
+							<p class="text-xs" th:text="${itemCart.getValue().food.description}" >Mực tươi được đánh bắt lại Ấn Độ dương</p>
 						</div>
-						<div class="price-product-cart font-bold flex justify-center items-center" >
+						<div class="price-product-cart font-bold flex justify-center items-center" th:text="${itemCart.getValue().food.price}" >
 							5.600$
 						</div>
 						<div class="quantity-product-cart flex justify-center items-center">
-							<input class="w-32 pl-2 border-none rounded-md " th:value="1" type="number" />
+							<input class="w-32 pl-2 border-none rounded-md" type="number" th:value="${itemCart.getValue().quantity}"/>
 						</div>
-						<div class="total_price-payment-cart font-bold flex justify-center items-center">
+						<div class="total_price-payment-cart font-bold flex justify-center items-center" th:text="${itemCart.getValue().total}">
 							5.600$
 						</div>
 						<div class="remove-product-cart flex justify-center items-center">
@@ -101,6 +107,7 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript" th:src="@{/js/ModalCart.js}"></script>
 	<div th:replace="~{/common/Footer}"></div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
 </body>

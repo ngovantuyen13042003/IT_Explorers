@@ -29,6 +29,8 @@ public class SpringSecurity {
                 .requestMatchers("/add-food/**").hasAuthority("ADMIN")
                 .requestMatchers("/add-restaurant/**").hasAuthority("ADMIN")
                 .requestMatchers("/update-infor-restaurant/**").authenticated()
+                .requestMatchers("/add-cart/**").authenticated()
+
                 .requestMatchers("/cart/**").authenticated()
                 .requestMatchers("/addToCart/**").authenticated()
                 .requestMatchers("/about-us/**").authenticated()
