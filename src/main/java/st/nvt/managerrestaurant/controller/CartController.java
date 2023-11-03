@@ -29,11 +29,11 @@ public class CartController {
             cart = new HashMap<Long, CartDTO>();
         }
         cart = cartService.addCart(id, cart);
+
+        session.setAttribute("tatalPrice", cartService.totalPrice(cart));
+        session.setAttribute("tatalQuantity", cartService.totalQuantity(cart));
         session.setAttribute("cart", cart);
-
-        return "redirect:/cart";
-
-//        return ResponseEntity.ok("Giỏ hàng của bạn đã được cập nhật");
+        return "redirect:/Home";
     }
 
     @GetMapping("cart")

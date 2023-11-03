@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import st.nvt.managerrestaurant.dto.CartDTO;
 import st.nvt.managerrestaurant.model.service.Cart;
 import st.nvt.managerrestaurant.model.service.Food;
+import st.nvt.managerrestaurant.repository.CartRepository;
 import st.nvt.managerrestaurant.service.CartService;
 import st.nvt.managerrestaurant.service.FoodService;
 
@@ -15,6 +16,9 @@ import java.util.Map;
 public class CartServiceImpl implements CartService {
     @Autowired
     FoodService foodService;
+    @Autowired
+    CartRepository cartRepository;
+
     @Override
     public HashMap<Long, CartDTO> addCart(Long id, HashMap<Long, CartDTO> cart) {
         CartDTO itemCart = new CartDTO();
