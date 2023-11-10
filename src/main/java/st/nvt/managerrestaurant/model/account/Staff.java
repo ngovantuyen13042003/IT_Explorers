@@ -21,9 +21,6 @@ public class Staff {
     private String email;
     private String phoneNumber;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "staff")
-    private List<Account> accounts;
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_position")
     private Position position;

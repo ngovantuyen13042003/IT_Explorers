@@ -127,7 +127,7 @@
     <div class="container-cart rounded-md flex flex-col justify-between p-2" >
         <div class="product-cart">
             <div class="header-cart flex flex-row justify-between max-h-2 pt-2">
-                <p class="flex justify-center items-center ">GIỎ HÀNG CỦA BẠN (ĐANG CÓ ${#session['cart'].size()} SẢN PHẨM)</p>
+                <p class="flex justify-center items-center ">GIỎ HÀNG CỦA BẠN (ĐANG CÓ [[ ${session.totalQuantity} ]] SẢN PHẨM)</p>
                 <div class="flex flex-col justify-center">
                     <i class="close-cart fa-solid fa-circle-xmark cursor-pointer " style="color: #464444; "></i>
                 </div>

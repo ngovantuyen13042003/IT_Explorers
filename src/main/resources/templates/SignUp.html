@@ -22,14 +22,14 @@
 <div class="container">
 	<div class="box-signup">
 		<h1 class="text-center">SIGN UP</h1>
-		<form method="post" th:action="@{/sign-up/save}" th:object="${account}" >
+		<form method="post" th:action="@{/sign-up/save}" th:object="${customer}" >
 
 			<div class="form-outline mb-4" >
-				<input type="text" id="username" placeholder="Enter your username" class="form-control" th:field="*{userName}"/>
+				<input type="text" id="username" placeholder="Enter your username" class="form-control" th:field="*{username}"/>
 				<label class="form-label" for="username">Username <span class="rq">*</span></label>
 			</div>
-			<p th:errors="*{userName}" class="text-danger"
-			   th:if="${#fields.hasErrors('userName')}"></p>
+			<p th:errors="*{username}" class="text-danger"
+			   th:if="${#fields.hasErrors('username')}"></p>
 
 
 			<!-- Email input -->

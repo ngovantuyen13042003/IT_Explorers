@@ -17,9 +17,8 @@ function calculateTotal() {
         totals[i].innerText = formatCurrency(subtotal);
         total += subtotal;
     }
-
-    const grandTotalElement = document.getElementById('grandTotal');
-    grandTotalElement.innerText = formatCurrency(total);
+    // const grandTotalElement = document.getElementById('grandTotal');
+    // grandTotalElement.innerText = formatCurrency(total);
 }
 
 function formatCurrency(value) {

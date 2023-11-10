@@ -10,10 +10,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import st.nvt.managerrestaurant.dto.CartDTO;
+import st.nvt.managerrestaurant.model.service.Food;
+import st.nvt.managerrestaurant.model.service.Images;
 import st.nvt.managerrestaurant.service.CartService;
 import st.nvt.managerrestaurant.service.FoodService;
+import st.nvt.managerrestaurant.service.ImagesService;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class CartController {
@@ -21,6 +26,8 @@ public class CartController {
     FoodService foodService;
     @Autowired
     CartService cartService;
+    @Autowired
+    ImagesService imagesService;
 
     @RequestMapping("/add-cart/{id}")
     public String showCart(HttpSession session, @PathVariable("id") Long id) {
@@ -28,13 +35,30 @@ public class CartController {
         if(cart == null ) {
             cart = new HashMap<Long, CartDTO>();
         }
+
         cart = cartService.addCart(id, cart);
 
         session.setAttribute("tatalPrice", cartService.totalPrice(cart));
         session.setAttribute("tatalQuantity", cartService.totalQuantity(cart));
         session.setAttribute("cart", cart);
-        return "redirect:/Home";
+        return "redirect:/home";
     }
+
+    @RequestMapping("/remove-cart/{id}")
+    public String removeCart(HttpSession session, @PathVariable("id") Long id) {
+        HashMap<Long, CartDTO> cart = (HashMap<Long, CartDTO>) session.getAttribute("cart");
+
+
+        cart = cartService.removeCart(id, cart);
+
+        session.setAttribute("tatalPrice", cartService.totalPrice(cart));
+        session.setAttribute("tatalQuantity", cartService.totalQuantity(cart));
+        session.setAttribute("cart", cart);
+        return "redirect:/cart";
+    }
+
+
+
 
     @GetMapping("cart")
     public String cart() {
@@ -42,18 +66,5 @@ public class CartController {
     }
 
 
-//    @GetMapping("/addToCart/{id}")
-//    public String addToCart(@PathVariable("id") Long id) {
-//        CartDTO.cart.add(foodService.findById(id));
-//        return "redirect:/home";
-//    }
-//
-//    @GetMapping("/cart")
-//    public String cart(Model model) {
-//        model.addAttribute("cartCount", CartDTO.cart.size());
-//        model.addAttribute("total", CartDTO.cart.stream().mapToDouble(Food::getPrice).sum());
-//        model.addAttribute("cart", CartDTO.cart);
-//        return "Cart";
-//    }
 
 }

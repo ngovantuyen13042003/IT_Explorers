@@ -5,11 +5,14 @@ import org.springframework.stereotype.Service;
 import st.nvt.managerrestaurant.dto.CartDTO;
 import st.nvt.managerrestaurant.model.service.Cart;
 import st.nvt.managerrestaurant.model.service.Food;
+import st.nvt.managerrestaurant.model.service.Images;
 import st.nvt.managerrestaurant.repository.CartRepository;
 import st.nvt.managerrestaurant.service.CartService;
 import st.nvt.managerrestaurant.service.FoodService;
+import st.nvt.managerrestaurant.service.ImagesService;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -18,11 +21,16 @@ public class CartServiceImpl implements CartService {
     FoodService foodService;
     @Autowired
     CartRepository cartRepository;
+    @Autowired
+    ImagesService imagesService;
 
     @Override
     public HashMap<Long, CartDTO> addCart(Long id, HashMap<Long, CartDTO> cart) {
         CartDTO itemCart = new CartDTO();
         Food food = foodService.findById(id);
+        List<Images> images = imagesService.findByFood(food);
+        food.setImages(images);
+
         if(food != null && cart.containsKey(id)) {
             itemCart = cart.get(id);
             int quantity = itemCart.getQuantity();
@@ -38,6 +46,9 @@ public class CartServiceImpl implements CartService {
         cart.put(food.getId(), itemCart);
         return cart;
     }
+
+
+
 
     @Override
     public HashMap<Long, CartDTO> editCart(Long id, int quantity, HashMap<Long, CartDTO> cart) {
@@ -84,5 +95,8 @@ public class CartServiceImpl implements CartService {
         }
         return totalPrice;
     }
+
+
+
 
 }
