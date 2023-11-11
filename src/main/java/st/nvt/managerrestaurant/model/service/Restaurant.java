@@ -28,9 +28,6 @@ public class Restaurant {
 
     private String phoneNumber;
 
-
-
-
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "Restaurant_Food",
         joinColumns = @JoinColumn(name = "id_restaurant", referencedColumnName = "id"),
@@ -40,9 +37,8 @@ public class Restaurant {
     @ManyToOne(cascade = CascadeType.ALL)
     private TypeRestaurant typeRestaurant;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_table")
-    private Table tables;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "restaurant")
+    private List<Table> tables;
 
     @OneToMany(mappedBy = "restaurant",cascade = CascadeType.ALL)
     private List<Images> images;
