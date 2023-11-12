@@ -15,4 +15,9 @@ public class RestaurantController {
     public String updateInforRes() {
         return "UpdateInforRestaurant";
     }
+
+    @GetMapping("restaurant/food-list")
+    public String showfoodList(){
+        return "RestaurantFoodList";
+    }
 }

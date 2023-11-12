@@ -38,6 +38,7 @@ public class SpringSecurity {
                 .requestMatchers("/about-us/**").authenticated()
 
                 .requestMatchers("/reservation/**").authenticated()
+                .requestMatchers("/restaurant/**").permitAll()
 
                 .requestMatchers("/login/**").permitAll()
                 .requestMatchers("/sign-up/**").permitAll()

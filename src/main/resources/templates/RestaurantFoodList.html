@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foodlist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" th:href="@{/css/RestaurantFoodList.css}"/>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark" style="width: 300px; background-color: rgb(94, 117, 37) !important;">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32"> </svg>
+                    <span class="fs-4">Quản lý nhà hàng</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item"> <a href="#" class="nav-link text-white" aria-current="page"> <i class="fa fa-home"></i><span class="ms-2">Home</span> </a> </li>
+                    <li> <a href="#" class="nav-link text-white active"> <i class="fas fa-utensils" style="color: #ffffff;"></i><span class="ms-2">Quản lý món ăn</span> </a> </li>
+                </ul>
+                <hr>
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"> <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2"> <strong> Chủ nhà hàng </strong> </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col py-3">
+                <div class="search-box">
+                    <div class="container">
+                        <div class="input-group">
+                            <label class="search-label">Tìm kiếm món ăn</label>
+                            <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-btn">
+                            <button class="btn btn-outline-secondary" type="button" id="search-btn">Search</button>
+                        </div>
+                    </div>
+                    <div class="add-button">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dataModal">Thêm món</button>
+                    </div>
+                </div>
+                <table class="table table-hover table-striped table-fixed table-bordered">
+                    <thead class="thead-dark" style="background-color: rgb(94, 117, 37); color: white">
+                    <tr>
+                        <th scope="col" class="col1">STT</th>
+                        <th scope="col" class="col2">Mã món ăn</th>
+                        <th scope="col" class="col3">Tên món ăn</th>
+                        <th scope="col" class="col4">Giá</th>
+                        <th scope="col" class="col5">Nguyên liệu</th>
+                        <th scope="col" class="col6">Mô tả</th>
+                        <th scope="col">Hình ảnh</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="row1">
+                        <th scope="row">1</th>
+                        <td>M1</td>
+                        <td>Bánh cuốn</td>
+                        <td>20$</td>
+                        <td>Chả, Bánh Cuốn</td>
+                        <td>Ngon quá trời quá đất</td>
+                        <td>
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
+                            <img th:src="@{/images/banhcuon2.jpg}" style="width: 50px; height: 50px">
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
+
+                        </td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a></td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a></td>
+                    </tr>
+                    <tr class="row1">
+                        <th scope="row">2</th>
+                        <td>M2</td>
+                        <td>Bánh cuốn</td>
+                        <td>20$</td>
+                        <td>Chả, Bánh Cuốn</td>
+                        <td>Ngon quá trời quá đất</td>
+                        <td>
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
+                            <img th:src="@{/images/banhcuon2.jpg}" style="width: 50px; height: 50px">
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
+
+                        </td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a></td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a></td>
+                    </tr>
+                    <tr class="row1">
+                        <th scope="row">3</th>
+                        <td>M3</td>
+                        <td>Bánh cuốn</td>
+                        <td>20$</td>
+                        <td>Chả, Bánh Cuốn</td>
+                        <td>Ngon quá trời quá đất</td>
+                        <td>
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
+                            <img th:src="@{/images/banhcuon2.jpg}" style="width: 50px; height: 50px">
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
+
+                        </td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a></td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a></td>
+                    </tr>
+                    <tr class="row1">
+                        <th scope="row">4</th>
+                        <td>M4</td>
+                        <td>Bánh cuốn</td>
+                        <td>20$</td>
+                        <td>Chả, Bánh Cuốn</td>
+                        <td>Ngon quá trời quá đất</td>
+                        <td>
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
+                            <img th:src="@{/images/banhcuon2.jpg}" style="width: 50px; height: 50px">
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
+
+                        </td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a></td>
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Thông báo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn xóa?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="dataModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Món ăn</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="id-mon" class="col-form-label">Mã món ăn</label>
+                            <input type="text" class="form-control" id="id-mon">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ten-mon" class="col-form-label">Tên món ăn</label>
+                            <input type="text" class="form-control" id="ten-mon"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gia" class="col-form-label">Giá</label>
+                            <input type="text" class="form-control" id="gia"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nguyen-lieu" class="col-form-label">Nguyên liệu</label>
+                            <textarea class="form-control" id="nguyen-lieu"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mo-ta" class="col-form-label">Mô tả</label>
+                            <textarea class="form-control" id="mo-ta"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="anh" class="col-form-label">Ảnh</label>
+                            <input type="file"  id="anh" class="form-control" name="file" accept="image/*"  multiple/>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
