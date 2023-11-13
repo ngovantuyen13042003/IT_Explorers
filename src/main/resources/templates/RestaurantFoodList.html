@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" th:href="@{/css/RestaurantFoodList.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -51,81 +52,87 @@
                 <table class="table table-hover table-striped table-fixed table-bordered">
                     <thead class="thead-dark" style="background-color: rgb(94, 117, 37); color: white">
                     <tr>
-                        <th scope="col" class="col1">STT</th>
-                        <th scope="col" class="col2">Mã món ăn</th>
-                        <th scope="col" class="col3">Tên món ăn</th>
-                        <th scope="col" class="col4">Giá</th>
-                        <th scope="col" class="col5">Nguyên liệu</th>
-                        <th scope="col" class="col6">Mô tả</th>
-                        <th scope="col">Hình ảnh</th>
+                        <th scope="col" class="col1" style="vertical-align: middle; text-align: center;">STT</th>
+                        <th scope="col" class="col2" style="vertical-align: middle; text-align: center;">Hình ảnh</th>
+                        <th scope="col" class="col3" style="vertical-align: middle; text-align: center;">Tên món ăn</th>
+                        <th scope="col" class="col4" style="vertical-align: middle; text-align: center;">Nguyên liệu</th>
+                        <th scope="col" class="col5" style="vertical-align: middle; text-align: center;">Mô tả</th>
+                        <th scope="col" class="col6" style="vertical-align: middle; text-align: center;">Giá</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr class="row1">
-                        <th scope="row">1</th>
-                        <td>M1</td>
-                        <td>Bánh cuốn</td>
-                        <td>20$</td>
-                        <td>Chả, Bánh Cuốn</td>
-                        <td>Ngon quá trời quá đất</td>
-                        <td>
-                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
-                            <img th:src="@{/images/banhcuon2.jpg}" style="width: 50px; height: 50px">
-                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
-
+                        <th scope="row" style="vertical-align: middle; text-align: center;">1</th>
+                        <td style="vertical-align: middle; text-align: center;">
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 80px; height: 80px">
                         </td>
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a></td>
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a></td>
+                        <td>Bánh cuốn</td>
+                        <td>Chả,Bánh cuốn</td>
+                        <td>Ngon lắm à nha </td>
+                        <td style="vertical-align: middle; text-align: center;">20$</td>
+
+                        <td style="vertical-align: middle; text-align: center;">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a>
+                        </td>
+                        <td style="vertical-align: middle; text-align: center;">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a>
+                        </td>
                     </tr>
                     <tr class="row1">
-                        <th scope="row">2</th>
-                        <td>M2</td>
-                        <td>Bánh cuốn</td>
-                        <td>20$</td>
-                        <td>Chả, Bánh Cuốn</td>
-                        <td>Ngon quá trời quá đất</td>
-                        <td>
-                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
-                            <img th:src="@{/images/banhcuon2.jpg}" style="width: 50px; height: 50px">
-                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
-
+                        <th scope="row" style="vertical-align: middle; text-align: center;">2</th>
+                        <td style="vertical-align: middle; text-align: center;">
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 80px; height: 80px">
                         </td>
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a></td>
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a></td>
+                        <td>Bánh cuốn</td>
+                        <td>Chả,Bánh cuốn</td>
+                        <td>Ngon lắm à nha </td>
+                        <td style="vertical-align: middle; text-align: center;">20$</td>
+
+
+                        <td style="vertical-align: middle; text-align: center;">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a>
+                        </td>
+                        <td style="vertical-align: middle; text-align: center;">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a>
+                        </td>
                     </tr>
                     <tr class="row1">
-                        <th scope="row">3</th>
-                        <td>M3</td>
-                        <td>Bánh cuốn</td>
-                        <td>20$</td>
-                        <td>Chả, Bánh Cuốn</td>
-                        <td>Ngon quá trời quá đất</td>
-                        <td>
-                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
-                            <img th:src="@{/images/banhcuon2.jpg}" style="width: 50px; height: 50px">
-                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
-
+                        <th scope="row" style="vertical-align: middle; text-align: center;">3</th>
+                        <td style="vertical-align: middle; text-align: center;">
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 80px; height: 80px">
                         </td>
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a></td>
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a></td>
+                        <td>Bánh cuốn</td>
+                        <td>Chả,Bánh cuốn</td>
+                        <td>Ngon lắm à nha </td>
+                        <td style="vertical-align: middle; text-align: center;">20$</td>
+
+
+                        <td style="vertical-align: middle; text-align: center;">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a>
+                        </td>
+                        <td style="vertical-align: middle; text-align: center;">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a>
+                        </td>
                     </tr>
                     <tr class="row1">
-                        <th scope="row">4</th>
-                        <td>M4</td>
-                        <td>Bánh cuốn</td>
-                        <td>20$</td>
-                        <td>Chả, Bánh Cuốn</td>
-                        <td>Ngon quá trời quá đất</td>
-                        <td>
-                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
-                            <img th:src="@{/images/banhcuon2.jpg}" style="width: 50px; height: 50px">
-                            <img th:src="@{/images/banhcuon.jpg}" style="width: 50px; height: 50px">
-
+                        <th scope="row" style="vertical-align: middle; text-align: center;">4</th>
+                        <td style="vertical-align: middle; text-align: center;">
+                            <img th:src="@{/images/banhcuon.jpg}" style="width: 80px; height: 80px">
                         </td>
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a></td>
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a></td>
+                        <td>Bánh cuốn</td>
+                        <td>Chả,Bánh cuốn</td>
+                        <td>Ngon lắm à nha </td>
+                        <td style="vertical-align: middle; text-align: center;">20$</td>
+
+
+                        <td style="vertical-align: middle; text-align: center;">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#dataModal"><i class="far fa-edit" style="color: #0d6efd;"></i></a>
+                        </td>
+                        <td style="vertical-align: middle; text-align: center;">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="far fa-trash-alt" style="color: #d11a2a;"></i></a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

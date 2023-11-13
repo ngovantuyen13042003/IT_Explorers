@@ -26,16 +26,20 @@
 .col1{
     width: 50px;
 }
-.col2{
-    width: 102px;
-}
 .col3{
-    width: 250px;
+    width: 220px;
+}
+.col2{
+    width: 150px;
 }
 .col4{
-    width: 60px;
+    width: 250px;
 }
-.col5, .col6{
+
+.col6{
+    width: 102px;
+}
+.col5{
     width: 250px;
 }
 
@@ -43,6 +47,7 @@
 .nav-link:hover{
     background-color:#525252 !important;
 }
+
 
 .nav-link .fa{
     transition:all 1s;
