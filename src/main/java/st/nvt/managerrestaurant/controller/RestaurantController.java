@@ -15,4 +15,6 @@ public class RestaurantController {
     public String updateInforRes() {
         return "UpdateInforRestaurant";
     }
+
+
 }

@@ -70,3 +70,14 @@ html, body {
     object-fit: cover;
     object-position: center;
 }
+
+.cart-badge {
+    background-color: #f85f5f; /* Background color of the badge */
+    color: white; /* Text color of the badge */
+    border-radius: 50%; /* Make it a circle */
+    padding: 3px 6px; /* Adjust padding for the badge */
+    position: absolute; /* Position it absolutely */
+    top: 10px; /* Align it to the top */
+    right: 10px; /* Align it to the right */
+    font-size: 10px; /* Adjust font size */
+}

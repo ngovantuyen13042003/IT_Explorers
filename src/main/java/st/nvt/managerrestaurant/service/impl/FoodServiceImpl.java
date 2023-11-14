@@ -26,6 +26,11 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
+    public List<Food> findAll() {
+        return foodRepository.findAll();
+    }
+
+    @Override
     public void saveOrUpdate(Food food) {
         foodRepository.save(food);
     }
