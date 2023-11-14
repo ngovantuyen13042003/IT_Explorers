@@ -1,17 +1,18 @@
 package st.nvt.managerrestaurant.service;
 
-import st.nvt.managerrestaurant.dto.CartDTO;
+import jakarta.transaction.Transactional;
+import st.nvt.managerrestaurant.model.service.Cart;
+import st.nvt.managerrestaurant.model.service.Food;
 
-import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
 
+@Transactional
 public interface CartService {
-    HashMap<Long, CartDTO> addCart(Long id, HashMap<Long, CartDTO> cart) ;
 
-    HashMap<Long, CartDTO> editCart(Long id, int quantity,HashMap<Long, CartDTO> cart) ;
+    void addCart(Long foodId, Long cusId)  throws Exception;
 
-    HashMap<Long, CartDTO> removeCart(Long id,HashMap<Long, CartDTO> cart) ;
-    int totalQuantity(HashMap<Long, CartDTO> cart);
-    double totalPrice(HashMap<Long, CartDTO> cart);
+    List<Cart> getAll(Long id) ;
 
-
+    void remove(Long id);
 }

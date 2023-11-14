@@ -1,102 +1,81 @@
 package st.nvt.managerrestaurant.service.impl;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import st.nvt.managerrestaurant.dto.CartDTO;
+import st.nvt.managerrestaurant.model.account.Customer;
 import st.nvt.managerrestaurant.model.service.Cart;
 import st.nvt.managerrestaurant.model.service.Food;
 import st.nvt.managerrestaurant.model.service.Images;
 import st.nvt.managerrestaurant.repository.CartRepository;
-import st.nvt.managerrestaurant.service.CartService;
-import st.nvt.managerrestaurant.service.FoodService;
-import st.nvt.managerrestaurant.service.ImagesService;
+import st.nvt.managerrestaurant.service.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
+@Transactional
 public class CartServiceImpl implements CartService {
-    @Autowired
-    FoodService foodService;
     @Autowired
     CartRepository cartRepository;
     @Autowired
     ImagesService imagesService;
+    @Autowired
+    FoodService foodService;
+    @Autowired
+    CustomerService customerService;
+    @Autowired
+    IAccountService accountService;
+
+@PersistenceContext
+private EntityManager entityManager;
 
     @Override
-    public HashMap<Long, CartDTO> addCart(Long id, HashMap<Long, CartDTO> cart) {
-        CartDTO itemCart = new CartDTO();
-        Food food = foodService.findById(id);
-        List<Images> images = imagesService.findByFood(food);
-        food.setImages(images);
+    public void addCart(Long foodId, Long cusId) throws Exception {
+        Customer customer = customerService.findById(cusId).orElseThrow(() -> new Exception("Customer not found"));
+        Food food = foodService.findById(foodId);
 
-        if(food != null && cart.containsKey(id)) {
-            itemCart = cart.get(id);
-            int quantity = itemCart.getQuantity();
-            itemCart.setQuantity(quantity + 1);
-            itemCart.setTotal((quantity + 1) * itemCart.getFood().getPrice());
-        }else {
-            itemCart.setFood(food);
-            itemCart.setQuantity(1);
-            double totalPrice = food.getPrice() * itemCart.getQuantity();
-            itemCart.setTotal(totalPrice);
+        if (cartRepository.existsCartByFoodIdAndCustomerId(foodId, cusId)) {
+            // Nếu giỏ hàng đã tồn tại, cập nhật số lượng
+            Cart existingCart = cartRepository.findCartByFoodIdAndCustomerId(foodId, cusId);
+            int quantity = existingCart.getTotalItems() + 1;
+            updateCartTotalItems(existingCart, quantity);
+        } else {
+            // Nếu giỏ hàng không tồn tại, tạo mới giỏ hàng
+            Cart newCart = new Cart();
+            newCart.setCustomerId(customer.getId());
+            newCart.setFoodName(food.getName());
+            newCart.setIngredient(food.getIngredientList());
+            newCart.setFoodPrice(food.getPrice());
+            newCart.setFoodId(foodId);
+            newCart.setTotalItems(1);
+            newCart.setTotalPrice(food.getPrice());
+
+            Images image = imagesService.findTop1ByFood(foodId);
+            newCart.setFoodImages(image.getNameImage());
+
+            cartRepository.save(newCart);
         }
-
-        cart.put(food.getId(), itemCart);
-        return cart;
     }
 
-
-
-
-    @Override
-    public HashMap<Long, CartDTO> editCart(Long id, int quantity, HashMap<Long, CartDTO> cart) {
-        if(cart == null) {
-            return cart;
-        }
-        CartDTO itemCart = new CartDTO();
-        if(cart.containsKey(id)) {
-            itemCart = cart.get(id);
-            itemCart.setQuantity(quantity);
-            itemCart.setTotal(itemCart.getFood().getPrice() * quantity);
-        }
-
-        cart.put(id, itemCart);
-        return null;
-    }
-
-    @Override
-    public HashMap<Long, CartDTO> removeCart(Long id, HashMap<Long, CartDTO> cart) {
-        if(cart == null) {
-            return cart;
-        }
-        if(cart.containsKey(id)) {
-            cart.remove(id);
-        }
-        return cart;
+    public void updateCartTotalItems(Cart cart, int quantity) {
+        cart.setTotalItems(quantity);
+        cart.setTotalPrice(cart.getFoodPrice() * quantity);
+        cartRepository.save(cart);
     }
 
     @Override
-    public int totalQuantity(HashMap<Long, CartDTO> cart) {
-        int totalQuantity = 0;
-        for(Map.Entry<Long, CartDTO> itemCart : cart.entrySet()) {
-            totalQuantity += itemCart.getValue().getQuantity();
+    public List<Cart> getAll(Long cusId) {
+        List<Cart> carts = cartRepository.findCartByCustomerId(cusId);
+        if(carts == null) {
+            carts = new ArrayList<>();
         }
-
-        return totalQuantity;
+        return carts;
     }
 
-    @Override
-    public double totalPrice(HashMap<Long, CartDTO> cart) {
-        double totalPrice= 0;
-        for(Map.Entry<Long, CartDTO> itemCart : cart.entrySet()) {
-            totalPrice += (itemCart.getValue().getTotal());
-        }
-        return totalPrice;
+    public void remove(Long id) {
+        cartRepository.removeCartByFoodId(id);
     }
-
-
-
 
 }

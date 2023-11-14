@@ -74,23 +74,22 @@
 		</thead>
 		<tbody>
 		<!-- Thêm các dòng trong bảng giỏ hàng tại đây -->
-		<tr th:each="item : ${session.cart}">
-
-			<td ><img class="img-product__cart"  th:src="@{'/img/' + ${item.getValue().food.images[0].nameImage}}"  th:href="@{/food/detail/{id}(id=${item.getValue().food.getId()})}"  alt="Food Image" /></td>
-			<td th:text="${item.getValue().food.name}">Bánh mì</td>
-			<td th:text="${item.getValue().food.price}">10.000đ</td>
-			<td class="quantity" th:text="${item.getValue().quantity}">
+		<tr th:each="item : ${carts}">
+			<td ><img class="img-product__cart"  th:src="@{'/img/' + ${item.foodImages}}"  alt="Food Image" /></td>
+			<td th:text="${item.foodName}">Bánh mì</td>
+			<td th:text="${item.foodPrice}">10.000đ</td>
+			<td class="quantity" th:text="${item.totalItems}">
 				<button>-</button>
 				<input type="text"  value="2">
 				<button>+</button>
 			</td>
-			<td th:text="${item.getValue().total}">0</td>
-			<td> <a th:href="@{/remove-cart/{id} (id = ${item.getValue().food.getId()})}"> <i class="close-cart fa-solid fa-circle-xmark cursor-pointer " style="color: #464444; "></i></a></td>
+			<td th:text="${item.totalPrice}">0</td>
+			<td> <a th:href="@{/remove-cart/{id} (id = ${item.foodId})}"> <i class="close-cart fa-solid fa-circle-xmark cursor-pointer " style="color: #464444; "></i></a></td>
 		</tr>
 		</tbody>
 		<tfoot>
 		<tr>
-			<td colspan="4" style="text-align: right;">Thành tiền: [[ ${session.tatalPrice} ]]</td>
+			<td colspan="4" style="text-align: right;">Thành tiền: [[ ${totalBill} ]]</td>
 			<td id="grandTotal"></td>
 		</tr>
 		</tfoot>

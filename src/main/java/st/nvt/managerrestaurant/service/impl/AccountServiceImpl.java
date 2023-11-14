@@ -49,7 +49,7 @@ public class AccountServiceImpl implements IAccountService {
         Customer customer = CustomerMapper.mapperToCustomer(customerDTO);
 
 
-        Role role = roleRepository.findByRoleName("USER");
+        Role role = roleRepository.findByRoleName("ADMIN");
 
         if(role == null){
             role = checkRoleExists();
@@ -65,7 +65,7 @@ public class AccountServiceImpl implements IAccountService {
 
     private Role checkRoleExists(){
         Role role = new Role();
-        role.setRoleName("USER");
+        role.setRoleName("ADMIN");
         return  roleRepository.save(role);
     }
 

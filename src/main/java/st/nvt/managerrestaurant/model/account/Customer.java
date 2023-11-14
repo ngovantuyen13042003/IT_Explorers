@@ -29,9 +29,5 @@ public class Customer  {
     @JoinColumn(name = "id_order")
     private Order order;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
-    private List<Cart> carts = new ArrayList<>();
-
-
 
 }

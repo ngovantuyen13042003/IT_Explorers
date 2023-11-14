@@ -10,7 +10,10 @@ import java.util.List;
 @Setter
 @Getter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
+@Table( uniqueConstraints = @UniqueConstraint(columnNames = "userName"))
 public class Account{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,5 +34,6 @@ public class Account{
         joinColumns = @JoinColumn(name = "id_Account", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "id_Role", referencedColumnName = "id"))
     private List<Role> roleList = new ArrayList<>();
+
 
 }

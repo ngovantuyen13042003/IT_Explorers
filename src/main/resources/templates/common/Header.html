@@ -28,7 +28,11 @@
             </div>
             <dic class="btn_login-container" >
                 <button  type="button" class="btn_login" style="margin-right: 10px" ><a th:href="@{/login}" style="color: #212121">LOGIN</a></button>
-                <a th:href="@{/cart}"><i class="fa-solid fa-cart-shopping" ></i></a>
+                <a th:href="@{/cart}">
+                    <i class="fa-solid fa-cart-shopping" ></i>
+<!--                    <span class="cart-badge" th:text="${session.totalQuantity}">5</span>-->
+                </a>
+
             </dic>
         </div>
     </div>
