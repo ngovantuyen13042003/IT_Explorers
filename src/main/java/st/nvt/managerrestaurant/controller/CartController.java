@@ -38,16 +38,16 @@ public class CartController {
 
     @GetMapping("/add-cart/{id}")
         public String showCart( @PathVariable("id") Long id, Principal principal) throws Exception {
-//        if(principal == null) {
-//            return "redirect:/login";
-//        }
+        if(principal == null) {
+            return "redirect:/login";
+        }
         Account account = accountService.findByUserName(principal.getName());
         Customer customer = customerService.findById(account.getCustomerId()).orElseThrow(
                 () -> new Exception()
         );
 
         cartService.addCart(id, customer.getId());
-        return "forward:/home";
+        return "redirect:/home";
     }
 
 
