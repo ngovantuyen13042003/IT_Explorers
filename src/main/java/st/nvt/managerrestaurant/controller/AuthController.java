@@ -78,6 +78,9 @@ public class AuthController {
         return "redirect:/login";
     }
 
-
+    @GetMapping("/register-owner")
+    public String showFormRegister() {
+        return "RestaurantOwnerRegister";
+    }
 
 }

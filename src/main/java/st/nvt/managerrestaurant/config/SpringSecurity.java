@@ -28,7 +28,9 @@ public class SpringSecurity {
                 .requestMatchers("/creation-food/**").hasAuthority("ADMIN")
                 .requestMatchers("/add-food/**").hasAuthority("ADMIN")
                 .requestMatchers("/add-restaurant/**").hasAuthority("ADMIN")
+                .requestMatchers("/management-restaurant/**").hasAuthority("ADMIN")
                 .requestMatchers("/update-infor-restaurant/**").authenticated()
+
                 .requestMatchers("/add-cart/**").authenticated()
                 .requestMatchers("/remove-cart/**").authenticated()
                 .requestMatchers("/cart/**").authenticated()
@@ -39,7 +41,7 @@ public class SpringSecurity {
 
                 .requestMatchers("/reservation/**").authenticated()
                 .requestMatchers("/restaurant/**").permitAll()
-
+                .requestMatchers("/register-owner/**").permitAll()
                 .requestMatchers("/login/**").permitAll()
                 .requestMatchers("/sign-up/**").permitAll()
                 .requestMatchers("/home/**").permitAll()

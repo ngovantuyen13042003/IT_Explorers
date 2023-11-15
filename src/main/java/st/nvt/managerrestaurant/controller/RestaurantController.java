@@ -20,4 +20,5 @@ public class RestaurantController {
     public String showfoodList(){
         return "RestaurantFoodList";
     }
+
 }
