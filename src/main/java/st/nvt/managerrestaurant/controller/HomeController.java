@@ -1,24 +1,34 @@
 package st.nvt.managerrestaurant.controller;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Page;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import st.nvt.managerrestaurant.dto.AccountDTO;
+import st.nvt.managerrestaurant.model.account.Account;
+import st.nvt.managerrestaurant.model.account.Customer;
+import st.nvt.managerrestaurant.model.service.Cart;
 import st.nvt.managerrestaurant.model.service.Food;
 import st.nvt.managerrestaurant.model.service.Images;
-import st.nvt.managerrestaurant.service.FoodService;
-import st.nvt.managerrestaurant.service.ImagesService;
+import st.nvt.managerrestaurant.service.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.Authenticator;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.Principal;
 import java.util.*;
 
 @Controller
@@ -28,6 +38,12 @@ public class HomeController {
     private FoodService foodService;
     @Autowired
     private ImagesService imagesService;
+    @Autowired
+    CartService cartService;
+    @Autowired
+    CustomerService customerService;
+    @Autowired
+    IAccountService accountService;
 
     @ModelAttribute("account")
     public AccountDTO accountDTO(){
@@ -35,7 +51,8 @@ public class HomeController {
     }
 
     @GetMapping("/home")
-    public String menu(@RequestParam(defaultValue = "0") int page, Model model) {
+    public String menu(@RequestParam(defaultValue = "0") int page, Model model, Principal principal, HttpServletResponse response, HttpSession session) throws Exception{
+
         int pageSize = 9;
         Page<Food> foodPage = foodService.listFoods(page, pageSize);
 
@@ -57,6 +74,32 @@ public class HomeController {
         }
         model.addAttribute("menu", menuWithImages);
         model.addAttribute("page", foodPage);
+
+
+        // cart
+        if(principal != null) {
+            Account account = accountService.findByUserName(principal.getName());
+            Customer customer = customerService.findById(account.getCustomerId()).orElseThrow(
+                    () -> new Exception()
+            );
+            List<Cart> carts = cartService.getAll(customer.getId());
+
+
+            double totalBill = 0.0;
+            int totalQuantity = 0;
+            for (Cart cart : carts) {
+                totalBill += cart.getTotalPrice();
+                totalQuantity += cart.getTotalItems();
+            }
+
+            model.addAttribute("totalBill", totalBill);
+            session.setAttribute("totalQuantity", totalQuantity);
+            Cookie cookie = new Cookie("totalQuantity", String.valueOf(totalQuantity));
+            cookie.setAttribute("totalQuantity", String.valueOf(totalQuantity));
+            cookie.setMaxAge(3600 * 3600 );
+            response.addCookie(cookie);
+            model.addAttribute("carts", carts);
+        }
 
 
         return "Home";

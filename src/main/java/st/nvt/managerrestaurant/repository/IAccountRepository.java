@@ -10,6 +10,5 @@ import java.util.Optional;
 public interface IAccountRepository extends JpaRepository<Account, Long> {
     Account findByUserName(String name); // Tìm username có trong DB không
     Boolean existsByUserName(String name); // check username đã có trong DB chưa
-    Boolean existsByEmail(String email);
 
 }

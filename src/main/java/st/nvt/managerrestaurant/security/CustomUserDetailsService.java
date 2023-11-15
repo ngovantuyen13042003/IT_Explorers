@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import st.nvt.managerrestaurant.model.account.Account;
-import st.nvt.managerrestaurant.repository.IAccountRepository;
+import st.nvt.managerrestaurant.service.IAccountService;
 
 import java.util.stream.Collectors;
 
@@ -18,14 +18,15 @@ import java.util.stream.Collectors;
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private IAccountRepository userRepository;
+    private IAccountService accountService;
 
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
+        Account user = accountService.findByUserName(usernameOrEmail);
+        System.out.println( "This is username: " + usernameOrEmail );
 
-        Account user = userRepository.findByUserName(usernameOrEmail);
-        System.out.println(user.getRoleList().stream().map(role -> new SimpleGrantedAuthority(role.getRoleName())).collect(Collectors.toList()));
+//        System.out.println( "This is roles: "+ user.getRoleList().stream().map(role -> new SimpleGrantedAuthority(role.getRoleName())).collect(Collectors.toList()));
         if (user != null) {
             return new org.springframework.security.core.userdetails.User(user.getUserName(),
                     user.getPassword(),

@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Customer {
+public class Customer  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,14 +24,10 @@ public class Customer {
     private String email;
     private String address;
     private int totalScores;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy ="customer")
-    private List<Account> accounts = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_order")
     private Order order;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
-    private List<Cart> carts = new ArrayList<>();
 
 }

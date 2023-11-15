@@ -17,9 +17,15 @@ public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private String address;
+
+    private String email;
+
     private String country;
+
     private String phoneNumber;
 
     @ManyToMany(cascade = CascadeType.ALL)
@@ -31,9 +37,8 @@ public class Restaurant {
     @ManyToOne(cascade = CascadeType.ALL)
     private TypeRestaurant typeRestaurant;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_table")
-    private Table tables;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "restaurant")
+    private List<Table> tables;
 
     @OneToMany(mappedBy = "restaurant",cascade = CascadeType.ALL)
     private List<Images> images;
