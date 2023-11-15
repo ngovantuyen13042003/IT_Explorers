@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface FoodService {
     Page<Food> listFoods(int page, int size);
 
-
+    List<Food> findAll();
     void saveOrUpdate(Food food);
 
     Food findById(Long id);
