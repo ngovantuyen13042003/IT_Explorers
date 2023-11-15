@@ -1,0 +1,118 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" th:href="@{/css/RestaurantOwnerRegister.css}">
+    <!--<script>
+        function chooseImage() {
+            // Tạo một đối tượng input[type="file"]
+            var input = document.createElement("input");
+            input.type = "file";
+
+            // Đặt thuộc tính multiple để cho phép chọn nhiều ảnh
+            input.multiple = true;
+
+            // Xử lý sự kiện khi người dùng chọn ảnh
+            input.onchange = function(event) {
+                var selectedFiles = event.target.files;
+                var previewDiv = document.getElementById("preview");
+
+                // Xóa các ảnh đã hiển thị trước đó
+                while (previewDiv.firstChild) {
+                    previewDiv.removeChild(previewDiv.firstChild);
+                }
+
+                // Hiển thị các ảnh đã chọn
+                for (var i = 0; i < selectedFiles.length; i++) {
+                    var file = selectedFiles[i];
+
+                    // Tạo một đối tượng img để hiển thị ảnh
+                    var img = document.createElement("img");
+                    img.src = URL.createObjectURL(file);
+                    img.width = 200;
+                    img.height = 200;
+
+                    // Thêm ảnh vào div preview
+                    previewDiv.appendChild(img);
+                }
+            };
+
+            // Mở cửa sổ chọn tệp khi người dùng nhấp vào nút
+            input.click();
+        }
+    </script>-->
+</head>
+<body>
+
+<!--header-->
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header_off}"></div>
+</div>
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <div th:replace="~{/common/Header}"></div>
+</div>
+
+<!--end header-->
+
+<form action="index.html" method="post">
+
+    <h1>Sign Up</h1>
+
+    <fieldset>
+        <legend><span class="number">1</span>Your Account Info</legend>
+        <label for="name">User Name:</label>
+        <input type="text" id="name" name="user_name">
+
+        <label for="mail">Password:</label>
+        <input type="email" id="mail" name="user_email">
+
+        <label for="password">Confirm Password:</label>
+        <input type="password" id="password" name="user_password">
+
+    </fieldset>
+
+    <fieldset>
+        <legend><span class="number">2</span>Your Profile</legend>
+        <label for="name">Full Name:</label>
+        <input type="text" id="fullname" name="full_name">
+
+        <label for="name">CCCD:</label>
+        <input type="text" id="CCCD" name="CCCD">
+
+        <label for="name">Address:</label>
+        <input type="text" id="address" name="address">
+
+        <label for="name">Email:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="name">Phone Number:</label>
+        <input type="text" id="Phone number" name="phone">
+    </fieldset>
+    <fieldset>
+        <legend><span class="number">3</span>Your Restaurant Profile</legend>
+        <label for="name">Restaurant Name:</label>
+        <input type="text" id="resname" name="res_name">
+
+        <label for="name">Address:</label>
+        <input type="text" id="res-address" name="address">
+
+        <label for="name">Email:</label>
+        <input type="text" id="res-email" name="email">
+
+        <label for="name">Phone Number:</label>
+        <input type="text" id="res-number" name="phone">
+
+        <!--<label for="name">Giấy chứng nhận nhà hàng:</label>
+        <button onclick="chooseImage()">select images</button>
+        <div id="preview"></div>-->
+    </fieldset>
+    <button type="submit">Sign Up</button>
+</form>
+
+<div th:replace="~{/common/Footer}"></div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+</body>
+</html>
