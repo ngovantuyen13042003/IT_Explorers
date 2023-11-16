@@ -27,11 +27,8 @@ public class Images {
     @JoinColumn(name = "food")
     private Food food;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "restaurant")
     private Restaurant restaurant;
-
-
-
 
 }

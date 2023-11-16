@@ -34,7 +34,7 @@ public class Restaurant {
         inverseJoinColumns = @JoinColumn(name = "id_Food", referencedColumnName = "id"))
     private List<Food> menu;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private TypeRestaurant typeRestaurant;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "restaurant")

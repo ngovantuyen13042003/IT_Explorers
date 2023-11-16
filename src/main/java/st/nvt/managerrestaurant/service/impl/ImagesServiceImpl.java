@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import st.nvt.managerrestaurant.model.service.Food;
 import st.nvt.managerrestaurant.model.service.Images;
+import st.nvt.managerrestaurant.model.service.Restaurant;
 import st.nvt.managerrestaurant.repository.ImagesRepository;
 import st.nvt.managerrestaurant.service.ImagesService;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -26,6 +28,11 @@ public class ImagesServiceImpl implements ImagesService {
     }
 
     @Override
+    public List<Images> findByRestaurant(Restaurant restaurant) {
+         return imagesRepository.findByRestaurant(restaurant);
+    }
+
+    @Override
     public Images findTop1ByFood(Long id) {
         return imagesRepository.findTop1ByFood(id);
     }
@@ -34,4 +41,10 @@ public class ImagesServiceImpl implements ImagesService {
     public List<Images> findAll() {
         return imagesRepository.findAll();
     }
+
+    @Override
+    public void delete(Images images) {
+        imagesRepository.delete(images);
+    }
+
 }

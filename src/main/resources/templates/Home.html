@@ -22,18 +22,22 @@
     <div th:replace="~{/common/Header}"></div>
 </div>
 <!--end header-->
-    <div class="sub-header">
+<div class="sub-header" th:style="'background-image: url(' + '/img/' + ${restaurant.images[0].nameImage} + ');'">
         <div class="sub-header-box">
             <p style="color: #650a0a">Trang chủ <span style="color: #a8a5a5"> > </span> Nhà hàng</p>
-            <h2 class="restaurant-name">Bami king - Bánh Mì Bò Nướng & Cơm thố - An Trạch</h2>
-            <p style="color: #b9b7b7 ; margin-top: 20px">
-                Bánh mì - xôi
+            <h2 class="restaurant-name" th:text="${restaurant.name}"></h2>
+            <p style="color: #505050 ; margin-top: 10px">
+                <span th:text="${restaurant.typeRestaurant.name}"></span>
+                <br>
+                <span th:text="'Địa chỉ: ' + ${restaurant.address}"></span>
+                <br>
+                <span th:text="'Số điện thoại: ' + ${restaurant.phoneNumber} + ' - Email: ' + ${restaurant.email} "></span>
                 <br>
                 <i class="fa-solid fa-star" style="color: #ffc400"></i>
                 <i class="fa-regular fa-clock" style="margin-left: 20px"></i>
                 30 phút - 1.2 km
                 <br>
-                Giờ mở cữa:   6h00 - 22h00
+                Giờ mở cửa:   6h00 - 22h00
                 <br>
                 <i class="fa-solid fa-tag fa-rotate-90"></i>
                 <span style="color: black">Tận hưởng ưu đãi</span>

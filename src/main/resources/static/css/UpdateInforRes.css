@@ -4,3 +4,6 @@
 .btn{
     --mdb-btn-font-size: 1rem !important;
 }
+.container {
+    width: 600px !important;
+}

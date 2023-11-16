@@ -10,8 +10,10 @@ import org.springframework.web.multipart.MultipartFile;
 import st.nvt.managerrestaurant.dto.AccountDTO;
 import st.nvt.managerrestaurant.model.service.Food;
 import st.nvt.managerrestaurant.model.service.Images;
+import st.nvt.managerrestaurant.model.service.Restaurant;
 import st.nvt.managerrestaurant.service.FoodService;
 import st.nvt.managerrestaurant.service.ImagesService;
+import st.nvt.managerrestaurant.service.RestaurantService;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,6 +28,8 @@ import java.util.*;
 public class HomeController {
     @Autowired
     private FoodService foodService;
+    @Autowired
+    private RestaurantService restaurantService;
     @Autowired
     private ImagesService imagesService;
 
@@ -55,6 +59,10 @@ public class HomeController {
             }
             menuWithImages.add(food);
         }
+        Restaurant restaurant = restaurantService.findById(1L);
+        List<Images> resImages = imagesService.findByRestaurant(restaurant);
+        restaurant.setImages(resImages);
+        model.addAttribute("restaurant", restaurant);
         model.addAttribute("menu", menuWithImages);
         model.addAttribute("page", foodPage);
 
