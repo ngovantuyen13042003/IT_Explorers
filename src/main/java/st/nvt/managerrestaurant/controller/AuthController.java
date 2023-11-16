@@ -12,6 +12,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.context.request.WebRequest;
 import st.nvt.managerrestaurant.dto.AccountDTO;
 import st.nvt.managerrestaurant.dto.CustomerDTO;
+import st.nvt.managerrestaurant.dto.RestaurantOwnerDTO;
 import st.nvt.managerrestaurant.model.account.Account;
 import st.nvt.managerrestaurant.repository.CustomerRepository;
 import st.nvt.managerrestaurant.service.IAccountService;
@@ -79,7 +80,8 @@ public class AuthController {
     }
 
     @GetMapping("/register-owner")
-    public String showFormRegister() {
+    public String showFormRegister(Model model) {
+        model.addAttribute("restaurantowner", new RestaurantOwnerDTO());
         return "RestaurantOwnerRegister";
     }
 
