@@ -25,4 +25,7 @@
         @OneToMany(mappedBy = "food",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
         private List<Images> images;
 
+        @ManyToOne(cascade = CascadeType.ALL)
+        @JoinColumn(name = "restaurantId")
+        private Restaurant restaurant;
     }

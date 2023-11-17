@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Setter
@@ -24,15 +25,7 @@ public class Restaurant {
 
     private String email;
 
-    private String country;
-
     private String phoneNumber;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "Restaurant_Food",
-        joinColumns = @JoinColumn(name = "id_restaurant", referencedColumnName = "id"),
-        inverseJoinColumns = @JoinColumn(name = "id_Food", referencedColumnName = "id"))
-    private List<Food> menu;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private TypeRestaurant typeRestaurant;
@@ -43,4 +36,6 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant",cascade = CascadeType.ALL)
     private List<Images> images;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "restaurant")
+    private List<Food> foods = new ArrayList<>();
 }

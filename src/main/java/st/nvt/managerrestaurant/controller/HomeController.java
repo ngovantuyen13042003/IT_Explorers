@@ -117,7 +117,8 @@ public class HomeController {
 
 
     @GetMapping("/creation-food")
-    public String showFormAddFood(@ModelAttribute Food food, Model model) {
+    public String showFormAddFood(@ModelAttribute Food food, Model model, Principal principal) {
+
         model.addAttribute("food", food);
         return "CreationFood";
     }

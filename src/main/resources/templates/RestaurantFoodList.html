@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Foodlist</title>
@@ -21,7 +21,7 @@
                 </a>
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item"> <a href="#" class="nav-link text-white" aria-current="page"> <i class="fa fa-home"></i><span class="ms-2">Home</span> </a> </li>
+                    <li class="nav-item"> <a th:href="@{/home}" class="nav-link text-white" aria-current="page"> <i class="fa fa-home"></i><span class="ms-2">Home</span> </a> </li>
                     <li> <a href="#" class="nav-link text-white active"> <i class="fas fa-utensils" style="color: #ffffff;"></i><span class="ms-2">Quản lý món ăn</span> </a> </li>
                 </ul>
                 <hr>
@@ -167,25 +167,25 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="/add-food" enctype="multipart/form-data" method="post" th:object="${food}">
+<!--                        <div class="mb-3">-->
+<!--                            <label for="id-mon" class="col-form-label">Mã món ăn</label>-->
+<!--                            <input type="text" class="form-control" id="id-mon">-->
+<!--                        </div>-->
                         <div class="mb-3">
-                            <label for="id-mon" class="col-form-label">Mã món ăn</label>
-                            <input type="text" class="form-control" id="id-mon">
+                            <label for="ten-mon" class="col-form-label" th:field="*{name}">Tên món ăn</label>
+                            <input type="text" class="form-control" id="ten-mon"/>
                         </div>
                         <div class="mb-3">
-                            <label for="ten-mon" class="col-form-label">Tên món ăn</label>
-                            <input type="text" class="form-control" id="ten-mon"></input>
+                            <label for="gia" class="col-form-label" th:field="*{price}">Giá</label>
+                            <input type="text" class="form-control" id="gia"/>
                         </div>
                         <div class="mb-3">
-                            <label for="gia" class="col-form-label">Giá</label>
-                            <input type="text" class="form-control" id="gia"></input>
-                        </div>
-                        <div class="mb-3">
-                            <label for="nguyen-lieu" class="col-form-label">Nguyên liệu</label>
+                            <label for="nguyen-lieu" class="col-form-label"  th:field="*{ingredientList}">Nguyên liệu</label>
                             <textarea class="form-control" id="nguyen-lieu"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="mo-ta" class="col-form-label">Mô tả</label>
+                            <label for="mo-ta" class="col-form-label" th:field="*{description}">Mô tả</label>
                             <textarea class="form-control" id="mo-ta"></textarea>
                         </div>
                         <div class="mb-3">
